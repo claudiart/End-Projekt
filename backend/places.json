@@ -1,0 +1,20 @@
+{
+    "edison": { 
+        "id": "01",
+        "name": "Edison",
+        "address": {
+            "streetAddress": "Examplestreet",
+            "city": "Vienna",
+            "postalCode": "394221"
+        }
+    },
+    "votiv": { 
+        "id": "01",
+        "name": "Votiv",
+        "address": {
+            "streetAddress": "Examplestreet",
+            "city": "Vienna",
+            "postalCode": "394221"
+        }
+    }
+}
