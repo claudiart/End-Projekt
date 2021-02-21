@@ -137,4 +137,5 @@ $( '#add form' ).on( 'submit', e => {
                 console.log( 'Request Error' );
             }
         });
-}
+    }
+});
