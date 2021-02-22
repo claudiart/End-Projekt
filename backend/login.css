@@ -1,0 +1,27 @@
+.form-signin {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 400px;
+    padding: 15px;
+    margin: 0 auto;
+  }
+
+  p {
+    font-size: 2vw;
+    margin-bottom: 0;
+  }
+
+  .smallImg {
+    height: 70px; 
+    width: 70px; 
+    object-fit: cover; 
+    border-radius: 50%;
+  }
+
+  .bigImg {
+    width:100%; 
+    border-radius: 50%;
+  }

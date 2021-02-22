@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous"> -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <!--Bootstrap adjust!-->
+
+        <link rel="stylesheet" href="login.css">
+        <title>Register</title>
+	
+	</head>
+
+	<body class="text-center">
+	    <form class="form-signin mx-auto " method="post"  action="" autocomplete= "off">
+		    <h2 class="text-info mb-3 font-weight-bold">Register</h2> 
+		    
+            <input class="form-control my-1" type="text" id="username" name="username"  class="form-control" placeholder= "Username" value=""  maxlength="40" />
+            <div class="invalid-feedback">
+                Define your username!
+            </div>
+
+		    <input class="form-control my-1" type="email" id="email" name="email"  class="form-control" placeholder= "Email" value=""  maxlength="40" />
+            <div class="invalid-feedback">
+                Define your e-mail address!
+            </div>
+		    
+		    <input class="form-control my-1" type="password" id="pass" name="pass"  class="form-control" placeholder ="Password" maxlength="15"  />
+            <div class="invalid-feedback">
+                Your password should have at least 6 characters!
+            </div>
+		    
+		    <button id="register" onclick="getUsers()" class="btn btn-lg btn-secondary btn-block mt-3 mb-3" type="submit" name= "btn-register">Register</button>
+		    
+	    </form>
+        <script src="lib/jquery-3.5.1.min.js"></script>
+        <script src="register.js"></script>
+	</body>
+</html>

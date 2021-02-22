@@ -1,5 +1,6 @@
 const http = require ('http');
 const fs = require('fs');
+let users =[];
 
 // json file with the data 
 var data = fs.readFileSync('./places.json'); 
@@ -32,8 +33,7 @@ function searchPlace(req, res) {
 	
 	if(places[word]) { 
 		var foundPlace = places[word];		 
-	} 
-	else { 
+	} else { 
 		var foundPlace = { 
 			status:"Not Found"
 		} 
@@ -41,3 +41,21 @@ function searchPlace(req, res) {
 	
 	res.send(foundPlace); 
 } 
+
+//Endpoint für die User-Registrierung
+app.post('/user', registerUser); 
+
+function registerUser(req, res) { 
+	console.log("ok backend");
+	var user = req.body; 
+	
+	if(!user.username || !user.email || !user.pass  ) { 
+		return res.sendStatus(400);	 
+	} else { 
+			users.push(user);
+			console.log(users);
+			res.json(user);
+		} 
+} 
+	
+ 
