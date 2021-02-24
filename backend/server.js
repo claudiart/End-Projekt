@@ -18,6 +18,10 @@ app.listen(PORT, () => console.log("Server Start at the Port " + PORT));
 
 //render register on start page (change this later to login)
 app.get('/', (req, res) => {
+	res.render('login')
+})
+
+app.get('/register', (req, res) => {
 	res.render('register')
 })
 
