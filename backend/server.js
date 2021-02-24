@@ -1,81 +1,73 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
-
-let users = [];
-
-// json file with the data 
-var data = fs.readFileSync('./places.json');
-var places = JSON.parse(data);
 const express = require('express');
 const app = express();
+
 app.set("view engine", "hbs"); // hbs dateien statt html 
 const viewsPath = path.join(__dirname, "views"); // __dirname und views zusammenfassen als String
 app.set("views", viewsPath); // views in ViewsPath 
 app.use(express.static(path.join(__dirname, 'public'))); // 
 
-
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true })); // Middleware
 app.use(bodyParser.json());
 
+const PORT = 3000;
+app.listen(PORT, () => console.log("Server Start at the Port " + PORT));
 
+//render register on start page (change this later to login)
 app.get('/', (req, res) => {
 	res.render('register')
 })
 
-const PORT = 3000;
-app.listen(PORT,
-	() => console.log("Server Start at the Port " + PORT));
+//Endpoint for getting all places
+app.get("/places", getAllPlaces);
 
-// ??? difference .send() .json()
+function getAllPlaces(req, res) {
+	var data = fs.readFileSync('./places.json');
+	var places = JSON.parse(data);
+	if (places) {
+		res.json(places);
+	} else {
+		res.send("No places found");
+	}
+}
 
-// Endpoint for getting all places
-app.get("/places", (req, res) => {
-	res.send(places);
-});
-
-//Endpoint for getting a single place
+//Endpoint for getting a single place by name
 app.get('/places/:place/', searchPlace);
 
 function searchPlace(req, res) {
-	var word = req.params.place;
-	word = word.toLowerCase();
-
-	if (places[word]) {
-		var foundPlace = places[word];
+	var name = req.params.place.toLowerCase();
+	var data = fs.readFileSync('./places.json');
+	var places = JSON.parse(data);
+	if (places[name]) {
+		res.json(places[name]);
 	} else {
-		var foundPlace = {
-			status: "Not Found"
-		}
+		res.send("Place not found");
 	}
-
-	res.send(foundPlace);
 }
 
-//Endpoint für die User-Registrierung
+//Endpoint for user registration
 app.post('/user', registerUser);
 
 function registerUser(req, res) {
-	console.log("ok backend");
-	var user = req.body;
-
-	if (user.username && user.email && user.pass) {
-		users.push(user);
-		console.log(users);
-		res.json(user);
+	var newUser = req.body; //get user object from the request body and save it to newUser
+	if (newUser.username && newUser.email && newUser.pass) { //if username, email and pass are truthy ...
+		fs.readFile('users.json', function (err, data) { // ...read existing users data from users.js..
+			var users = JSON.parse(data); // ...parse that data to a JS object and save it to users...
+			users.push(newUser); //...push newUser to users array...
+			fs.writeFile('users.json', JSON.stringify(users), (err) => { //stringify users (onverts a JavaScript value to a JSON string) and write it to users.json file
+				if (err) { //if there is an error throw error
+					throw err
+				}
+				console.log(newUser.username + " has been added"); //if sucess then console.log this sentence
+			});
+		});
+		res.json(newUser); //send response to client with newUser information
+	} else {
+		res.send('Failed to add user'); // if username, email and pass are NOT truthy (are missing) send response to client with this sentence
+		throw new Error('Failed to add user'); //and throw new error in the backend
 	}
-	else if (!user.username || !user.email || !user.pass) {
-		throw new Error('fail');
-	}
-
-	let fileText = JSON.stringify(user);
-	fs.writeFile(__dirname + '/users.json', fileText, (err, user) => {
-		if (err) {
-			throw err
-		} if (user) {
-			console.log(user);
-		}
-	})
 }
 
