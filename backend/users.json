@@ -1,1 +1,32 @@
-[{"username":"111","email":"fef@fdf.com","pass":"eee"},{"username":"222","email":"fef@fdf.com","pass":"eee"},{"username":"333","email":"fef@fdf.com","pass":"eee"},{"username":"444","email":"fef@fdf.com","pass":"eee"},{"username":"55","email":"55@fdf.com","pass":"eee"},{"username":"äpfel","email":"apf@pf.com","pass":"sfdsfsdf"},{"username":"5434","email":"rerere","pass":"fdfds"},{"username":"5434","email":"rerere","pass":"fdfds"},{"username":"clauuu","email":"hgj","pass":"bnmn b"},{"username":"clau","email":"clau@me.com","pass":"12345"}]
+[
+    {
+        "username": "claudiart",
+        "email": "clau@gmail.com",
+        "pass": "asdf",
+        "admin": true
+    },
+    {
+        "username": "user1",
+        "email": "user1@gmail.com",
+        "pass": "1234",
+        "admin": false
+    },
+    {
+        "username": "jfdjfh",
+        "email": "kjfhsdfh",
+        "pass": "fjdhf",
+        "admin": false
+    },
+    {
+        "username": "äää",
+        "email": "wewe",
+        "pass": "fsf",
+        "admin": false
+    },
+    {
+        "username": "www",
+        "email": "www",
+        "pass": "www",
+        "admin": false
+    }
+]

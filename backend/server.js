@@ -27,7 +27,7 @@ app.get('/register', (req, res) => {
 })
 
 //Endpoint for getting all places
-app.get("/places", getAllPlaces);
+app.get('/places', getAllPlaces);
 
 function getAllPlaces(req, res) {
 	var data = fs.readFileSync('./places.json');
@@ -68,13 +68,31 @@ function registerUser(req, res) {
 				if (err) { //if there is an error throw error
 					throw err
 				}
-				console.log(newUser.username + " has been added"); //if sucess then console.log this sentence
+				console.log(newUser.username + " has been added"); //if success then console.log this sentence
 			});
 		});
 		res.json(newUser); //send response to client with newUser information
 	} else {
 		res.send('Failed to add user'); // if username, email and pass are NOT truthy (are missing) send response to client with this sentence
 		throw new Error('Failed to add user'); //and throw new error in the backend
+	}
+}
+
+//Endpoint for user login
+app.post('/login', loginUser);
+
+function loginUser(req, res) {
+	var userData = req.body; 
+	if (userData.email && userData.pass) {
+		fs.readFile('users.json', function (err, data) { 
+			var users = JSON.parse(data); 
+		//find users by email	
+			const findUserByEmail = (email) => {
+				users.find(user => user.email === email);
+			  }
+			  console.log(findUserByEmail(userData.email))
+		});
+		res.json(userData);
 	}
 }
 
