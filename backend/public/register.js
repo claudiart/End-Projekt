@@ -5,13 +5,12 @@ const getUsers = (e) => {
     let username = $('#username').val();
     let email = $('#email').val();
     let pass = $('#pass').val();
-    console.log('ok frontend');
 
     fetch(`/user`, {
         method: 'POST',
         headers: { 'content-type': 'application/json; charset=UTF-8' },
         body: JSON.stringify({ username: username, email: email, pass: pass })
-    }).then((res) => res.json).then(res => res.json)
+    }).then(res => res.json);
 
 
     //  request = $.ajax({

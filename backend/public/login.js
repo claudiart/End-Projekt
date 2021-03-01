@@ -4,11 +4,15 @@ const loginUser = (e) => {
     let email = $('#email').val();
     let pass = $('#pass').val();
 
-        fetch(`/login`, {
-            method: 'GET',
-            headers: { 'content-type': 'application/json; charset=UTF-8' },
-            body: JSON.stringify({ email: email, pass: pass })
-        }).then(res => res.json).then(console.log(res))
+    //send http request to server
+    fetch(`/login`, {
+        method: 'POST',
+        headers: { 'content-type': 'application/json; charset=UTF-8' },
+        body: JSON.stringify({ email: email, pass: pass })
+    }).then(res => res.json())
+      .then(json => {
+            window.location.href = "/admin";
+        });
 };
 
-$('#login').on('click', loginUser)
+$('#login').on('click', loginUser);

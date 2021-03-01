@@ -26,6 +26,16 @@ app.get('/register', (req, res) => {
 	res.render('register')
 })
 
+//ToDO Work this out! 
+app.get('/admin', (req, res) => {
+	let a = JSON.parse(req.body);
+	if (isAdmin(a.token)) {
+		res.render('addPlace');
+	} else {
+		res.render('/error');
+	}
+})
+
 //Endpoint for getting all places
 app.get('/places', getAllPlaces);
 
@@ -82,17 +92,29 @@ function registerUser(req, res) {
 app.post('/login', loginUser);
 
 function loginUser(req, res) {
-	var userData = req.body; 
+	var userData = req.body;
 	if (userData.email && userData.pass) {
-		fs.readFile('users.json', function (err, data) { 
-			var users = JSON.parse(data); 
-		//find users by email	
+		fs.readFile('users.json', function (err, data) {
+			var users = JSON.parse(data);
+
+			//find users by email	
 			const findUserByEmail = (email) => {
-				users.find(user => user.email === email);
-			  }
-			  console.log(findUserByEmail(userData.email))
+				console.log("(findUserByEmail) email" + email);
+				return users.find(user => email === user.email);
+			}
+
+			let foundUser = findUserByEmail(userData.email);
+
+			if (foundUser) {
+				res.json(JSON.stringify(foundUser));
+			} else {
+				console.log("didn't find user");
+				throw new Error('didnt find user in database');
+			}
 		});
-		res.json(userData);
+	} else {
+		console.log("failed to log in");
+		throw new Error('no valid data found in request');
 	}
 }
 
