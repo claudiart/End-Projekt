@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const express = require('express');
 const app = express();
-const nanoid = require ('nanoid');
+const {nanoid} = require('nanoid');
 
 app.set("view engine", "hbs"); // hbs dateien statt html 
 const viewsPath = path.join(__dirname, "views"); // __dirname und views zusammenfassen als String
@@ -62,7 +62,7 @@ function registerUser(req, res) {
 		fs.readFile('users.json', function (err, data) { // ...read existing users data from users.js..
 			var users = JSON.parse(data); // ...parse that data to a JS object and save it to users...
 			newUser.admin = false; //... all users are false at the beginning...
-			newUser.id = nanoid();
+			newUser.id = nanoid(10); 
 			users.push(newUser); //...push newUser to users array...
 			fs.writeFile('users.json', JSON.stringify(users), (err) => { //stringify users (onverts a JavaScript value to a JSON string) and write it to users.json file
 				if (err) { //if there is an error throw error
