@@ -6,7 +6,8 @@
             "streetAddress": "Examplestreet",
             "city": "Vienna",
             "postalCode": "394221"
-        }
+        }, 
+        "categories": ["eat","from the sea","easy-going"]
     },
     "votiv": { 
         "id": "02",
