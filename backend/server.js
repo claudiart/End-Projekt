@@ -4,6 +4,9 @@ const path = require('path');
 const express = require('express');
 const app = express();
 const {nanoid} = require('nanoid');
+var CryptoJS = require('crypto.js');
+const md5 = require('md5');
+// var hash = CryptoJS.MD5("Message");
 
 app.set("view engine", "hbs"); // hbs dateien statt html 
 const viewsPath = path.join(__dirname, "views"); // __dirname und views zusammenfassen als String
