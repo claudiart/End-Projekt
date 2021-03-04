@@ -1,21 +1,47 @@
 {
-    "edison": { 
+    "edison": {
         "id": "01",
         "name": "Edison",
         "address": {
             "streetAddress": "Examplestreet",
+            "number": 1,
             "city": "Vienna",
             "postalCode": "394221"
-        }, 
-        "categories": ["eat","from the sea","easy-going"]
+        },
+        "categories": [
+            "eat",
+            "from the sea",
+            "easy-going"
+        ]
     },
-    "votiv": { 
+    "votiv": {
         "id": "02",
         "name": "Votiv",
         "address": {
             "streetAddress": "Examplestreet",
+            "number": 1,
             "city": "Vienna",
-            "postalCode": "394221"
-        }
+            "postalCode": "1080"
+        },
+        "categories": [
+            "eat",
+            "from the sea",
+            "easy-going"
+        ]
+    },
+    "Test": {
+        "id": "tCeCtJlLVL",
+        "name": "Test",
+        "address": {
+            "streetAddress": "Teststreet",
+            "number": 1,
+            "city": "Vienna",
+            "postalCode": "1100"
+        },
+        "categories": [
+            "eat",
+            "from the sea",
+            "easy-going"
+        ]
     }
 }

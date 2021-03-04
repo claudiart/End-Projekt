@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const express = require('express');
 const app = express();
-const {nanoid} = require('nanoid');
+const { nanoid } = require('nanoid');
 var CryptoJS = require('crypto.js');
 const md5 = require('md5');
 // var hash = CryptoJS.MD5("Message");
@@ -66,6 +66,29 @@ function searchPlace(req, res) {
 	}
 }
 
+//Endpoint for adding a place
+app.post('/places/add', addPlace);
+
+function addPlace(req, res) {
+	var newPlace = req.body;
+	if (newPlace.name) {
+		fs.readFile('places.json', function (err, data) {
+			var places = JSON.parse(data);
+			places[newPlace.name] = { id: nanoid(10), name: newPlace.name, address: newPlace.address, categories: newPlace.categories };
+			fs.writeFile('places.json', JSON.stringify(places), (err) => {
+				if (err) {
+					throw err
+				}
+				console.log(newPlace.name + " has been added"); //if success then console.log this sentence
+			});
+		});
+		res.json(newPlace); //send response to client with newUser information
+	} else {
+		res.send('Failed to add place'); // if username, email and pass are NOT truthy (are missing) send response to client with this sentence
+		throw new Error('Failed to add place'); //and throw new error in the backend
+	}
+}
+
 //Endpoint for user registration
 app.post('/user', registerUser);
 
@@ -75,7 +98,7 @@ function registerUser(req, res) {
 		fs.readFile('users.json', function (err, data) { // ...read existing users data from users.js..
 			var users = JSON.parse(data); // ...parse that data to a JS object and save it to users...
 			newUser.admin = false; //... all users are false at the beginning...
-			newUser.id = nanoid(10); 
+			newUser.id = nanoid(10);
 			users.push(newUser); //...push newUser to users array...
 			fs.writeFile('users.json', JSON.stringify(users), (err) => { //stringify users (onverts a JavaScript value to a JSON string) and write it to users.json file
 				if (err) { //if there is an error throw error
