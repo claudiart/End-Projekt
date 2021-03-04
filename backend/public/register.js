@@ -6,6 +6,23 @@ const getUsers = (e) => {
     let email = $('#email').val();
     let pass = $('#pass').val();
 
+// validation 
+
+$('.is-invalid').removeClass('is-invalid');
+if (username == '') {
+    $('#username').addClass('is-invalid');
+}
+
+if (email.length < 7 || email.indexOf( '@' ) == -1 ){
+    $('#email').addClass('is-invalid');
+}
+if (pass.length < 6 ) {
+    $('#pass').addClass('is-invalid');
+}
+if ( $('.is-invalid').length == 0 ) {
+    $( '#register' ).prop( 'disabled', true ); // damit man nicht zweimal klicken kann
+
+
     fetch(`/user`, {
         method: 'POST',
         headers: { 'content-type': 'application/json; charset=UTF-8' },
@@ -13,24 +30,6 @@ const getUsers = (e) => {
     }).then(res => res.json);
 
 
-    //  request = $.ajax({
-    //         url:'/user',
-    //         method:'POST', 
-    //         data: JSON.stringify( newUser ), 
-    //         contentType:'application/json',
-
-
-    // success:( res )=>{
-    //    if ( res.status == 'success' ) {
-    //        console.log( 'User wurde gespeichert' );
-    //    }                 
-    // },
-    // error:()=>{
-    //     console.log( 'Request Error' );
-    // }
-    // });
-    // request.done(() => console.log("we made it"));
-    // request.fail(() => console.log("we made it NOT"));
-
+};
 };
 $('#register').on('click', getUsers)

@@ -17,18 +17,19 @@
 
         <input class="form-control my-1" type="text" id="username" name="username" class="form-control"
             placeholder="Username" value="" maxlength="40" />
-        
-        {{!-- <div class="is-valid">Define your username!</div> --}}
+        <div class="invalid-feedback">
+      Please define an username.
+    </div>
+       
 
         <input class="form-control my-1" type="email" id="email" name="email" class="form-control" placeholder="Email"
             value="" maxlength="40" />
-        
-        {{!-- <div class="is-valid">Define your e-mail address!</div> --}}
+        <div class="invalid-feedback">Please provide a valid e-mail.</div>
 
         <input class="form-control my-1" type="password" id="pass" name="pass" class="form-control"
             placeholder="Password" maxlength="15" />
        
-        {{!-- <div class="is-valid">Your password should have at least 6 characters!</div> --}}
+        <div class="invalid-feedback">The password should have at least 6 characters.</div>
        
         <div class="d-grid">
             <button id="register" class="btn btn-lg btn-secondary btn-block mt-3 mb-3" type="submit"
