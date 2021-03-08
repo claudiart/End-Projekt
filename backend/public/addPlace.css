@@ -1,8 +1,24 @@
-#cuisine {
-    display: none;
+
+.form {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 800px;
+  }
+
+#eatdrink {
+    max-width: 50px;
+    margin: 20px auto;
+    
 }
 
 #timeoftheday {
+    display: none;
+}
+  
+#cuisine {
     display: none;
 }
 
@@ -14,9 +30,13 @@
     display: none;
 }
 
+<<<<<<< HEAD
 #eatdrink {
     width: 50px;
     margin: auto;
     
 }
+=======
+
+>>>>>>> ed5e9aa9765ee70fa58355dd953ed03d5db5f00e
 
