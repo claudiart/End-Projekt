@@ -17,23 +17,21 @@
 
         <input class="form-control my-1" type="text" id="username" name="username" class="form-control"
             placeholder="Username" value="" maxlength="40" />
-        <div class="invalid-feedback">
-      Please define an username.
-    </div>
-       
-
+        <div class="invalid-feedback">Please define an username.</div>
+        
         <input class="form-control my-1" type="email" id="email" name="email" class="form-control" placeholder="Email"
             value="" maxlength="40" />
         <div class="invalid-feedback">Please provide a valid e-mail.</div>
-
+        
         <input class="form-control my-1" type="password" id="pass" name="pass" class="form-control"
             placeholder="Password" maxlength="15" />
-       
         <div class="invalid-feedback">The password should have at least 6 characters.</div>
-       
+
+        <div class="userExistsHide" id="userExists">User already exists</div>
+
         <div class="d-grid">
             <button id="register" class="btn btn-lg btn-secondary btn-block mt-3 mb-3" type="submit"
-            name="btn-register">Register</button>
+                name="btn-register">Register</button>
             <a class="text-muted" href="/">Login Here</a>
         </div>
 
@@ -41,4 +39,5 @@
     <script src="jquery-3.5.1.min.js"></script>
     <script src="register.js"></script>
 </body>
+
 </html>

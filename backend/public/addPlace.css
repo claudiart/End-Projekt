@@ -6,7 +6,13 @@
     transform: translate(-50%, -50%);
     width: 100%;
     max-width: 800px;
+    color: #882c66;
   }
+
+
+.text-center {
+    color: #882c66;
+}
 
 #eatdrink {
     max-width: 50px;
@@ -30,13 +36,13 @@
     display: none;
 }
 
-<<<<<<< HEAD
+.btn-toolbar {
+    max-width: 200px;
+    margin: 50px auto;
+}
+
 #eatdrink {
     width: 50px;
     margin: auto;
     
 }
-=======
-
->>>>>>> ed5e9aa9765ee70fa58355dd953ed03d5db5f00e
-

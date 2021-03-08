@@ -4,9 +4,7 @@ const path = require('path');
 const express = require('express');
 const app = express();
 const { nanoid } = require('nanoid');
-var CryptoJS = require('crypto.js');
-const md5 = require('md5');
-// var hash = CryptoJS.MD5("Message");
+const bcrypt = require('bcrypt');
 
 app.set("view engine", "hbs"); // hbs dateien statt html 
 const viewsPath = path.join(__dirname, "views"); // __dirname und views zusammenfassen als String
@@ -90,29 +88,54 @@ function addPlace(req, res) {
 }
 
 //Endpoint for user registration
-app.post('/user', registerUser);
 
-function registerUser(req, res) {
+const registerUser = (req, res) => {
 	var newUser = req.body; //get user object from the request body and save it to newUser
 	if (newUser.username && newUser.email && newUser.pass) { //if username, email and pass are truthy ...
-		fs.readFile('users.json', function (err, data) { // ...read existing users data from users.js..
+
+		fs.readFile('users.json', async (err, data) => { // ...read existing users data from users.js..
 			var users = JSON.parse(data); // ...parse that data to a JS object and save it to users...
-			newUser.admin = false; //... all users are false at the beginning...
-			newUser.id = nanoid(10);
-			users.push(newUser); //...push newUser to users array...
-			fs.writeFile('users.json', JSON.stringify(users), (err) => { //stringify users (onverts a JavaScript value to a JSON string) and write it to users.json file
-				if (err) { //if there is an error throw error
-					throw err
+
+			//check if user exists, if yes set userIsNew to false
+			let userIsNew = true;
+			users.forEach(item => {
+				if (item.email == newUser.email) {
+					userIsNew = false;
 				}
-				console.log(newUser.username + " has been added"); //if success then console.log this sentence
-			});
+			})
+
+			if (userIsNew) {
+				newUser.admin = false; //... all users are false at the beginning...
+				newUser.id = nanoid(10);
+				await bcrypt.hash(newUser.pass, 8).then(hash => {
+					if (hash) {
+						hashpass = hash;
+						newUser.pass = hash;
+					}
+				}).catch(err => console.log(err))
+
+				users.push(newUser);//...push newUser to users array...
+
+				fs.writeFile('users.json', JSON.stringify(users), (err) => { //stringify users (onverts a JavaScript value to a JSON string) and write it to users.json file
+					if (err) { //if there is an error throw error
+						throw err
+					}
+					console.log(newUser.username + " has been added"); //if success then console.log this sentence
+				});
+				res.json(newUser); //send response to client with newUser information
+			} else {
+				res.status(404);
+				res.send('User already exists'); 
+				throw new Error('User already exists');
+			};
 		});
-		res.json(newUser); //send response to client with newUser information
+	
 	} else {
-		res.send('Failed to add user'); // if username, email and pass are NOT truthy (are missing) send response to client with this sentence
-		throw new Error('Failed to add user'); //and throw new error in the backend
+		res.send('Failed to add user - missing data'); // if username, email and pass are NOT truthy (are missing) send response to client with this sentence
+		throw new Error('Failed to add user - missing data'); //and throw new error in the backend
 	}
 }
+app.post('/user', registerUser);
 
 //Endpoint for user login
 app.post('/login', loginUser);
@@ -125,7 +148,6 @@ function loginUser(req, res) {
 
 			//find users by email	
 			const findUserByEmail = (email) => {
-				console.log("(findUserByEmail) email" + email);
 				return users.find(user => email === user.email);
 			}
 

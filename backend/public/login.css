@@ -8,3 +8,12 @@
     padding: 15px;
     margin: 0 auto;
   }
+
+.userExistsHide {
+    display: none;
+  }
+
+  .userExistsShow {
+    display: block;
+    color:red;
+  }
