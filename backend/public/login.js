@@ -14,7 +14,7 @@ const loginUser = (e) => {
         $('#pass').addClass('is-invalid');
     }
     if ( $('.is-invalid').length == 0 ) {
-        $( '#login' ).prop( 'disabled', true ); // damit man nicht zweimal klicken kann
+        // $( '#login' ).prop( 'disabled', true ); // damit man nicht zweimal klicken kann
 
 
     // send http request to server
@@ -23,8 +23,11 @@ const loginUser = (e) => {
         headers: { 'content-type': 'application/json; charset=UTF-8' },
         body: JSON.stringify({ email: email, pass: pass })
     }).then(res => res.json())
-      .then(json => {
-            window.location.href = "/admin";
+      .then(res => {
+          if (res === "true") { window.location.href = "/admin"} else {
+              alert("pass is not correct");
+          }
+           
         });
 };
 }; 

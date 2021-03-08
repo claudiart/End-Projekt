@@ -30,6 +30,10 @@ const getUsers = (e) => {
       $("#userExists").removeClass("userExistsShow").addClass("userExistsHide");
     };
 
+    const showRegisterInfo = () => {
+        $("#registerInfo").addClass("registerInfoShow").removeClass("registerInfoHide");
+    }
+
     // http request with POST method
     fetch(`/user`, {
       method: "POST",
@@ -38,6 +42,7 @@ const getUsers = (e) => {
     })
       .then((res) => {
         hideError();
+        showRegisterInfo();
         if (!res.ok) {
           throw new Error("User already exists");
         }

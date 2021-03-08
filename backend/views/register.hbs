@@ -13,7 +13,7 @@
 
 <body class="text-center">
     <form class="form mx-auto " method="post" action="" autocomplete="off">
-        <h2 class="text-info mb-3 font-weight-bold">Register</h2>
+        <h2 class="mb-3 font-weight-bold">Register</h2>
 
         <input class="form-control my-1" type="text" id="username" name="username" class="form-control"
             placeholder="Username" value="" maxlength="40" />
@@ -28,6 +28,7 @@
         <div class="invalid-feedback">The password should have at least 6 characters.</div>
 
         <div class="userExistsHide" id="userExists">User already exists</div>
+        <div class="registerInfoHide" id="registerInfo">User successfully registered</div>
 
         <div class="d-grid">
             <button id="register" class="btn btn-lg btn-secondary btn-block mt-3 mb-3" type="submit"

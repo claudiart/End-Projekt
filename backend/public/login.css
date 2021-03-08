@@ -7,13 +7,28 @@
     max-width: 400px;
     padding: 15px;
     margin: 0 auto;
+    color: #882c66;
   }
 
-.userExistsHide {
+.userExistsHide, .registerInfoHide {
     display: none;
   }
 
   .userExistsShow {
     display: block;
     color:red;
+  }
+
+  .registerInfoShow {
+    display: block;
+    color:green;
+  }
+
+  #register, #login {
+    background-color: #882c66;
+    color: cornsilk;
+  }
+
+  .text-muted {
+    color: #882c66;
   }

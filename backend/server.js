@@ -29,12 +29,12 @@ app.get('/register', (req, res) => {
 
 //ToDO Work this out! 
 app.get('/admin', (req, res) => {
-	let a = JSON.parse(req.body);
-	if (isAdmin(a.token)) {
+	// let a = JSON.parse(req.body);
+	// if (isAdmin(a.token)) {
 		res.render('addPlace');
-	} else {
-		res.render('/error');
-	}
+	// } else {
+	// 	res.render('/error');
+	// }
 })
 
 //Endpoint for getting all places
@@ -98,6 +98,7 @@ const registerUser = (req, res) => {
 
 			//check if user exists, if yes set userIsNew to false
 			let userIsNew = true;
+
 			users.forEach(item => {
 				if (item.email == newUser.email) {
 					userIsNew = false;
@@ -106,11 +107,12 @@ const registerUser = (req, res) => {
 
 			if (userIsNew) {
 				newUser.admin = false; //... all users are false at the beginning...
-				newUser.id = nanoid(10);
+				newUser.id = nanoid(5);
 				await bcrypt.hash(newUser.pass, 8).then(hash => {
 					if (hash) {
-						hashpass = hash;
 						newUser.pass = hash;
+					} else {
+						//todo smth if hash not valid
 					}
 				}).catch(err => console.log(err))
 
@@ -153,8 +155,13 @@ function loginUser(req, res) {
 
 			let foundUser = findUserByEmail(userData.email);
 
-			if (foundUser) {
-				res.json(JSON.stringify(foundUser));
+			if (foundUser) { 
+				bcrypt.compare(userData.pass, foundUser.pass).then(function(result) {
+					res.json(JSON.stringify(result)); 
+					// result true or false
+				
+			});
+
 			} else {
 				console.log("didn't find user");
 				throw new Error('didnt find user in database');
