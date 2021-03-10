@@ -28,20 +28,5 @@
             "from the sea",
             "easy-going"
         ]
-    },
-    "Test": {
-        "id": "tCeCtJlLVL",
-        "name": "Test",
-        "address": {
-            "streetAddress": "Teststreet",
-            "number": 1,
-            "city": "Vienna",
-            "postalCode": "1100"
-        },
-        "categories": [
-            "eat",
-            "from the sea",
-            "easy-going"
-        ]
     }
 }

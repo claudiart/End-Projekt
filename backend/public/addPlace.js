@@ -1,32 +1,32 @@
-$( '#eat' ).on( 'change', function() {
-    if ( $(this).is(':checked') ) {
-        $( '#timeoftheday').show();
+$('#eat').on('change', function () {
+    if ($(this).is(':checked')) {
+        $('#timeoftheday').show();
     } else {
-        $( '#timeoftheday').hide();
+        $('#timeoftheday').hide();
     }
 })
 
-$( '#breakfast, #lunch, #brunch, #dinner, #latesnack' ).on( 'click', function() {
-    if ( $(this).is(':checked') ) {
-        $( '#cuisine').show();
+$('#breakfast, #lunch, #brunch, #dinner, #latesnack').on('click', function () {
+    if ($(this).is(':checked')) {
+        $('#cuisine').show();
     } else {
-        $( '#cuisine').hide();
+        $('#cuisine').hide();
     }
 })
 
-$( '#sweettooth' ).on( 'click', function() {
-    if ( $(this).is(':checked') ) {
-        $( '#sweet').show();
+$('#sweettooth').on('click', function () {
+    if ($(this).is(':checked')) {
+        $('#sweet').show();
     } else {
-        $( '#sweet').hide();
+        $('#sweet').hide();
     }
 })
 
-$( '#drink' ).on( 'change', function() {
-    if ( $(this).is(':checked') ) {
-        $( '#bars').show();
+$('#drink').on('change', function () {
+    if ($(this).is(':checked')) {
+        $('#bars').show();
     } else {
-        $( '#bars').hide();
+        $('#bars').hide();
     }
 })
 
@@ -40,15 +40,23 @@ const submitPlace = (e) => {
     let postcode = $("#postcode").val();
     let city = $("#city").val();
 
+    let placeData = {
+        name: name,
+        address: {
+            streetAddress: street,
+            number: number,
+            city: city,
+            postalCode: postcode
+        }
+    }
+
     fetch(`/places/add`, {
         method: "POST",
         headers: { "content-type": "application/json; charset=UTF-8" },
-        body: JSON.stringify({ name: name, adress: {streetAddress: street, number: number, city: city, postalCode: postcode}}),
-      }).then(response => response.json())
-        .then((res) => res.json)
+        body: JSON.stringify(placeData),
+    }).then(response => response.json())
         .catch((error) => {
-          console.error("there was an error: ", error);
-          // showError();
+            console.error("there was an error: ", error);
         });
 }
 
