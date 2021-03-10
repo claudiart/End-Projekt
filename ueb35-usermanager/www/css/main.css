@@ -1,0 +1,37 @@
+body {
+    padding-top:50px;
+}
+
+td { 
+    padding:10px; 
+}
+
+.tab-pane {
+    border:1px solid #dee2e6;
+    border-top:none;
+    min-height:200px;
+    padding:20px;    
+}
+
+.tab-content {
+    position:relative;
+    z-index:1;
+    background:#fff;
+}
+
+.nav-item .nav-link {
+    background:#dee2e6;
+    color:#000;
+    border-color:#fff;
+    position:relative;
+    top:10px;
+    transition:top 0.4s;
+}
+
+.nav-item .nav-link.active {
+    top:0;
+}
+
+.form-group {
+    margin-bottom:1em;
+}
