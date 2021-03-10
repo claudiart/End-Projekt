@@ -31,7 +31,7 @@ const getUsers = (e) => {
     };
 
     const showRegisterInfo = () => {
-        $("#registerInfo").addClass("registerInfoShow").removeClass("registerInfoHide");
+      $("#registerInfo").addClass("registerInfoShow").removeClass("registerInfoHide");
     }
 
     // http request with POST method
@@ -45,8 +45,8 @@ const getUsers = (e) => {
         if (!res.ok) {
           // throw new Error("User already exists"); 
           showError();
-        } else { 
-          showRegisterInfo(); 
+        } else {
+          showRegisterInfo();
           // top.location.href = "/"
         }
         // return res.json;
@@ -57,4 +57,5 @@ const getUsers = (e) => {
       });
   }
 };
+
 $("#register").on("click", getUsers);
