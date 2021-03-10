@@ -39,18 +39,21 @@ const getUsers = (e) => {
       method: "POST",
       headers: { "content-type": "application/json; charset=UTF-8" },
       body: JSON.stringify({ username: username, email: email, pass: pass }),
-    })
+    }).then(response => response.json())
       .then((res) => {
         hideError();
-        showRegisterInfo();
         if (!res.ok) {
-          throw new Error("User already exists");
+          // throw new Error("User already exists"); 
+          showError();
+        } else { 
+          showRegisterInfo(); 
+          // top.location.href = "/"
         }
-        return res.json;
+        // return res.json;
       })
       .catch((error) => {
         console.error("there was an error: ", error);
-        showError();
+        // showError();
       });
   }
 };

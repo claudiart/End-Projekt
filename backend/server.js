@@ -72,7 +72,7 @@ function addPlace(req, res) {
 	if (newPlace.name) {
 		fs.readFile('places.json', function (err, data) {
 			var places = JSON.parse(data);
-			places[newPlace.name] = { id: nanoid(10), name: newPlace.name, address: newPlace.address, categories: newPlace.categories };
+			places[newPlace.name] = { id: nanoid(5), name: newPlace.name, address: newPlace.address, categories: newPlace.categories };
 			fs.writeFile('places.json', JSON.stringify(places), (err) => {
 				if (err) {
 					throw err
@@ -124,11 +124,14 @@ const registerUser = (req, res) => {
 					}
 					console.log(newUser.username + " has been added"); //if success then console.log this sentence
 				});
+				newUser.ok = true; // wurde angelegt
+				console.log(newUser)
 				res.json(newUser); //send response to client with newUser information
 			} else {
-				res.status(404);
-				res.send('User already exists'); 
-				throw new Error('User already exists');
+				// res.status(404);
+				// res.send('User already exists'); 
+				// throw new Error('User already exists');
+				res.json({ok:false});
 			};
 		});
 	

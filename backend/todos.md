@@ -1,11 +1,21 @@
 [until 9.03.] 
 
-- admin interface to add new places (addPlace.hbs, addPlace.js)
+- admin interface to add new places (addPlace.hbs, addPlace.js)------------Done
 - backend endpoint to add new places (server.js)---------------------------Done
-- Pass verschlüsseln mit crypto.js + md5 ----------------------------------
-- userRegister not allow doble registration (wenn doppelt fehler)
+- Pass verschlüsseln - bcrypt ---------------------------------------------Done
+- userRegister not allow doble registration (wenn doppelt fehler)----------Done
 - Validation on register + on login ---------------------------------------Done
-- session token für log in users JWT
+- session token für log in users JWT ?
 
 
-- register form - automatisch refresh ? geht das? ( wie nodemon)
+[until 25.03  changed - 14:00 Coaching ] 
+
+- admin area: (welcome admin)  add/delete/edit places (usermanager example)
+- user:  welcome user 
+- Maps - Geolocation
+
+[until 08.04]
+
+- pwa - herokuapp 
+- saved places 
+
