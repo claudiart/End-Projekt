@@ -39,6 +39,43 @@ const submitPlace = (e) => {
     let number = $("#number").val();
     let postcode = $("#postcode").val();
     let city = $("#city").val();
+    let friends = $("#friends").val();
+    let meeting = $("#meeting").val();
+    let business = $("#business").val();
+    let date = $("#date").val();
+    let family =$("#family").val();
+    let eat = $("#eat").val();
+    let drink = $("#drink").val();
+    let breakfast = $("#breakfast").val();
+    let brunch = $("#brunch").val();
+    let lunch = $("#lunch").val();
+    let dinner = $("#dinner").val();
+    let latesnack = $("#latesnack").val();
+    let aroundhere = $("#aroundhere").val();
+    let fromthesea = $("#fromthesea").val();
+    let fireland = $("#fireland").val();
+    let bites = $("#bites").val();
+    let bistrofrancais = $("#bistrofrancais").val();
+    let cucinaitaliana = $("#cucinaitaliana").val();
+    let farawayasia = $("#farawayasia").val();
+    let plantbased = $("#plantbades").val();
+    let streetfood = $("#streetfood").val();
+    let hummus = $("#hummus").val();
+    let fusion = $("#fusion").val();
+    let sweettooth = $("#sweettooth").val();
+    let patisserie = $("#patisserie").val();
+    let bakery = $("#bakery").val();
+    let gelateria = $("#gelateria").val();
+    let wine = $("#wine").val();
+    let cocktail = $("#cocktail").val();
+    let beer = $("#beer").val();
+    let coffee = $("#coffee").val();
+    let highend = $("#highend").val();
+    let easygoing = $("#easygoing").val();
+    let between = $("#between").val();
+    let dollar = $("#dollar").val();
+    let ddollar = $("#ddollar").val();
+    let dddollar = $("#dddollar").val();
 
     let placeData = {
         name: name,
@@ -47,6 +84,9 @@ const submitPlace = (e) => {
             number: number,
             city: city,
             postalCode: postcode
+        },
+        categories: {
+    
         }
     }
 

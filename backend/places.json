@@ -28,5 +28,36 @@
             "from the sea",
             "easy-going"
         ]
+    },
+    "TestLokal": {
+        "id": "bBWlm",
+        "name": "TestLokal",
+        "address": {
+            "streetAddress": "Teststreet",
+            "number": "",
+            "city": "Vienna",
+            "postalCode": "1010"
+        }
+    },
+    "TestLokal12345": {
+        "id": "zgd2x",
+        "name": "TestLokal12345",
+        "address": {
+            "streetAddress": "Teststreet",
+            "number": "2",
+            "city": "Vienna",
+            "postalCode": "1010"
+        }
+    },
+    "robertos": {
+        "id": "UCymm",
+        "name": "robertos",
+        "address": {
+            "streetAddress": "robertostr",
+            "number": "12",
+            "city": "Vienna",
+            "postalCode": "1010"
+        },
+        "categories": {}
     }
 }
