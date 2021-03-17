@@ -31,10 +31,14 @@ app.get('/register', (req, res) => {
 app.get('/admin', (req, res) => {
 	// let a = JSON.parse(req.body);
 	// if (isAdmin(a.token)) {
-		res.render('addPlace');
+		res.render('adminHome');
 	// } else {
 	// 	res.render('/error');
 	// }
+})
+
+app.get('/admin/add', (req, res) => {
+		res.render('addPlace');
 })
 
 //Endpoint for getting all places

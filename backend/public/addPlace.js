@@ -39,11 +39,11 @@ const submitPlace = (e) => {
     let number = $("#number").val();
     let postcode = $("#postcode").val();
     let city = $("#city").val();
-    let friends = $("#friends").val();
-    let meeting = $("#meeting").val();
-    let business = $("#business").val();
-    let date = $("#date").val();
-    let family =$("#family").val();
+    let friends = $("#friends").is(':checked');
+    let meeting = $("#meeting").is(':checked');
+    let business = $("#business").is(':checked');
+    let date = $("#date").is(':checked');
+    let family = $("#family").is(':checked');
     let eat = $("#eat").val();
     let drink = $("#drink").val();
     let breakfast = $("#breakfast").val();
@@ -58,7 +58,7 @@ const submitPlace = (e) => {
     let bistrofrancais = $("#bistrofrancais").val();
     let cucinaitaliana = $("#cucinaitaliana").val();
     let farawayasia = $("#farawayasia").val();
-    let plantbased = $("#plantbades").val();
+    let plantbased = $("#plantbased").val();
     let streetfood = $("#streetfood").val();
     let hummus = $("#hummus").val();
     let fusion = $("#fusion").val();
@@ -77,6 +77,9 @@ const submitPlace = (e) => {
     let ddollar = $("#ddollar").val();
     let dddollar = $("#dddollar").val();
 
+    let checkedCategories = [];
+    if ($("#friends").is(':checked')) {checkedCategories.push("friends")}
+
     let placeData = {
         name: name,
         address: {
@@ -85,9 +88,7 @@ const submitPlace = (e) => {
             city: city,
             postalCode: postcode
         },
-        categories: {
-    
-        }
+        categories: checkedCategories
     }
 
     fetch(`/places/add`, {
