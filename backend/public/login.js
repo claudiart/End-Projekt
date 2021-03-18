@@ -24,7 +24,13 @@ const loginUser = (e) => {
             body: JSON.stringify({ email: email, pass: pass })
         }).then(res => res.json())
             .then(res => {
-                if (res === "true") { window.location.href = "/admin" } else {
+                user = JSON.parse(res);
+                console.log(user.admin);
+                if (user.admin === true) { window.location.href = "/admin" } 
+                else if (user.admin === false) {
+                    window.location.href = "/user"
+                }
+                else {
                     alert("pass is not correct");
                 }
 

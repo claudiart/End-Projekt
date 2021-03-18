@@ -27,14 +27,13 @@ app.get('/register', (req, res) => {
 	res.render('register')
 })
 
-//ToDO Work this out! 
+//ToDO Work this out! How to get to frontend/index.html???
+app.get('/user', (req, res) => {
+	res.render('frontend/index.html')
+})
+
 app.get('/admin', (req, res) => {
-	// let a = JSON.parse(req.body);
-	// if (isAdmin(a.token)) {
-		res.render('adminHome');
-	// } else {
-	// 	res.render('/error');
-	// }
+	res.render('adminHome');
 })
 
 app.get('/admin/add', (req, res) => {
@@ -155,19 +154,20 @@ function loginUser(req, res) {
 		fs.readFile('users.json', function (err, data) {
 			var users = JSON.parse(data);
 
-			//find users by email	
+			//find user by email	
 			const findUserByEmail = (email) => {
 				return users.find(user => email === user.email);
 			}
 
 			let foundUser = findUserByEmail(userData.email);
+	console.log(foundUser);
 
 			if (foundUser) { 
-				bcrypt.compare(userData.pass, foundUser.pass).then(function(result) {
-					res.json(JSON.stringify(result)); 
-					// result true or false
-				
-			});
+				// bcrypt.compare(userData.pass, foundUser.pass).then(function(result) {
+				// 	res.json(JSON.stringify(result)); 
+				// 	// result true or false
+				bcrypt.compare(userData.pass, foundUser.pass).then(
+				res.json(JSON.stringify(foundUser)));
 
 			} else {
 				console.log("didn't find user");
