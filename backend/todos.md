@@ -13,6 +13,8 @@
 - admin area: (welcome admin)  add/delete/edit places (usermanager example)
 - user:  welcome user 
 - Maps - Geolocation
+- Fotos finden und im ordner seichern
+- types als subkathegorie in der categorie speichern nur für "eat"
 
 [until 08.04]
 

@@ -1,21 +1,4 @@
 {
-    "5534": {
-        "id": "reBf4",
-        "name": "5534",
-        "address": {
-            "streetAddress": "rerer",
-            "number": "",
-            "city": "Vienna",
-            "postalCode": "12323"
-        },
-        "categories": {
-            "friends": true,
-            "meeting": "meeting",
-            "business": "business",
-            "date": "date",
-            "family": "family"
-        }
-    },
     "edison": {
         "id": "01",
         "name": "Edison",
@@ -44,80 +27,6 @@
             "eat",
             "from the sea",
             "easy-going"
-        ]
-    },
-    "TestLokal": {
-        "id": "bBWlm",
-        "name": "TestLokal",
-        "address": {
-            "streetAddress": "Teststreet",
-            "number": "",
-            "city": "Vienna",
-            "postalCode": "1010"
-        }
-    },
-    "TestLokal12345": {
-        "id": "zgd2x",
-        "name": "TestLokal12345",
-        "address": {
-            "streetAddress": "Teststreet",
-            "number": "2",
-            "city": "Vienna",
-            "postalCode": "1010"
-        }
-    },
-    "robertos": {
-        "id": "UCymm",
-        "name": "robertos",
-        "address": {
-            "streetAddress": "robertostr",
-            "number": "12",
-            "city": "Vienna",
-            "postalCode": "1010"
-        },
-        "categories": {}
-    },
-    "CLAU": {
-        "id": "3A40v",
-        "name": "CLAU",
-        "address": {
-            "streetAddress": "sdffd",
-            "number": "12",
-            "city": "Vienna",
-            "postalCode": "1100"
-        },
-        "categories": {
-            "friends": true
-        }
-    },
-    "TINA": {
-        "id": "UbAoY",
-        "name": "TINA",
-        "address": {
-            "streetAddress": "fdfsd",
-            "number": "12",
-            "city": "Vi",
-            "postalCode": "1100"
-        },
-        "categories": {
-            "friends": true,
-            "meeting": false,
-            "date": false,
-            "family": false,
-            "business": true
-        }
-    },
-    "TTT": {
-        "id": "ng703",
-        "name": "TTT",
-        "address": {
-            "streetAddress": "dsdas",
-            "number": "1",
-            "city": "vien",
-            "postalCode": "21313"
-        },
-        "categories": [
-            "friends"
         ]
     }
 }

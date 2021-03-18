@@ -27,9 +27,9 @@ app.get('/register', (req, res) => {
 	res.render('register')
 })
 
-//ToDO Work this out! How to get to frontend/index.html???
+
 app.get('/user', (req, res) => {
-	res.render('frontend/index.html')
+	res.render('../../frontend/index')
 })
 
 app.get('/admin', (req, res) => {

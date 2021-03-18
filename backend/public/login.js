@@ -25,8 +25,7 @@ const loginUser = (e) => {
         }).then(res => res.json())
             .then(res => {
                 user = JSON.parse(res);
-                console.log(user.admin);
-                if (user.admin === true) { window.location.href = "/admin" } 
+                if (user.admin === true) { window.location.href = "/admin" }
                 else if (user.admin === false) {
                     window.location.href = "/user"
                 }
@@ -34,7 +33,7 @@ const loginUser = (e) => {
                     alert("pass is not correct");
                 }
 
-            });
+        });
     };
 };
 
