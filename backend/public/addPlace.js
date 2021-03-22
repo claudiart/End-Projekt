@@ -44,38 +44,38 @@ const submitPlace = (e) => {
     let business = $("#business").is(':checked');
     let date = $("#date").is(':checked');
     let family = $("#family").is(':checked');
-    let eat = $("#eat").val();
-    let drink = $("#drink").val();
-    let breakfast = $("#breakfast").val();
-    let brunch = $("#brunch").val();
-    let lunch = $("#lunch").val();
-    let dinner = $("#dinner").val();
-    let latesnack = $("#latesnack").val();
-    let aroundhere = $("#aroundhere").val();
-    let fromthesea = $("#fromthesea").val();
-    let fireland = $("#fireland").val();
-    let bites = $("#bites").val();
-    let bistrofrancais = $("#bistrofrancais").val();
-    let cucinaitaliana = $("#cucinaitaliana").val();
-    let farawayasia = $("#farawayasia").val();
-    let plantbased = $("#plantbased").val();
-    let streetfood = $("#streetfood").val();
-    let hummus = $("#hummus").val();
-    let fusion = $("#fusion").val();
-    let sweettooth = $("#sweettooth").val();
-    let patisserie = $("#patisserie").val();
-    let bakery = $("#bakery").val();
-    let gelateria = $("#gelateria").val();
-    let wine = $("#wine").val();
-    let cocktail = $("#cocktail").val();
-    let beer = $("#beer").val();
-    let coffee = $("#coffee").val();
-    let highend = $("#highend").val();
-    let easygoing = $("#easygoing").val();
-    let between = $("#between").val();
-    let dollar = $("#dollar").val();
-    let ddollar = $("#ddollar").val();
-    let dddollar = $("#dddollar").val();
+    let eat = $("#eat").is(':checked');
+    let drink = $("#drink").is(':checked');
+    let breakfast = $("#breakfast").is(':checked');
+    let brunch = $("#brunch").is(':checked');
+    let lunch = $("#lunch").is(':checked');
+    let dinner = $("#dinner").is(':checked');
+    let latesnack = $("#latesnack").is(':checked');
+    let aroundhere = $("#aroundhere").is(':checked');
+    let fromthesea = $("#fromthesea").is(':checked');
+    let fireland = $("#fireland").is(':checked');
+    let bites = $("#bites").is(':checked');
+    let bistrofrancais = $("#bistrofrancais").is(':checked');
+    let cucinaitaliana = $("#cucinaitaliana").is(':checked');
+    let farawayasia = $("#farawayasia").is(':checked');
+    let plantbased = $("#plantbased").is(':checked');
+    let streetfood = $("#streetfood").is(':checked');
+    let hummus = $("#hummus").is(':checked');
+    let fusion = $("#fusion").is(':checked');
+    let sweettooth = $("#sweettooth").is(':checked');
+    let patisserie = $("#patisserie").is(':checked');
+    let bakery = $("#bakery").is(':checked');
+    let gelateria = $("#gelateria").is(':checked');
+    let wine = $("#wine").is(':checked');
+    let cocktail = $("#cocktail").is(':checked');
+    let beer = $("#beer").is(':checked');
+    let coffee = $("#coffee").is(':checked');
+    let highend = $("#highend").is(':checked');
+    let easygoing = $("#easygoing").is(':checked');
+    let between = $("#between").is(':checked');
+    let dollar = $("#dollar").is(':checked');
+    let ddollar = $("#ddollar").is(':checked');
+    let dddollar = $("#dddollar").is(':checked');
 
     let checkedCategories = [];
     if ($("#friends").is(':checked')) {checkedCategories.push("friends")}
@@ -89,25 +89,25 @@ const submitPlace = (e) => {
     if ($("#lunch").is(':checked')) {checkedCategories.push("lunch")}
     if ($("#dinner").is(':checked')) {checkedCategories.push("dinner")}
     if ($("#latesnack").is(':checked')) {checkedCategories.push("latesnack")}
-    if ($("#aroundhere").is(':checked')) {checkedCategories.push("aroundhere")}
-    if ($("#fromthesea").is(':checked')) {checkedCategories.push("fromthesea")}
-    if ($("#fireland").is(':checked')) {checkedCategories.push("fireland")}
-    if ($("#bites").is(':checked')) {checkedCategories.push("bites")}
-    if ($("#bistrofrancais").is(':checked')) {checkedCategories.push("bistrofrancais")}
-    if ($("#cucinaitaliana").is(':checked')) {checkedCategories.push("cucinaitaliana")}
-    if ($("#farawayasia").is(':checked')) {checkedCategories.push("farawayasia")}
-    if ($("#plantbased").is(':checked')) {checkedCategories.push("plantbased")}
-    if ($("#streetfood").is(':checked')) {checkedCategories.push("streetfood")}
-    if ($("#hummus").is(':checked')) {checkedCategories.push("hummus")}
-    if ($("#fusion").is(':checked')) {checkedCategories.push("fusion")}
-    if ($("#sweettooth").is(':checked')) {checkedCategories.push("sweettooth")}
+    // if ($("#aroundhere").is(':checked')) {checkedCategories.push("aroundhere")}
+    // if ($("#fromthesea").is(':checked')) {checkedCategories.push("fromthesea")}
+    // if ($("#fireland").is(':checked')) {checkedCategories.push("fireland")}
+    // if ($("#bites").is(':checked')) {checkedCategories.push("bites")}
+    // if ($("#bistrofrancais").is(':checked')) {checkedCategories.push("bistrofrancais")}
+    // if ($("#cucinaitaliana").is(':checked')) {checkedCategories.push("cucinaitaliana")}
+    // if ($("#farawayasia").is(':checked')) {checkedCategories.push("farawayasia")}
+    // if ($("#plantbased").is(':checked')) {checkedCategories.push("plantbased")}
+    // if ($("#streetfood").is(':checked')) {checkedCategories.push("streetfood")}
+    // if ($("#hummus").is(':checked')) {checkedCategories.push("hummus")}
+    // if ($("#fusion").is(':checked')) {checkedCategories.push("fusion")}
+    // if ($("#sweettooth").is(':checked')) {checkedCategories.push("sweettooth")}
     if ($("#patisserie").is(':checked')) {checkedCategories.push("patisserie")}
     if ($("#bakery").is(':checked')) {checkedCategories.push("bakery")}
     if ($("#gelateria").is(':checked')) {checkedCategories.push("gelateria")}
-    if ($("#wine").is(':checked')) {checkedCategories.push("wine")}
-    if ($("#cocktail").is(':checked')) {checkedCategories.push("cocktail")}
-    if ($("#beer").is(':checked')) {checkedCategories.push("beer")}
-    if ($("#coffee").is(':checked')) {checkedCategories.push("coffee")}
+    // if ($("#wine").is(':checked')) {checkedCategories.push("wine")}
+    // if ($("#cocktail").is(':checked')) {checkedCategories.push("cocktail")}
+    // if ($("#beer").is(':checked')) {checkedCategories.push("beer")}
+    // if ($("#coffee").is(':checked')) {checkedCategories.push("coffee")}
     if ($("#highend").is(':checked')) {checkedCategories.push("highend")}
     if ($("#easygoing").is(':checked')) {checkedCategories.push("easygoing")}
     if ($("#between").is(':checked')) {checkedCategories.push("between")}
@@ -115,6 +115,28 @@ const submitPlace = (e) => {
     if ($("#ddollar").is(':checked')) {checkedCategories.push("ddollar")}
     if ($("#dddollar").is(':checked')) {checkedCategories.push("dddollar")}
 
+
+    checkedKitchen = [];
+
+    if ($("#aroundhere").is(':checked')) {checkedKitchen.push("aroundhere")}
+    if ($("#fromthesea").is(':checked')) {checkedKitchen.push("fromthesea")}
+    if ($("#fireland").is(':checked')) {checkedKitchen.push("fireland")}
+    if ($("#bites").is(':checked')) {checkedKitchen.push("bites")}
+    if ($("#bistrofrancais").is(':checked')) {checkedKitchen.push("bistrofrancais")}
+    if ($("#cucinaitaliana").is(':checked')) {checkedKitchen.push("cucinaitaliana")}
+    if ($("#farawayasia").is(':checked')) {checkedKitchen.push("farawayasia")}
+    if ($("#plantbased").is(':checked')) {checkedKitchen.push("plantbased")}
+    if ($("#streetfood").is(':checked')) {checkedKitchen.push("streetfood")}
+    if ($("#hummus").is(':checked')) {checkedKitchen.push("hummus")}
+    if ($("#fusion").is(':checked')) {checkedKitchen.push("fusion")}
+    if ($("#sweettooth").is(':checked')) {checkedKitchen.push("sweettooth")}
+
+    checkedLiquids = []; 
+
+    if ($("#wine").is(':checked')) {checkedLiquids.push("wine")}
+    if ($("#cocktail").is(':checked')) {checkedLiquids.push("cocktail")}
+    if ($("#beer").is(':checked')) {checkedLiquids.push("beer")}
+    if ($("#coffee").is(':checked')) {checkedLiquids .push("coffee")}
 
     let placeData = {
         name: name,
@@ -124,6 +146,8 @@ const submitPlace = (e) => {
             city: city,
             postalCode: postcode
         },
+        kitchen: checkedKitchen, 
+        liquids: checkedLiquids,
         categories: checkedCategories
     }
 

@@ -1,32 +1,67 @@
 {
-    "edison": {
-        "id": "01",
-        "name": "Edison",
+    "Pho Saigon ": {
+        "id": "H4JKe",
+        "name": "Pho Saigon ",
         "address": {
-            "streetAddress": "Examplestreet",
-            "number": 1,
-            "city": "Vienna",
-            "postalCode": "394221"
+            "streetAddress": "Hegelgasse ",
+            "number": "17",
+            "city": "Wien",
+            "postalCode": "1010"
         },
+        "kitchen": [
+            "farawayasia"
+        ],
         "categories": [
+            "friends",
+            "meeting",
+            "business",
             "eat",
-            "from the sea",
-            "easy-going"
+            "lunch",
+            "dinner",
+            "easygoing",
+            "ddollar"
         ]
     },
-    "votiv": {
-        "id": "02",
-        "name": "Votiv",
+    "Roberto": {
+        "id": "-tBHZ",
+        "name": "Roberto",
         "address": {
-            "streetAddress": "Examplestreet",
-            "number": 1,
+            "streetAddress": "Jasomirgottstraße",
+            "number": "7",
             "city": "Vienna",
-            "postalCode": "1080"
+            "postalCode": "1010"
         },
+        "kitchen": [],
+        "liquids": [
+            "cocktail"
+        ],
         "categories": [
-            "eat",
-            "from the sea",
-            "easy-going"
+            "friends",
+            "business",
+            "date",
+            "between",
+            "dddollar"
+        ]
+    },
+    "Truth & Dare ": {
+        "id": "qtU8Y",
+        "name": "Truth & Dare ",
+        "address": {
+            "streetAddress": "Schönlaterngasse",
+            "number": "4",
+            "city": "Vienna",
+            "postalCode": "1010"
+        },
+        "kitchen": [],
+        "liquids": [
+            "cocktail"
+        ],
+        "categories": [
+            "friends",
+            "meeting",
+            "date",
+            "easygoing",
+            "dddollar"
         ]
     }
 }
