@@ -90,6 +90,13 @@ function addPlace(req, res) {
 	}
 }
 
+//Endpoint for deleting a place
+app.post('/places/delete', deletePlace);
+
+function deletePlace(req, res) {}
+
+
+
 //Endpoint for user registration
 
 const registerUser = (req, res) => {
