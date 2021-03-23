@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="/addPlace.css">
+    <title>Edit Place</title>
+
+</head>
+
+<body class="text-center">
+  <form class="form mx-auto p-3" method="post" action="" autocomplete="off">
+    <h2 class="mb-3 font-weight-bold">Add New Place</h2>
+    <div class="row g-3">
+      <div class="col-12">
+        <input id="name" type="text" aria-label="Name of the place" class="form-control mb-3" placeholder="Name of the place">
+    </div>
+      <div class="col-md-10">
+        <input id="street" type="text" aria-label="Street name" class="form-control mb-3 col" placeholder="Street name">
+      </div>
+      <div class="col-md-2">
+        <input id="number" type="number" aria-label="Number" class="form-control mb-3" placeholder="Number">
+      </div>
+      <div class="col-md-4">
+        <input id="postcode" type="number" aria-label="Postcode" class="form-control mb-3" placeholder="Postcode">
+      </div>
+      <div class="col-md-6">
+        <input id="city" type="text" aria-label="City" class="form-control mb-3" placeholder="City">
+      </div>
+      <div class="col-md-6">
+        <input id="website" type="text" aria-label="Website" class="form-control mb-3" placeholder="Website">
+      </div>
+</div>
+
+    <div class="mb-3">
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="checkbox" id="friends" value="friends">
+  <label class="form-check-label" for="friends">Friends</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="checkbox" id="meeting" value="meeting">
+  <label class="form-check-label" for="meeting">Meeting</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="checkbox" id="business" value="business">
+  <label class="form-check-label" for="business">Business</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="checkbox" id="date" value="date">
+  <label class="form-check-label" for="date">Date</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="checkbox" id="family" value="family">
+  <label class="form-check-label" for="family">Family/Kids</label>
+</div>
+</div>
+
+<div id="eatdrink">
+<div class="form-check form-switch">
+  <input class="form-check-input" type="checkbox" id="eat">
+  <label class="form-check-label" for="eat">eat</label>
+</div>
+<div class="form-check form-switch">
+  <input class="form-check-input" type="checkbox" id="drink">
+  <label class="form-check-label" for="drink">drink</label>
+</div>
+</div>
+
+<br>
+<div id="timeoftheday">
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="checkbox" id="breakfast" value="breakfast">
+    <label class="form-check-label" for="breakfast">breakfast</label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="checkbox" id="brunch" value="brunch">
+    <label class="form-check-label" for="brunch">brunch</label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="checkbox" id="lunch" value="lunch">
+    <label class="form-check-label" for="lunch">lunch</label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="checkbox" id="dinner" value="dinner">
+    <label class="form-check-label" for="dinner">dinner</label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="checkbox" id="latesnack" value="latesnack">
+    <label class="form-check-label" for="latesnack">late snack</label>
+  </div>
+  </div>
+<br>
+
+    <div id="cuisine">
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" id="aroundhere" value="aroundhere">
+      <label class="form-check-label" for="aroundhere">around here</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" id="fromthesea" value="fromthesea">
+      <label class="form-check-label" for="fromthesea">from the sea</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" id="fireland" value="fireland">
+      <label class="form-check-label" for="fireland">fire&land</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" id="bites" value="bites">
+      <label class="form-check-label" for="bites">bites</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" id="bistrofrancais" value="bistrofrancais">
+      <label class="form-check-label" for="bistrofrancais">bistro francais</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" id="cucinaitaliana" value="cucinaitaliana">
+      <label class="form-check-label" for="cucinaitaliana">cucina italiana</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" id="farawayasia" value="farawayasia">
+      <label class="form-check-label" for="farawayasia">far away asia</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" id="plantbased" value="plantbased">
+      <label class="form-check-label" for="plantbased">plant-based</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" id="streetfood" value="streetfood">
+      <label class="form-check-label" for="streetfood">street-food</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" id="hummus" value="hummus">
+      <label class="form-check-label" for="hummus">hummus&co</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" id="fusion" value="fusion">
+      <label class="form-check-label" for="fusion">fusion</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" id="sweettooth" value="sweettooth">
+      <label class="form-check-label" for="sweettooth">sweet tooth</label>
+    </div>
+    </div>
+<br>
+
+    <div id="sweet">
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" id="patisserie">
+      <label class="form-check-label" for="patisserie">pâtisserie</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" id="bakery">
+      <label class="form-check-label" for="bakery">bakery</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" id="gelateria">
+      <label class="form-check-label" for="gelateria">gelateria</label>
+    </div>
+  </div>
+
+  <div id="bars">
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" id="wine">
+      <label class="form-check-label" for="wine">wine</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" id="cocktail">
+      <label class="form-check-label" for="cocktail">cocktail</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" id="beer">
+      <label class="form-check-label" for="beer">beer</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" id="coffee">
+      <label class="form-check-label" for="coffee">coffee</label>
+    </div>
+  </div>
+
+  <div id="stil">
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" id="highend">
+      <label class="form-check-label" for="highend">high-end</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" id="easygoing">
+      <label class="form-check-label" for="easygoing">easy-going</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" id="between">
+      <label class="form-check-label" for="between">smth in between</label>
+    </div>
+  </div>
+
+<div id="price">
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="checkbox" id="dollar">
+    <label class="form-check-label" for="dollar">$</label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="checkbox" id="ddollar">
+    <label class="form-check-label" for="ddollar">$$</label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="checkbox" id="dddollar">
+    <label class="form-check-label" for="dddollar">$$$</label>
+  </div>
+</div>
+
+<button id="submitplace" class="btn btn-lg btn-block mt-3 mb-3" type="submit"
+            name="btn-register">save changes</button>
+            
+</form>
+
+    <script src="/jquery-3.5.1.min.js"></script>
+    <script src="/editPlace.js"></script>
+</body>
+
+</html>

@@ -7,7 +7,6 @@ fetch(`/places`, {
 }).then(res => res.json())
     .then(data => {
         renderPlaces(data);
-
     });
 
 const renderPlace = (place) => {
@@ -24,8 +23,8 @@ const kitchen = place.kitchen.length > 0 ? place.kitchen : "";
                 <a href="${place.website}">${place.website}</a>
                 <p class="mb-0">${liquids}</p>
                 <p class="mb-0">${kitchen}</p>
-                <button>edit</button>
-                <button id="delete" onclick='handleDelete("${place.name}")'>delete</button>
+                <button onclick='handleEdit("${place.name}")'>edit</button>
+                <button onclick='handleDelete("${place.name}")'>delete</button>
             </div>
         </div>
         `
@@ -40,7 +39,17 @@ const handleDelete = (placeName) => {
     }).then(response => alert("Successfully deleted")).then(location.reload())
         .catch((error) => {
             console.error("there was an error: ", error);
-            // showError();
+        });
+};
+
+const handleEdit = (placeName) => {
+    // http request with PUT method
+    fetch(`/places/${placeName}`, {
+        method: "PUT",
+        headers: { "content-type": "application/json; charset=UTF-8" },
+    }).then(console.log("I am here"))
+        .catch((error) => {
+            console.error("there was an error: ", error);
         });
 };
 

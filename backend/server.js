@@ -90,11 +90,39 @@ function addPlace(req, res) {
 	}
 }
 
+//Endpoint for editing a place
+app.put('/places/:name', editPlace);
+
+function editPlace(req, res) {
+    var placeName = req.params.name;
+    if (placeName) {
+        fs.readFile('places.json', function (err, data) {
+            var places = JSON.parse(data);
+            //suche place mit dem namen placeName
+			//send this data to editPlace (redirect)???
+			//befülle das Formular mit den daten
+			//on save überschreibe place mit dem namen placeName mit neuen daten
+            fs.writeFile('places.json', JSON.stringify(places), (err) => {
+                if (err) {
+                    throw err
+                }
+            });
+            console.log(placeName + " has been edited");
+        });
+        res.json(placeName); 
+    } else {
+        res.send('Failed to edit place'); 
+        throw new Error('Failed to edit place'); 
+    }
+
+}
+
 //Endpoint for deleting a place
 app.delete('/places/:name', deletePlace);
 
 function deletePlace(req, res) {
     var placeName = req.params.name;
+
     if (placeName) {
         fs.readFile('places.json', function (err, data) {
             var places = JSON.parse(data);
