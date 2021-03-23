@@ -74,6 +74,7 @@
             "city": "Vienna",
             "postalCode": "1010"
         },
+        "website": "https://www.truthanddare.bar",
         "kitchen": [],
         "liquids": [
             "cocktail"
@@ -165,6 +166,450 @@
             "lunch",
             "easygoing",
             "ddollar"
+        ]
+    },
+    "Oswald & Kalb": {
+        "id": "ElXbY",
+        "name": "Oswald & Kalb",
+        "address": {
+            "streetAddress": "Bäckerstraße ",
+            "number": "14",
+            "city": "Vienna",
+            "postalCode": "1010"
+        },
+        "website": "www.oswaldundkalb.at",
+        "kitchen": [
+            "aroundhere"
+        ],
+        "liquids": [],
+        "categories": [
+            "friends",
+            "meeting",
+            "business",
+            "date",
+            "eat",
+            "lunch",
+            "dinner",
+            "between",
+            "ddollar"
+        ]
+    },
+    "asdfg": {
+        "id": "3MFpe",
+        "name": "asdfg",
+        "address": {
+            "streetAddress": "sdfgh",
+            "number": "2",
+            "city": "Vienna",
+            "postalCode": "3233"
+        },
+        "website": "www.at.at",
+        "kitchen": [
+            "fireland"
+        ],
+        "liquids": [],
+        "categories": [
+            "friends",
+            "eat",
+            "lunch",
+            "easygoing",
+            "dollar"
+        ]
+    },
+    "sdfgfds": {
+        "id": "yW80j",
+        "name": "sdfgfds",
+        "address": {
+            "streetAddress": "asdfgdfggg",
+            "number": "12",
+            "city": "Vienna",
+            "postalCode": "1245"
+        },
+        "website": "www.cevafain.at",
+        "kitchen": [
+            "bites"
+        ],
+        "liquids": [],
+        "categories": [
+            "meeting",
+            "eat",
+            "lunch",
+            "easygoing",
+            "ddollar"
+        ]
+    },
+    "Heunisch & Erben": {
+        "id": "vUajJ",
+        "name": "Heunisch & Erben",
+        "address": {
+            "streetAddress": "Landstraßer Hauptstraße ",
+            "number": "17",
+            "city": "Vienna",
+            "postalCode": "1030"
+        },
+        "website": "www.heunisch.at",
+        "kitchen": [
+            "fusion"
+        ],
+        "liquids": [
+            "wine"
+        ],
+        "categories": [
+            "friends",
+            "meeting",
+            "business",
+            "date",
+            "eat",
+            "lunch",
+            "dinner",
+            "between",
+            "dddollar"
+        ]
+    },
+    "Umar Fisch Bar": {
+        "id": "2l7LX",
+        "name": "Umar Fisch Bar",
+        "address": {
+            "streetAddress": "Naschmarkt Stand",
+            "number": "",
+            "city": "Vienna",
+            "postalCode": "1060"
+        },
+        "website": "www.umarfischbar.at",
+        "kitchen": [
+            "fromthesea"
+        ],
+        "liquids": [
+            "wine"
+        ],
+        "categories": [
+            "friends",
+            "meeting",
+            "business",
+            "date",
+            "eat",
+            "lunch",
+            "dinner",
+            "between",
+            "ddollar"
+        ]
+    },
+    "Kornat": {
+        "id": "-gAeo",
+        "name": "Kornat",
+        "address": {
+            "streetAddress": "Marc-Aurel-Straße",
+            "number": "8",
+            "city": "Vienna",
+            "postalCode": "1010"
+        },
+        "website": "www.kornat.at",
+        "kitchen": [
+            "fromthesea"
+        ],
+        "liquids": [],
+        "categories": [
+            "friends",
+            "meeting",
+            "business",
+            "date",
+            "eat",
+            "lunch",
+            "dinner",
+            "between",
+            "ddollar"
+        ]
+    },
+    "XO Grill": {
+        "id": "hlXPc",
+        "name": "XO Grill",
+        "address": {
+            "streetAddress": "Gumpendorfer Straße",
+            "number": "",
+            "city": "Vienna",
+            "postalCode": "1060"
+        },
+        "website": "www.xo-grill.at",
+        "kitchen": [
+            "fireland",
+            "streetfood"
+        ],
+        "liquids": [],
+        "categories": [
+            "friends",
+            "eat",
+            "lunch",
+            "dinner",
+            "latesnack",
+            "easygoing",
+            "ddollar"
+        ]
+    },
+    "ignacio vinos e ibéricos": {
+        "id": "Y9qd3",
+        "name": "ignacio vinos e ibéricos",
+        "address": {
+            "streetAddress": "Salztorgasse ",
+            "number": "7",
+            "city": "Vienna",
+            "postalCode": "1010"
+        },
+        "website": "www.ignacio.at",
+        "kitchen": [
+            "bites"
+        ],
+        "liquids": [
+            "wine"
+        ],
+        "categories": [
+            "friends",
+            "meeting",
+            "business",
+            "date",
+            "eat",
+            "lunch",
+            "dinner",
+            "latesnack",
+            "easygoing",
+            "ddollar"
+        ]
+    },
+    "BEAULIEU Épicerie fine & Bistrot": {
+        "id": "bOPV8",
+        "name": "BEAULIEU Épicerie fine & Bistrot",
+        "address": {
+            "streetAddress": "Herrengasse",
+            "number": "14",
+            "city": "Vienna",
+            "postalCode": "1010"
+        },
+        "website": "www.beaulieu-wien.at",
+        "kitchen": [
+            "bistrofrancais"
+        ],
+        "liquids": [],
+        "categories": [
+            "friends",
+            "meeting",
+            "business",
+            "date",
+            "eat",
+            "breakfast",
+            "brunch",
+            "lunch",
+            "dinner",
+            "between",
+            "ddollar"
+        ]
+    },
+    "IKI Restaurant": {
+        "id": "NSWuO",
+        "name": "IKI Restaurant",
+        "address": {
+            "streetAddress": "Am Belvedere",
+            "number": "1",
+            "city": "Vienna",
+            "postalCode": "1100"
+        },
+        "website": "www.iki-restaurant.at",
+        "kitchen": [
+            "farawayasia"
+        ],
+        "liquids": [],
+        "categories": [
+            "friends",
+            "meeting",
+            "business",
+            "date",
+            "family",
+            "eat",
+            "lunch",
+            "dinner",
+            "easygoing",
+            "ddollar"
+        ]
+    },
+    "Elissar": {
+        "id": "HRPJ3",
+        "name": "Elissar",
+        "address": {
+            "streetAddress": "Johannesgasse ",
+            "number": "27",
+            "city": "Vienna",
+            "postalCode": "1010"
+        },
+        "website": "www.elissar.at",
+        "kitchen": [
+            "hummus"
+        ],
+        "liquids": [],
+        "categories": [
+            "friends",
+            "meeting",
+            "business",
+            "date",
+            "family",
+            "eat",
+            "lunch",
+            "dinner",
+            "between",
+            "ddollar"
+        ]
+    },
+    "Seven North": {
+        "id": "gcF_J",
+        "name": "Seven North",
+        "address": {
+            "streetAddress": "Schottenfeldgasse ",
+            "number": "74",
+            "city": "Vienna",
+            "postalCode": "1070"
+        },
+        "website": "www.sevennorthrestaurant.at",
+        "kitchen": [
+            "fusion"
+        ],
+        "liquids": [],
+        "categories": [
+            "friends",
+            "meeting",
+            "business",
+            "date",
+            "family",
+            "eat",
+            "dinner",
+            "latesnack",
+            "between",
+            "ddollar"
+        ]
+    },
+    "Okra Izakaya": {
+        "id": "UmkU0",
+        "name": "Okra Izakaya",
+        "address": {
+            "streetAddress": "Kleine Pfarrgasse ",
+            "number": "1",
+            "city": "Vienna",
+            "postalCode": "1020"
+        },
+        "website": "www.okra1020.com",
+        "kitchen": [
+            "farawayasia"
+        ],
+        "liquids": [],
+        "categories": [
+            "friends",
+            "meeting",
+            "business",
+            "date",
+            "family",
+            "eat",
+            "dinner",
+            "between",
+            "ddollar"
+        ]
+    },
+    "Shokudo Kuishimbo": {
+        "id": "4536V",
+        "name": "Shokudo Kuishimbo",
+        "address": {
+            "streetAddress": "Esterhazygasse ",
+            "number": "12",
+            "city": "Vienna",
+            "postalCode": "1060"
+        },
+        "website": "www.shokudokuishimbo.com",
+        "kitchen": [
+            "farawayasia"
+        ],
+        "liquids": [],
+        "categories": [
+            "friends",
+            "meeting",
+            "date",
+            "family",
+            "eat",
+            "lunch",
+            "dinner",
+            "easygoing",
+            "ddollar"
+        ]
+    },
+    "Mochi": {
+        "id": "SQrKO",
+        "name": "Mochi",
+        "address": {
+            "streetAddress": "Praterstraße",
+            "number": "15",
+            "city": "Vienna",
+            "postalCode": "1020"
+        },
+        "website": "www.mochi.at",
+        "kitchen": [
+            "farawayasia"
+        ],
+        "liquids": [],
+        "categories": [
+            "friends",
+            "meeting",
+            "business",
+            "date",
+            "eat",
+            "lunch",
+            "dinner",
+            "easygoing",
+            "ddollar"
+        ]
+    },
+    "MAST Weinbistro": {
+        "id": "mCStJ",
+        "name": "MAST Weinbistro",
+        "address": {
+            "streetAddress": "Porzellangasse ",
+            "number": "53",
+            "city": "Vienna",
+            "postalCode": "1090"
+        },
+        "website": "www.mast.wine",
+        "kitchen": [
+            "fusion"
+        ],
+        "liquids": [],
+        "categories": [
+            "friends",
+            "meeting",
+            "date",
+            "eat",
+            "lunch",
+            "dinner",
+            "between",
+            "dddollar"
+        ]
+    },
+    "Grace ": {
+        "id": "401-m",
+        "name": "Grace ",
+        "address": {
+            "streetAddress": "Danhausergasse ",
+            "number": "3",
+            "city": "Vienna",
+            "postalCode": "1040"
+        },
+        "website": "www.grace-restaurant.at",
+        "kitchen": [
+            "fusion"
+        ],
+        "liquids": [],
+        "categories": [
+            "friends",
+            "meeting",
+            "business",
+            "date",
+            "family",
+            "eat",
+            "dinner",
+            "between",
+            "dddollar"
         ]
     }
 }

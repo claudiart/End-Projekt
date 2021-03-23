@@ -39,6 +39,7 @@ const submitPlace = (e) => {
     let number = $("#number").val();
     let postcode = $("#postcode").val();
     let city = $("#city").val();
+    let website = $('#website').val();
     let friends = $("#friends").is(':checked');
     let meeting = $("#meeting").is(':checked');
     let business = $("#business").is(':checked');
@@ -146,6 +147,7 @@ const submitPlace = (e) => {
             city: city,
             postalCode: postcode
         },
+        website: website,  
         kitchen: checkedKitchen, 
         liquids: checkedLiquids,
         categories: checkedCategories

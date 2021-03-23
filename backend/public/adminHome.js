@@ -10,7 +10,7 @@ fetch(`/places`, {
 
     });
 
-const renderPlace = (place) => {
+const renderPlace = (place) => { // wenn beides ? 
   let category = '';
   if (place.liquids.length > 0) {
       category = place.liquids;
@@ -25,6 +25,7 @@ const renderPlace = (place) => {
             <div class="content col-12 rounded shadow text-dark pt-3 pb-3">
                 <p class="text-dark font-weight-bold">${place.name}</p>
                 <p class="mt-3 mb-0">${place.address.streetAddress + ", " + place.address.postalCode + " " + place.address.city}</p>
+                <a href="${place.website}">${place.website}</a>
                 <p class="mb-0">${category}</p>
                 <button>edit</button>
                 <button id="delete" onclick='handleDelete("${place.name}")'>delete</button>

@@ -75,7 +75,7 @@ function addPlace(req, res) {
 	if (newPlace.name) {
 		fs.readFile('places.json', function (err, data) {
 			var places = JSON.parse(data);
-			places[newPlace.name] = { id: nanoid(5), name: newPlace.name, address: newPlace.address, kitchen: newPlace.kitchen, liquids: newPlace.liquids, categories: newPlace.categories };
+			places[newPlace.name] = { id: nanoid(5), name: newPlace.name, address: newPlace.address, website: newPlace.website, kitchen: newPlace.kitchen, liquids: newPlace.liquids, categories: newPlace.categories };
 			fs.writeFile('places.json', JSON.stringify(places), (err) => {
 				if (err) {
 					throw err
