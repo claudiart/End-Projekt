@@ -91,29 +91,26 @@ function addPlace(req, res) {
 }
 
 //Endpoint for deleting a place
-app.post('/places/delete', deletePlace);
+app.delete('/places/:name', deletePlace);
 
 function deletePlace(req, res) {
-	var placeName = req.body;
-	console.log(placeName);
-	// if (placeName) {
-	// 	fs.readFile('places.json', function (err, data) {
-	// 		console.log(data);
-	// 		// var places = JSON.parse(data);
-	// 		var places = data;
-	// 		delete places[placeName];
-	// 		fs.writeFile('places.json', places, (err) => {
-	// 			if (err) {
-	// 				throw err
-	// 			}
-	// 		});
-	// 		console.log(placeName + " has been deleted");
-	// 	});
-	// 	res.json(alert('successfully deleted')); 
-	// } else {
-	// 	res.send('Failed to delete place'); 
-	// 	throw new Error('Failed to delete place'); 
-	// }
+    var placeName = req.params.name;
+    if (placeName) {
+        fs.readFile('places.json', function (err, data) {
+            var places = JSON.parse(data);
+            delete places[placeName];
+            fs.writeFile('places.json', JSON.stringify(places), (err) => {
+                if (err) {
+                    throw err
+                }
+            });
+            console.log(placeName + " has been deleted");
+        });
+        res.json(placeName); 
+    } else {
+        res.send('Failed to delete place'); 
+        throw new Error('Failed to delete place'); 
+    }
 
 }
 

@@ -10,15 +10,11 @@ fetch(`/places`, {
 
     });
 
-const renderPlace = (place) => { // wenn beides ? 
-  let category = '';
-  if (place.liquids.length > 0) {
-      category = place.liquids;
-    } else if (place.kitchen.length > 0) {
-      category = place.kitchen;
-  }
+const renderPlace = (place) => {
 
-  console.log(place.liquids);
+const liquids = place.liquids.length > 0 ? place.liquids : "";
+const kitchen = place.kitchen.length > 0 ? place.kitchen : "";
+
     return (
         `
         <div class="col-md-6 col-lg-3 mb-3">
@@ -26,7 +22,8 @@ const renderPlace = (place) => { // wenn beides ?
                 <p class="text-dark font-weight-bold">${place.name}</p>
                 <p class="mt-3 mb-0">${place.address.streetAddress + ", " + place.address.postalCode + " " + place.address.city}</p>
                 <a href="${place.website}">${place.website}</a>
-                <p class="mb-0">${category}</p>
+                <p class="mb-0">${liquids}</p>
+                <p class="mb-0">${kitchen}</p>
                 <button>edit</button>
                 <button id="delete" onclick='handleDelete("${place.name}")'>delete</button>
             </div>
@@ -36,16 +33,15 @@ const renderPlace = (place) => { // wenn beides ?
 }
 
 const handleDelete = (placeName) => {
-        // http request with POST method
-        fetch(`/places/delete`, {
-            method: "POST",
-            headers: { "content-type": "application/json; charset=UTF-8" },
-            body: placeName,
-          }).then(response => console.log(response))
-            .catch((error) => {
-              console.error("there was an error: ", error);
-              // showError();
-            });
+    // http request with DELETE method
+    fetch(`/places/${placeName}`, {
+        method: "DELETE",
+        headers: { "content-type": "application/json; charset=UTF-8" },
+    }).then(response => alert("Successfully deleted")).then(location.reload())
+        .catch((error) => {
+            console.error("there was an error: ", error);
+            // showError();
+        });
 };
 
 const renderPlaces = (data) => {

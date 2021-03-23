@@ -119,15 +119,15 @@ const submitPlace = (e) => {
 
     checkedKitchen = [];
 
-    if ($("#aroundhere").is(':checked')) {checkedKitchen.push("aroundhere")}
-    if ($("#fromthesea").is(':checked')) {checkedKitchen.push("fromthesea")}
-    if ($("#fireland").is(':checked')) {checkedKitchen.push("fireland")}
+    if ($("#aroundhere").is(':checked')) {checkedKitchen.push("around here")}
+    if ($("#fromthesea").is(':checked')) {checkedKitchen.push("from the sea")}
+    if ($("#fireland").is(':checked')) {checkedKitchen.push("fire & land")}
     if ($("#bites").is(':checked')) {checkedKitchen.push("bites")}
-    if ($("#bistrofrancais").is(':checked')) {checkedKitchen.push("bistrofrancais")}
-    if ($("#cucinaitaliana").is(':checked')) {checkedKitchen.push("cucinaitaliana")}
-    if ($("#farawayasia").is(':checked')) {checkedKitchen.push("farawayasia")}
-    if ($("#plantbased").is(':checked')) {checkedKitchen.push("plantbased")}
-    if ($("#streetfood").is(':checked')) {checkedKitchen.push("streetfood")}
+    if ($("#bistrofrancais").is(':checked')) {checkedKitchen.push("bistro francais")}
+    if ($("#cucinaitaliana").is(':checked')) {checkedKitchen.push("cucina italiana")}
+    if ($("#farawayasia").is(':checked')) {checkedKitchen.push("faraway asia")}
+    if ($("#plantbased").is(':checked')) {checkedKitchen.push("plant-based")}
+    if ($("#streetfood").is(':checked')) {checkedKitchen.push("street-food")}
     if ($("#hummus").is(':checked')) {checkedKitchen.push("hummus")}
     if ($("#fusion").is(':checked')) {checkedKitchen.push("fusion")}
     if ($("#sweettooth").is(':checked')) {checkedKitchen.push("sweettooth")}
