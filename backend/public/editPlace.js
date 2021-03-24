@@ -4,11 +4,11 @@ console.log('hi')
 
 const handleEdit = () => {
     // http request with PUT method
-    var placeName = $('name').val();
+    var placeName = $('#name').val();
     fetch(`/places/${placeName}`, {
         method: "PUT",
         headers: { "content-type": "application/json; charset=UTF-8" },
-    }).then(console.log("I am here"))
+    }).then(console.log("You are awesome"))
         .catch((error) => {
             console.error("there was an error: ", error);
         });
