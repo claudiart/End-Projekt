@@ -128,7 +128,7 @@ const submitPlace = (e) => {
     if ($("#farawayasia").is(':checked')) {checkedKitchen.push("faraway asia")}
     if ($("#plantbased").is(':checked')) {checkedKitchen.push("plant-based")}
     if ($("#streetfood").is(':checked')) {checkedKitchen.push("street-food")}
-    if ($("#hummus").is(':checked')) {checkedKitchen.push("hummus")}
+    if ($("#hummus").is(':checked')) {checkedKitchen.push("hummus & co")}
     if ($("#fusion").is(':checked')) {checkedKitchen.push("fusion")}
     if ($("#sweettooth").is(':checked')) {checkedKitchen.push("sweettooth")}
 

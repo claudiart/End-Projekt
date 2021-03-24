@@ -23,8 +23,8 @@ const kitchen = place.kitchen.length > 0 ? place.kitchen : "";
                 <a href="${place.website}">${place.website}</a>
                 <p class="mb-0">${liquids}</p>
                 <p class="mb-0">${kitchen}</p>
-                <button onclick='handleEdit("${place.name}")'>edit</button>
-                <button onclick='handleDelete("${place.name}")'>delete</button>
+                <button class="btn btn-lg btn-block mt-3 mb-3" onclick='handleEdit("${place.name}")'>edit</button>
+                <button class="btn btn-lg btn-block mt-3 mb-3" onclick='handleDelete("${place.name}")'>delete</button>
             </div>
         </div>
         `

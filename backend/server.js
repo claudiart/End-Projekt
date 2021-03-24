@@ -54,7 +54,7 @@ function getAllPlaces(req, res) {
 }
 
 //Endpoint for getting a single place by name
-app.get('/places/:place/', searchPlace);
+app.get('/places/:place', searchPlace);
 
 function searchPlace(req, res) {
 	var name = req.params.place.toLowerCase();
@@ -98,7 +98,7 @@ function editPlace(req, res) {
     if (placeName) {
         fs.readFile('places.json', function (err, data) {
             var places = JSON.parse(data);
-            //suche place mit dem namen placeName
+            //suche place mit dem namen placeName // gib das Objekt aus dem Array und überschreibe die Daten 
 			//send this data to editPlace (redirect)???
 			//befülle das Formular mit den daten
 			//on save überschreibe place mit dem namen placeName mit neuen daten
