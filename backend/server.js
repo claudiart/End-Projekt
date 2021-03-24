@@ -40,6 +40,10 @@ app.get('/admin/add', (req, res) => {
 		res.render('addPlace');
 })
 
+app.get('/admin/edit', (req, res) => {
+	res.render('editPlace');
+})
+
 //Endpoint for getting all places
 app.get('/places', getAllPlaces);
 
