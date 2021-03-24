@@ -101,21 +101,21 @@ function editPlace(req, res) {
     var placeName = req.params.name;
 	console.log("'" + placeName + "'");
 	var updatedPlaceData = req.body;
-	console.log(req.body);
+	console.log(updatedPlaceData);
     if (placeName) {
         fs.readFile('places.json', function (err, data) {
             var places = JSON.parse(data);
             //suche place mit dem namen placeName // gib das Objekt aus dem Array und überschreibe die Daten 
-			var placeToUpdate = places[placeName];
+			// var placeToUpdate = places[placeName];
 			//send this data to editPlace (redirect)???
 			
 			//update object with new values
-			placeToUpdate.name = updatedPlaceData.name; 
-			placeToUpdate.address = updatedPlaceData.address; 
-			placeToUpdate.website = updatedPlaceData.website;
-			placeToUpdate.kitchen = updatedPlaceData.kitchen;
-			placeToUpdate.liquids = updatedPlaceData.liquid;
-			placeToUpdate.categories = updatedPlaceData.categories;
+			places[placeName].name = updatedPlaceData.name; 
+			places[placeName].address = updatedPlaceData.address; 
+			places[placeName].website = updatedPlaceData.website;
+			places[placeName].kitchen = updatedPlaceData.kitchen;
+			places[placeName].liquids = updatedPlaceData.liquid;
+			places[placeName].categories = updatedPlaceData.categories;
 			
 			//befülle das Formular mit den daten
 			//on save überschreibe place mit dem namen placeName mit neuen daten
