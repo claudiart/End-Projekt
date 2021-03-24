@@ -18,7 +18,7 @@
         body {
             color: #882c66;
         }
-        #search {
+        .btn {
             background-color: #882c66;
             color: #e4b370;
             
@@ -37,39 +37,44 @@
     
         let coords = [48.210033,16.373449];
         let zoom = 15;
-        let meinkarte = L.map( 'karte' ).setView( coords, zoom );
+        let placesmap = L.map( 'karte' ).setView( coords, zoom );
 
         L.tileLayer( 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: 'OpenStreetMap...' 
-        } ).addTo( meinkarte );
+        } ).addTo( placesmap );
 
 
         navigator.geolocation.getCurrentPosition( 
             function(pos) { 
                 console.log(pos)
                 let meineCoords =  [ pos.coords.latitude, pos.coords.longitude ];
-                L.marker( meineCoords ).addTo( meinkarte );
-                meinkarte.panTo( meineCoords ); //flyTo
+            
+                L.marker( meineCoords ).addTo( placesmap );
+                placesmap.panTo( meineCoords ); //flyTo
             }, 
             function() { console.log( 'Error' ) }
         );
+        
 
-        // geocoding
-        // => wandelt Adresse in Geokoordinaten (LatLng)
-        // => Bsp. Shanghai => 31,121
+        // geocoding ??
 
-        // reverse geocoding
-        // => wandelt Geokoordinaten in Adresse 
-        // Bsp 31,121 => Shanghai
 
-   
+    $('button').on('click', function(e) {
+        let search = $('#search').val();
+        $.ajax ({
+            url:'http://localhost:3000/places'+ search,
+            success:function(res) {
+                res.JSON.parse(res);
+                let meineCoords = [res.address[0].latitude, res.address[0].latitude]; 
+            }
+        })
+    })
 
 
     </script>
     <br>
     <div class="col-md-2">
-    <input type="text" class="form-control my-1" placeholder="type to search...">
-    <button id="search" class="btn btn-lg btn-block mt-3 mb-3" type="submit">search</button>
+    <input type="text" id="search" class="form-control my-1" placeholder="type to search..."><button  class="btn btn-lg btn-block mt-3 mb-3" type="submit">search</button>
     </div>
 </body>
 </html>
