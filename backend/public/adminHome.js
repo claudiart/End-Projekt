@@ -23,26 +23,27 @@ const kitchen = place.kitchen.length > 0 ? place.kitchen : "";
                 <a href="${place.website}">${place.website}</a>
                 <p class="mb-0">${liquids}</p>
                 <p class="mb-0">${kitchen}</p>
-                <button class="btn btn-lg btn-block mt-3 mb-3" onclick='handleEdit("${place.name}")'>edit</button>
-                <button class="btn btn-lg btn-block mt-3 mb-3" onclick='handleDelete("${place.name}")'>delete</button>
+                <button class="btn btn-lg btn-block mt-3 mb-3" onclick='handleEdit("${place.id}")'>edit</button>
+                <button class="btn btn-lg btn-block mt-3 mb-3" onclick='handleDelete("${place.id}")'>delete</button>
             </div>
         </div>
         `
     )
 }
 
-const handleDelete = (placeName) => {
+const handleDelete = (placeId) => {
     // http request with DELETE method
-    fetch(`/places/${placeName}`, {
+    fetch(`/places/${placeId}`, {
         method: "DELETE",
         headers: { "content-type": "application/json; charset=UTF-8" },
-    }).then(response => alert("Successfully deleted")).then(location.reload())
+    }).then(response => alert("Place will be deleted")).then(location.reload())
         .catch((error) => {
             console.error("there was an error: ", error);
         });
 };
 
-// const handleEdit = (placeName) => {
+const handleEdit = (placeId) => {
+    top.location.href = "/admin/edit/"+placeId;
 //     // http request with PUT method
 //     fetch(`/places/${placeName}`, {
 //         method: "PUT",
@@ -51,7 +52,7 @@ const handleDelete = (placeName) => {
 //         .catch((error) => {
 //             console.error("there was an error: ", error);
 //         });
-// };
+};
 
 const renderPlaces = (data) => {
     for (var place in data) {

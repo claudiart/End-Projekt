@@ -1,8 +1,3 @@
-
-//Fill in data from existing place????
-// $('#name').val('claudia');
-
-
 $('#eat').on('change', function () {
     if ($(this).is(':checked')) {
         $('#timeoftheday').show();
@@ -106,6 +101,10 @@ const handleEdit = (e) => {
         liquids: checkedLiquids,
         categories: checkedCategories
     }
+
+    //Fill in data from existing place????
+    // $('#name').val('claudia');
+
 
     // http request with PUT method
     fetch(`/places/${name}`, {

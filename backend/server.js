@@ -40,8 +40,17 @@ app.get('/admin/add', (req, res) => {
 		res.render('addPlace');
 })
 
-app.get('/admin/edit', (req, res) => {
-	res.render('editPlace');
+app.get('/admin/edit/:id', (req, res) => {
+	var placeId = req.params.id;
+	var data = fs.readFileSync('./places.json');
+	var places = JSON.parse(data);
+	//var ort = places.find( element => element.id == placeId );
+	for (let i in places ) {
+		if ( places[i].id == placeId ) {
+			var ort = places[i];
+		}
+	}
+	res.render('editPlace',{placeId:placeId, ortName:ort.name, ort:ort});
 })
 
 //Endpoint for getting all places
@@ -118,6 +127,8 @@ function editPlace(req, res) {
 			places[placeName].categories = updatedPlaceData.categories;
 			
 			//befülle das Formular mit den daten
+
+
 			//on save überschreibe place mit dem namen placeName mit neuen daten
             fs.writeFile('places.json', JSON.stringify(places), (err) => {
                 if (err) {
@@ -135,23 +146,29 @@ function editPlace(req, res) {
 }
 
 //Endpoint for deleting a place
-app.delete('/places/:name', deletePlace);
+app.delete('/places/:id', deletePlace);
 
 function deletePlace(req, res) {
-    var placeName = req.params.name;
+    var placeId = req.params.id;
 
-    if (placeName) {
+    if (placeId) {
         fs.readFile('places.json', function (err, data) {
             var places = JSON.parse(data);
-            delete places[placeName];
+            //delete places[placeName];
+			//places = places.filter( element => element.id != placeId );
+			for ( let i in places ) {
+				if ( places[i].id == placeId ) {
+					delete places [i]; break;
+				}
+			}
             fs.writeFile('places.json', JSON.stringify(places), (err) => {
                 if (err) {
                     throw err
                 }
             });
-            console.log(placeName + " has been deleted");
+            console.log(placeId + " has been deleted");
         });
-        res.json(placeName); 
+        res.json(placeId); 
     } else {
         res.send('Failed to delete place'); 
         throw new Error('Failed to delete place'); 
