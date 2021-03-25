@@ -59,13 +59,14 @@
         // geocoding ??
 
 
-    $('button').on('click', function(e) {
+    $('#search').on('click', function(e) {
         let search = $('#search').val();
         $.ajax ({
             url:'http://localhost:3000/places'+ search,
             success:function(res) {
-                res.JSON.parse(res);
-                let meineCoords = [res.address[0].latitude, res.address[0].latitude]; 
+                // res.JSON.parse(res);
+                let meineCoords = [res.address[0].latitude, res.address[0].longitude]; 
+                placesmap.flyTo(meineCoords);
             }
         })
     })
