@@ -58,7 +58,7 @@
 </div>
 </div>
 
-<div id="eatdrink">
+{{!-- <div id="eatdrink">
 <div class="form-check form-switch">
   <input class="form-check-input" type="checkbox" id="eat">
   <label class="form-check-label" for="eat">eat</label>
@@ -67,9 +67,7 @@
   <input class="form-check-input" type="checkbox" id="drink">
   <label class="form-check-label" for="drink">drink</label>
 </div>
-</div>
-
-<br>
+</div> --}}
 <div id="timeoftheday">
   <div class="form-check form-check-inline">
     <input class="form-check-input" type="checkbox" id="breakfast" value="breakfast">
@@ -160,7 +158,7 @@
       <label class="form-check-label" for="gelateria">gelateria</label>
     </div>
   </div>
-
+<br>
   <div id="bars">
     <div class="form-check form-check-inline">
       <input class="form-check-input" type="checkbox" id="wine">
@@ -179,7 +177,7 @@
       <label class="form-check-label" for="coffee">coffee</label>
     </div>
   </div>
-
+<br>
   <div id="stil">
     <div class="form-check form-check-inline">
       <input class="form-check-input" type="checkbox" id="highend">
@@ -194,7 +192,7 @@
       <label class="form-check-label" for="between">smth in between</label>
     </div>
   </div>
-
+<br>
 <div id="price">
   <div class="form-check form-check-inline">
     <input class="form-check-input" type="checkbox" id="dollar">
@@ -210,6 +208,8 @@
   </div>
 </div>
 
+        
+
 <button id="editplace" class="btn btn-lg btn-block mt-3 mb-3" type="submit"
             name="btn-register">save changes</button>
 
@@ -224,6 +224,7 @@
       var placeId = "{{{placeId}}}";
       alert( placeId );
       $( "#name").val( "{{{ort.name}}}");
+
 
       var cats = "{{{ort.categories}}}";
       cats = cats.split( "," );
