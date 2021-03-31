@@ -1,32 +1,7 @@
 {
-    "Pho Saigon ": {
-        "id": "H4JKe",
-        "name": "Pho Saigon ",
-        "address": {
-            "streetAddress": "Hegelgasse ",
-            "number": "17",
-            "city": "Wien",
-            "postalCode": "1010"
-        },
-        "website": "www.phosaigon.at",
-        "liquids": [],
-        "kitchen": [
-            "faraway asia"
-        ],
-        "categories": [
-            "friends",
-            "meeting",
-            "business",
-            "eat",
-            "lunch",
-            "dinner",
-            "easygoing",
-            "ddollar"
-        ]
-    },
-    "Roberto American Bar": {
+    "-tBHZ": {
         "id": "-tBHZ",
-        "name": "Roberto American Bar",
+        "name": "Roberto BARRRRR",
         "address": {
             "streetAddress": "Jasomirgottstraße",
             "number": "7",
@@ -35,9 +10,7 @@
         },
         "website": "www.robertosbar.at",
         "kitchen": [],
-        "liquids": [
-            "cocktail"
-        ],
+        "liquids": [],
         "categories": [
             "friends",
             "business",
@@ -46,7 +19,7 @@
             "dddollar"
         ]
     },
-    "Truth & Dare ": {
+    "qtU8Y": {
         "id": "qtU8Y",
         "name": "Truth & Dare ",
         "address": {
@@ -68,7 +41,7 @@
             "dddollar"
         ]
     },
-    "Oswald & Kalb": {
+    "ElXbY": {
         "id": "ElXbY",
         "name": "Oswald & Kalb",
         "address": {
@@ -94,7 +67,7 @@
             "ddollar"
         ]
     },
-    "Heunisch & Erben": {
+    "vUajJ": {
         "id": "vUajJ",
         "name": "Heunisch & Erben",
         "address": {
@@ -122,7 +95,7 @@
             "dddollar"
         ]
     },
-    "Umar Fisch Bar": {
+    "2l7LX": {
         "id": "2l7LX",
         "name": "Umar Fisch Bar",
         "address": {
@@ -150,7 +123,7 @@
             "ddollar"
         ]
     },
-    "Kornat": {
+    "-gAeo": {
         "id": "-gAeo",
         "name": "Kornat",
         "address": {
@@ -176,7 +149,7 @@
             "ddollar"
         ]
     },
-    "XO Grill": {
+    "hlXPc": {
         "id": "hlXPc",
         "name": "XO Grill",
         "address": {
@@ -201,7 +174,7 @@
             "ddollar"
         ]
     },
-    "ignacio vinos e ibéricos": {
+    "Y9qd3": {
         "id": "Y9qd3",
         "name": "ignacio vinos e ibéricos",
         "address": {
@@ -230,7 +203,7 @@
             "ddollar"
         ]
     },
-    "BEAULIEU Épicerie fine & Bistrot": {
+    "bOPV8": {
         "id": "bOPV8",
         "name": "BEAULIEU Épicerie fine & Bistrot",
         "address": {
@@ -258,7 +231,7 @@
             "ddollar"
         ]
     },
-    "IKI Restaurant": {
+    "NSWuO": {
         "id": "NSWuO",
         "name": "IKI Restaurant",
         "address": {
@@ -285,7 +258,7 @@
             "ddollar"
         ]
     },
-    "Elissar": {
+    "HRPJ3": {
         "id": "HRPJ3",
         "name": "Elissar",
         "address": {
@@ -312,7 +285,7 @@
             "ddollar"
         ]
     },
-    "Seven North": {
+    "gcF_J": {
         "id": "gcF_J",
         "name": "Seven North",
         "address": {
@@ -339,7 +312,7 @@
             "ddollar"
         ]
     },
-    "Okra Izakaya": {
+    "UmkU0": {
         "id": "UmkU0",
         "name": "Okra Izakaya",
         "address": {
@@ -365,7 +338,7 @@
             "ddollar"
         ]
     },
-    "Shokudo Kuishimbo": {
+    "4536V": {
         "id": "4536V",
         "name": "Shokudo Kuishimbo",
         "address": {
@@ -391,7 +364,7 @@
             "ddollar"
         ]
     },
-    "Mochi": {
+    "SQrKO": {
         "id": "SQrKO",
         "name": "Mochi",
         "address": {
@@ -417,7 +390,7 @@
             "ddollar"
         ]
     },
-    "MAST Weinbistro": {
+    "mCStJ": {
         "id": "mCStJ",
         "name": "MAST Weinbistro",
         "address": {
@@ -442,7 +415,7 @@
             "dddollar"
         ]
     },
-    "Grace": {
+    "401-m": {
         "id": "401-m",
         "name": "Grace",
         "address": {
