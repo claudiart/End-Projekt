@@ -82,7 +82,7 @@ const handleEdit = (e) => {
     checkedKitchen.push("from the sea");
   }
   if ($("#fireland").is(":checked")) {
-    checkedKitchen.push("fire & land");
+    checkedKitchen.push("fireland");
   }
   if ($("#bites").is(":checked")) {
     checkedKitchen.push("bites");

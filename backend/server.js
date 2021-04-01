@@ -90,8 +90,9 @@ function addPlace(req, res) {
   if (newPlace.name) {
     fs.readFile("places.json", function (err, data) {
       var places = JSON.parse(data);
-      places[newPlace.name] = {
-        id: nanoid(5),
+      const id = nanoid(5);
+      places[id] = {
+        id,
         name: newPlace.name,
         address: newPlace.address,
         website: newPlace.website,
@@ -123,9 +124,6 @@ function editPlace(req, res) {
   if (placeId) {
     fs.readFile("places.json", function (err, data) {
       var places = JSON.parse(data);
-      //suche place mit dem namen placeName // gib das Objekt aus dem Array und überschreibe die Daten
-      // var placeToUpdate = places[placeName];
-      //send this data to editPlace (redirect)???
 
       //update object with new values
       places[placeId].name = updatedPlaceData.name;

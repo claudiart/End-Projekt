@@ -9,7 +9,9 @@
             "postalCode": "1010"
         },
         "website": "www.robertosbar.at",
-        "kitchen": [],
+        "kitchen": [
+            "fireland"
+        ],
         "liquids": [],
         "categories": [
             "friends",
@@ -160,7 +162,7 @@
         },
         "website": "www.xo-grill.at",
         "kitchen": [
-            "fire & land",
+            "fireland",
             "street-food"
         ],
         "liquids": [],
