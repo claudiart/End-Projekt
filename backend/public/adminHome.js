@@ -53,14 +53,6 @@ const handleDelete = (placeId) => {
 
 const handleEdit = (placeId) => {
   top.location.href = "/admin/edit/" + placeId;
-  //     // http request with PUT method
-  //     fetch(`/places/${placeName}`, {
-  //         method: "PUT",
-  //         headers: { "content-type": "application/json; charset=UTF-8" },
-  //     }).then(console.log("I am here"))
-  //         .catch((error) => {
-  //             console.error("there was an error: ", error);
-  //         });
 };
 
 const renderPlaces = (data) => {

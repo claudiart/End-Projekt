@@ -6,6 +6,14 @@ const app = express();
 const { nanoid } = require("nanoid");
 const bcrypt = require("bcrypt");
 
+const testFolder = "/";
+
+fs.readdir(testFolder, (err, files) => {
+  files.forEach((file) => {
+    console.log(file);
+  });
+});
+
 app.set("view engine", "hbs"); // hbs dateien statt html
 const viewsPath = path.join(__dirname, "views"); // __dirname und views zusammenfassen als String
 app.set("views", viewsPath); // views in ViewsPath
@@ -28,7 +36,7 @@ app.get("/register", (req, res) => {
 });
 
 app.get("/user", (req, res) => {
-  res.render("../../frontend/index");
+  res.render("../../frontend/userHome");
 });
 
 app.get("/admin", (req, res) => {
