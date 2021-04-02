@@ -1,3 +1,4 @@
+console.log("hi");
 fetch(`/places`, {
   method: "GET",
   headers: { "content-type": "application/json; charset=UTF-8" },

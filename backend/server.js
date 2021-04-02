@@ -6,18 +6,11 @@ const app = express();
 const { nanoid } = require("nanoid");
 const bcrypt = require("bcrypt");
 
-const testFolder = "/";
-
-fs.readdir(testFolder, (err, files) => {
-  files.forEach((file) => {
-    console.log(file);
-  });
-});
-
 app.set("view engine", "hbs"); // hbs dateien statt html
 const viewsPath = path.join(__dirname, "views"); // __dirname und views zusammenfassen als String
 app.set("views", viewsPath); // views in ViewsPath
 app.use(express.static(path.join(__dirname, "public"))); //
+app.use(express.static(path.join(__dirname, "../frontend"))); //
 
 const bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: true })); // Middleware
