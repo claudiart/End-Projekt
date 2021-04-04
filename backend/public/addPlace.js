@@ -25,7 +25,7 @@ const submitPlace = (e) => {
   if ($("#family").is(":checked")) {
     checkedCategories.push("family");
   }
-  // if ($("#eat").is(':checked')) {checkedCategories.push("eat")}
+
   if ($("#breakfast").is(":checked")) {
     checkedCategories.push("breakfast");
   }
