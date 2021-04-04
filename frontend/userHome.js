@@ -44,6 +44,8 @@ const renderPlaces = (data) => {
 //find filtered places
 const filterPlaces = (e) => {
   e.preventDefault();
+  console.log(e.target.id);
+  console.log(e.target.className);
   fetchPlaces()
     .then((res) => res.json())
     .then((data) => {

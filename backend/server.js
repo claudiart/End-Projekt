@@ -5,9 +5,11 @@ const express = require("express");
 const app = express();
 const { nanoid } = require("nanoid");
 const bcrypt = require("bcrypt");
+const hbs = require('hbs');
 
 app.set("view engine", "hbs"); // hbs dateien statt html
 const viewsPath = path.join(__dirname, "views"); // __dirname und views zusammenfassen als String
+const partialsPath = path.join(__dirname,'../frontend/partials');
 app.set("views", viewsPath); // views in ViewsPath
 app.use(express.static(path.join(__dirname, "public"))); //
 app.use(express.static(path.join(__dirname, "../frontend"))); //
@@ -15,6 +17,7 @@ app.use(express.static(path.join(__dirname, "../frontend"))); //
 const bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: true })); // Middleware
 app.use(bodyParser.json());
+hbs.registerPartials(partialsPath);
 
 const PORT = 3000;
 app.listen(PORT, () => console.log("Server Start at the Port " + PORT));
