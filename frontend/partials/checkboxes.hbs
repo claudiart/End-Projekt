@@ -1,25 +1,39 @@
-<div class="mb-3">
+
+<div class="mb-3"> 
+    <label  class="form-label">what´s the ocassion?</label>
+    <div id="occasion">
     <div class="form-check form-check-inline">
         <input class="form-check-input" type="checkbox" id="friends" value="friends">
-        <label class="form-check-label" for="friends">Friends</label>
-    </div>
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" id="meeting" value="meeting">
-        <label class="form-check-label" for="meeting">Meeting</label>
+        <label class="form-check-label" for="friends">friends</label>
     </div>
     <div class="form-check form-check-inline">
         <input class="form-check-input" type="checkbox" id="business" value="business">
-        <label class="form-check-label" for="business">Business</label>
+        <label class="form-check-label" for="business">business</label>
     </div>
     <div class="form-check form-check-inline">
         <input class="form-check-input" type="checkbox" id="date" value="date">
-        <label class="form-check-label" for="date">Date</label>
+        <label class="form-check-label" for="date">date</label>
     </div>
     <div class="form-check form-check-inline">
         <input class="form-check-input" type="checkbox" id="family" value="family">
-        <label class="form-check-label" for="family">Family/Kids</label>
+        <label class="form-check-label" for="family">family/kids</label>
     </div>
-</div>
+    </div>
+
+{{!-- <div class="widget">
+  <h2>Radio Group</h2>
+  <fieldset>
+    <legend>Select a Location: </legend>
+    <label for="radio-1">New York</label>
+    <input type="radio" name="radio-1" id="radio-1">
+    <label for="radio-2">Paris</label>
+    <input type="radio" name="radio-1" id="radio-2">
+    <label for="radio-3">London</label>
+    <input type="radio" name="radio-1" id="radio-3">
+  </fieldset> --}}
+
+
+<label  class="form-label">hungry now or later?</label>
 <div id="timeoftheday">
     <div class="form-check form-check-inline">
         <input class="form-check-input" type="checkbox" id="breakfast" value="breakfast">
@@ -42,9 +56,9 @@
         <label class="form-check-label" for="latesnack">late snack</label>
     </div>
 </div>
-<br>
 
-<div id="cuisine">
+<label  class="form-label">a list of cuisines</label>
+<div id="cuisine"> 
     <div class="form-check form-check-inline">
         <input class="form-check-input" type="checkbox" id="aroundhere" value="aroundhere">
         <label class="form-check-label" for="aroundhere">around here</label>
@@ -71,7 +85,7 @@
     </div>
     <div class="form-check form-check-inline">
         <input class="form-check-input" type="checkbox" id="farawayasia" value="farawayasia">
-        <label class="form-check-label" for="farawayasia">far away asia</label>
+        <label class="form-check-label" for="farawayasia">faraway asia</label>
     </div>
     <div class="form-check form-check-inline">
         <input class="form-check-input" type="checkbox" id="plantbased" value="plantbased">
@@ -83,19 +97,15 @@
     </div>
     <div class="form-check form-check-inline">
         <input class="form-check-input" type="checkbox" id="hummus" value="hummus">
-        <label class="form-check-label" for="hummus">hummus&co</label>
+        <label class="form-check-label" for="hummus">hummus and co</label>
     </div>
     <div class="form-check form-check-inline">
         <input class="form-check-input" type="checkbox" id="fusion" value="fusion">
         <label class="form-check-label" for="fusion">fusion</label>
     </div>
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" id="sweettooth" value="sweettooth">
-        <label class="form-check-label" for="sweettooth">sweet tooth</label>
-    </div>
 </div>
-<br>
 
+<label  class="form-label">coffee and cakes</label>
 <div id="sweet">
     <div class="form-check form-check-inline">
         <input class="form-check-input" type="checkbox" id="patisserie">
@@ -109,8 +119,12 @@
         <input class="form-check-input" type="checkbox" id="gelateria">
         <label class="form-check-label" for="gelateria">gelateria</label>
     </div>
+     <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="coffee">
+        <label class="form-check-label" for="coffee">coffee</label>
+    </div>
 </div>
-<br>
+<label  class="form-label">bars and more</label>
 <div id="bars">
     <div class="form-check form-check-inline">
         <input class="form-check-input" type="checkbox" id="wine">
@@ -124,12 +138,8 @@
         <input class="form-check-input" type="checkbox" id="beer">
         <label class="form-check-label" for="beer">beer</label>
     </div>
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" id="coffee">
-        <label class="form-check-label" for="coffee">coffee</label>
-    </div>
 </div>
-<br>
+<label  class="form-label">overdressed or underdressed</label>
 <div id="stil">
     <div class="form-check form-check-inline">
         <input class="form-check-input" type="checkbox" id="highend">
@@ -144,7 +154,7 @@
         <label class="form-check-label" for="between">smth in between</label>
     </div>
 </div>
-<br>
+<label  class="form-label">price range</label>
 <div id="price">
     <div class="form-check form-check-inline">
         <input class="form-check-input" type="checkbox" id="dollar">
@@ -158,4 +168,5 @@
         <input class="form-check-input" type="checkbox" id="dddollar">
         <label class="form-check-label" for="dddollar">$$$</label>
     </div>
+</div>
 </div>

@@ -14,40 +14,15 @@
     color: #882c66;
 }
 
-#eatdrink {
-    max-width: 50px;
-    margin: 20px auto;
-    
-}
-/* 
-#timeoftheday {
-    display: none;
-}
-  
-#cuisine {
-    display: none;
-}
-
-#sweet {
-    display: none;
-}
-
-#bars {
-    display: none;
-} */
-
 .btn-toolbar {
     max-width: 200px;
     margin: 50px auto;
 }
 
-#eatdrink {
-    width: 50px;
-    margin: auto;
-    
-}
-
 #submitplace {
     background-color: #882c66;
+    color: #e4b370;
+}
+.form-label {
     color: #e4b370;
 }

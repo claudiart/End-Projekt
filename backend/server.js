@@ -100,8 +100,6 @@ function addPlace(req, res) {
         name: newPlace.name,
         address: newPlace.address,
         website: newPlace.website,
-        kitchen: newPlace.kitchen,
-        liquids: newPlace.liquids,
         categories: newPlace.categories,
       };
       fs.writeFile("places.json", JSON.stringify(places), (err) => {
@@ -133,8 +131,6 @@ function editPlace(req, res) {
       places[placeId].name = updatedPlaceData.name;
       places[placeId].address = updatedPlaceData.address;
       places[placeId].website = updatedPlaceData.website;
-      places[placeId].kitchen = updatedPlaceData.kitchen;
-      places[placeId].liquids = updatedPlaceData.liquids;
       places[placeId].categories = updatedPlaceData.categories;
 
       //befülle das Formular mit den daten
@@ -264,9 +260,6 @@ function loginUser(req, res) {
       console.log(foundUser);
 
       if (foundUser) {
-        // bcrypt.compare(userData.pass, foundUser.pass).then(function(result) {
-        // 	res.json(JSON.stringify(result));
-        // 	// result true or false
         bcrypt
           .compare(userData.pass, foundUser.pass)
           .then(res.json(JSON.stringify(foundUser)));

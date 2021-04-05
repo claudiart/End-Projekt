@@ -8,12 +8,9 @@
             "city": "Vienna",
             "postalCode": "1010"
         },
-        "website": "www.robertosbar.at",
-        "kitchen": [
-            "fireland"
-        ],
-        "liquids": [],
+        "website": "https://www.robertosbar.at",
         "categories": [
+            "cocktail",
             "friends",
             "business",
             "date",
@@ -31,13 +28,9 @@
             "postalCode": "1010"
         },
         "website": "https://www.truthanddare.bar",
-        "kitchen": [],
-        "liquids": [
-            "cocktail"
-        ],
         "categories": [
+            "cocktail",
             "friends",
-            "meeting",
             "date",
             "easygoing",
             "dddollar"
@@ -52,14 +45,11 @@
             "city": "Vienna",
             "postalCode": "1010"
         },
-        "website": "www.oswaldundkalb.at",
-        "kitchen": [
-            "around here"
-        ],
-        "liquids": [],
+        "website": "https://www.oswaldundkalb.at",
         "categories": [
+            "wine",
+            "aroundhere",
             "friends",
-            "meeting",
             "business",
             "date",
             "eat",
@@ -78,16 +68,11 @@
             "city": "Vienna",
             "postalCode": "1030"
         },
-        "website": "www.heunisch.at",
-        "kitchen": [
-            "fusion"
-        ],
-        "liquids": [
-            "wine"
-        ],
+        "website": "https://www.heunisch.at",
         "categories": [
+            "wine",
+            "fusion",
             "friends",
-            "meeting",
             "business",
             "date",
             "eat",
@@ -106,23 +91,18 @@
             "city": "Vienna",
             "postalCode": "1060"
         },
-        "website": "www.umarfischbar.at",
-        "kitchen": [
-            "from the sea"
-        ],
-        "liquids": [
-            "wine"
-        ],
+        "website": "https://www.umarfischbar.at",
         "categories": [
             "friends",
-            "meeting",
             "business",
             "date",
-            "eat",
             "lunch",
             "dinner",
             "between",
-            "ddollar"
+            "ddollar",
+            "fromthesea",
+            "fusion",
+            "wine"
         ]
     },
     "-gAeo": {
@@ -134,14 +114,10 @@
             "city": "Vienna",
             "postalCode": "1010"
         },
-        "website": "www.kornat.at",
-        "kitchen": [
-            "from the sea"
-        ],
-        "liquids": [],
+        "website": "https://www.kornat.at",
         "categories": [
+            "fromthesea",
             "friends",
-            "meeting",
             "business",
             "date",
             "eat",
@@ -160,20 +136,16 @@
             "city": "Vienna",
             "postalCode": "1060"
         },
-        "website": "www.xo-grill.at",
-        "kitchen": [
-            "fireland",
-            "street-food"
-        ],
-        "liquids": [],
+        "website": "https://www.xo-grill.at",
         "categories": [
             "friends",
-            "eat",
             "lunch",
             "dinner",
             "latesnack",
             "easygoing",
-            "ddollar"
+            "ddollar",
+            "fireland",
+            "streetfood"
         ]
     },
     "Y9qd3": {
@@ -185,16 +157,11 @@
             "city": "Vienna",
             "postalCode": "1010"
         },
-        "website": "www.ignacio.at",
-        "kitchen": [
-            "bites"
-        ],
-        "liquids": [
-            "wine"
-        ],
+        "website": "https://www.ignacio.at",
         "categories": [
+            "bites",
+            "wine",
             "friends",
-            "meeting",
             "business",
             "date",
             "eat",
@@ -214,14 +181,10 @@
             "city": "Vienna",
             "postalCode": "1010"
         },
-        "website": "www.beaulieu-wien.at",
-        "kitchen": [
-            "bistro francais"
-        ],
-        "liquids": [],
+        "website": "https://www.beaulieu-wien.at",
         "categories": [
+            "bistrofrancais",
             "friends",
-            "meeting",
             "business",
             "date",
             "eat",
@@ -242,14 +205,10 @@
             "city": "Vienna",
             "postalCode": "1100"
         },
-        "website": "www.iki-restaurant.at",
-        "kitchen": [
-            "faraway asia"
-        ],
-        "liquids": [],
+        "website": "https://www.iki-restaurant.at",
         "categories": [
+            "farawayasia",
             "friends",
-            "meeting",
             "business",
             "date",
             "family",
@@ -269,14 +228,10 @@
             "city": "Vienna",
             "postalCode": "1010"
         },
-        "website": "www.elissar.at",
-        "kitchen": [
-            "hummus & co"
-        ],
-        "liquids": [],
+        "website": "https://www.elissar.at",
         "categories": [
+            "hummus",
             "friends",
-            "meeting",
             "business",
             "date",
             "family",
@@ -296,22 +251,19 @@
             "city": "Vienna",
             "postalCode": "1070"
         },
-        "website": "www.sevennorthrestaurant.at",
-        "kitchen": [
-            "fusion"
-        ],
-        "liquids": [],
+        "website": "https://www.sevennorthrestaurant.at",
         "categories": [
             "friends",
-            "meeting",
             "business",
             "date",
             "family",
-            "eat",
             "dinner",
             "latesnack",
             "between",
-            "ddollar"
+            "ddollar",
+            "hummus",
+            "fusion",
+            "cocktail"
         ]
     },
     "UmkU0": {
@@ -323,14 +275,10 @@
             "city": "Vienna",
             "postalCode": "1020"
         },
-        "website": "www.okra1020.com",
-        "kitchen": [
-            "faraway asia"
-        ],
-        "liquids": [],
+        "website": "https://www.okra1020.com",
         "categories": [
+            "farawayasia",
             "friends",
-            "meeting",
             "business",
             "date",
             "family",
@@ -349,14 +297,10 @@
             "city": "Vienna",
             "postalCode": "1060"
         },
-        "website": "www.shokudokuishimbo.com",
-        "kitchen": [
-            "faraway asia"
-        ],
-        "liquids": [],
+        "website": "https://www.shokudokuishimbo.com",
         "categories": [
+            "farawayasia",
             "friends",
-            "meeting",
             "date",
             "family",
             "eat",
@@ -375,14 +319,10 @@
             "city": "Vienna",
             "postalCode": "1020"
         },
-        "website": "www.mochi.at",
-        "kitchen": [
-            "faraway asia"
-        ],
-        "liquids": [],
+        "website": "https://www.mochi.at",
         "categories": [
+            "farawayasia",
             "friends",
-            "meeting",
             "business",
             "date",
             "eat",
@@ -401,20 +341,17 @@
             "city": "Vienna",
             "postalCode": "1090"
         },
-        "website": "www.mast.wine",
-        "kitchen": [
-            "fusion"
-        ],
-        "liquids": [],
+        "website": "https://www.mast.wine",
         "categories": [
             "friends",
-            "meeting",
             "date",
-            "eat",
             "lunch",
             "dinner",
             "between",
-            "dddollar"
+            "dddollar",
+            "aroundhere",
+            "fusion",
+            "wine"
         ]
     },
     "401-m": {
@@ -426,21 +363,36 @@
             "city": "Vienna",
             "postalCode": "1040"
         },
-        "website": "www.grace-restaurant.at",
-        "kitchen": [
-            "fusion"
-        ],
-        "liquids": [],
+        "website": "https://www.grace-restaurant.at",
         "categories": [
             "friends",
-            "meeting",
             "business",
             "date",
             "family",
-            "eat",
             "dinner",
             "between",
-            "dddollar"
+            "dddollar",
+            "fusion",
+            "wine"
+        ]
+    },
+    "4Dfli": {
+        "id": "4Dfli",
+        "name": "asdfgh",
+        "address": {
+            "streetAddress": "aaaastreeet",
+            "number": "12",
+            "city": "Vienna",
+            "postalCode": "1212"
+        },
+        "website": "https://www.at.at",
+        "categories": [
+            "family",
+            "patisserie",
+            "easygoing",
+            "ddollar",
+            "hummus",
+            "wine"
         ]
     }
 }

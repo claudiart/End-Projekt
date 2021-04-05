@@ -233,8 +233,8 @@
     $("#website").val("{{{place.website}}}");
 
     var categories = "{{{place.categories}}}";
-    var liquids = "{{{place.liquids}}}";
-    var kitchen = "{{{place.kitchen}}}";
+    {{!-- var liquids = "{{{place.liquids}}}";
+    var kitchen = "{{{place.kitchen}}}"; --}}
 
     const checkCheckboxes = (cats) => {
       cats = cats.split(",");
@@ -244,8 +244,8 @@
     }
 
     checkCheckboxes(categories);
-    liquids.length != 0 && checkCheckboxes(liquids);
-    kitchen.length != 0 && checkCheckboxes(kitchen);
+    {{!-- liquids.length != 0 && checkCheckboxes(liquids);
+    kitchen.length != 0 && checkCheckboxes(kitchen); --}}
 
   </script>
 </body>

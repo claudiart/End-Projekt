@@ -13,9 +13,6 @@ const submitPlace = (e) => {
   if ($("#friends").is(":checked")) {
     checkedCategories.push("friends");
   }
-  if ($("#meeting").is(":checked")) {
-    checkedCategories.push("meeting");
-  }
   if ($("#business").is(":checked")) {
     checkedCategories.push("business");
   }
@@ -25,7 +22,6 @@ const submitPlace = (e) => {
   if ($("#family").is(":checked")) {
     checkedCategories.push("family");
   }
-
   if ($("#breakfast").is(":checked")) {
     checkedCategories.push("breakfast");
   }
@@ -68,59 +64,53 @@ const submitPlace = (e) => {
   if ($("#dddollar").is(":checked")) {
     checkedCategories.push("dddollar");
   }
-
-  let checkedKitchen = [];
-
   if ($("#aroundhere").is(":checked")) {
-    checkedKitchen.push("around here");
+    checkedCategories.push("aroundhere");
   }
   if ($("#fromthesea").is(":checked")) {
-    checkedKitchen.push("from the sea");
+    checkedCategories.push("fromthesea");
   }
   if ($("#fireland").is(":checked")) {
-    checkedKitchen.push("fireland");
+    checkedCategories.push("fireland");
   }
   if ($("#bites").is(":checked")) {
-    checkedKitchen.push("bites");
+    checkedCategories.push("bites");
   }
   if ($("#bistrofrancais").is(":checked")) {
-    checkedKitchen.push("bistro francais");
+    checkedCategories.push("bistrofrancais");
   }
   if ($("#cucinaitaliana").is(":checked")) {
-    checkedKitchen.push("cucina italiana");
+    checkedCategories.push("cucinaitaliana");
   }
   if ($("#farawayasia").is(":checked")) {
-    checkedKitchen.push("faraway asia");
+    checkedCategories.push("farawayasia");
   }
   if ($("#plantbased").is(":checked")) {
-    checkedKitchen.push("plant-based");
+    checkedCategories.push("plantbased");
   }
   if ($("#streetfood").is(":checked")) {
-    checkedKitchen.push("street-food");
+    checkedCategories.push("streetfood");
   }
   if ($("#hummus").is(":checked")) {
-    checkedKitchen.push("hummus & co");
+    checkedCategories.push("hummus");
   }
   if ($("#fusion").is(":checked")) {
-    checkedKitchen.push("fusion");
+    checkedCategories.push("fusion");
   }
   if ($("#sweettooth").is(":checked")) {
-    checkedKitchen.push("sweettooth");
+    checkedCategories.push("sweettooth");
   }
-
-  let checkedLiquids = [];
-
   if ($("#wine").is(":checked")) {
-    checkedLiquids.push("wine");
+    checkedCategories.push("wine");
   }
   if ($("#cocktail").is(":checked")) {
-    checkedLiquids.push("cocktail");
+    checkedCategories.push("cocktail");
   }
   if ($("#beer").is(":checked")) {
-    checkedLiquids.push("beer");
+    checkedCategories.push("beer");
   }
   if ($("#coffee").is(":checked")) {
-    checkedLiquids.push("coffee");
+    checkedCategories.push("coffee");
   }
 
   let placeData = {
@@ -132,8 +122,6 @@ const submitPlace = (e) => {
       postalCode: postcode,
     },
     website: website,
-    kitchen: checkedKitchen,
-    liquids: checkedLiquids,
     categories: checkedCategories,
   };
 

@@ -14,8 +14,8 @@ const fetchPlaces = () => {
 };
 
 const renderPlace = (place) => {
-  const liquids = place.liquids.length > 0 ? place.liquids : "";
-  const kitchen = place.kitchen.length > 0 ? place.kitchen : "";
+  // const liquids = place.liquids.length > 0 ? place.liquids : "";
+  // const kitchen = place.kitchen.length > 0 ? place.kitchen : "";
 
   return `
           <div id="${place.id}" class="col-md-6 col-lg-3 mb-3 ">
@@ -29,8 +29,6 @@ const renderPlace = (place) => {
                     place.address.city
                   }</p>
                   <a href="${place.website}">${place.website}</a>
-                  <p class="mb-0">${liquids}</p>
-                  <p class="mb-0">${kitchen}</p>
               </div>
           </div>
           `;
@@ -40,8 +38,6 @@ const isVisiblePlace = (place) => {
   var isPlaceVisible = false;
 
   let checkedCategories = [];
-  let checkedKitchen = [];
-  let checkedLiquids = [];
 
   if ($("#friends").is(":checked")) {
     checkedCategories.push("friends");
@@ -101,68 +97,66 @@ const isVisiblePlace = (place) => {
   if ($("#dddollar").is(":checked")) {
     checkedCategories.push("dddollar");
   }
-
   if ($("#aroundhere").is(":checked")) {
-    checkedKitchen.push("around here");
+    checkedCategories.push("aroundhere");
   }
   if ($("#fromthesea").is(":checked")) {
-    checkedKitchen.push("from the sea");
+    checkedCategories.push("fromthesea");
   }
   if ($("#fireland").is(":checked")) {
-    checkedKitchen.push("fireland");
+    checkedCategories.push("fireland");
   }
   if ($("#bites").is(":checked")) {
-    checkedKitchen.push("bites");
+    checkedCategories.push("bites");
   }
   if ($("#bistrofrancais").is(":checked")) {
-    checkedKitchen.push("bistro francais");
+    checkedCategories.push("bistrofrancais");
   }
   if ($("#cucinaitaliana").is(":checked")) {
-    checkedKitchen.push("cucina italiana");
+    checkedCategories.push("cucinaitaliana");
   }
   if ($("#farawayasia").is(":checked")) {
-    checkedKitchen.push("faraway asia");
+    checkedCategories.push("farawayasia");
   }
   if ($("#plantbased").is(":checked")) {
-    checkedKitchen.push("plant-based");
+    checkedCategories.push("plantbased");
   }
   if ($("#streetfood").is(":checked")) {
-    checkedKitchen.push("street-food");
+    checkedCategories.push("streetfood");
   }
   if ($("#hummus").is(":checked")) {
-    checkedKitchen.push("hummus & co");
+    checkedCategories.push("hummus");
   }
   if ($("#fusion").is(":checked")) {
-    checkedKitchen.push("fusion");
+    checkedCategories.push("fusion");
   }
   if ($("#sweettooth").is(":checked")) {
-    checkedKitchen.push("sweettooth");
+    checkedCategories.push("sweettooth");
   }
-
   if ($("#wine").is(":checked")) {
-    checkedLiquids.push("wine");
+    checkedCategories.push("wine");
   }
   if ($("#cocktail").is(":checked")) {
-    checkedLiquids.push("cocktail");
+    checkedCategories.push("cocktail");
   }
   if ($("#beer").is(":checked")) {
-    checkedLiquids.push("beer");
+    checkedCategories.push("beer");
   }
   if ($("#coffee").is(":checked")) {
-    checkedLiquids.push("coffee");
+    checkedCategories.push("coffee");
   }
 
-  checkedKitchen.forEach((kitchen) => {
-    if (place.kitchen.includes(kitchen)) {
-      isPlaceVisible = true;
-    }
-  });
+  // checkedKitchen.forEach((kitchen) => {
+  //   if (place.kitchen.includes(kitchen)) {
+  //     isPlaceVisible = true;
+  //   }
+  // });
 
-  checkedLiquids.forEach((liquid) => {
-    if (place.liquids.includes(liquid)) {
-      isPlaceVisible = true;
-    }
-  });
+  // checkedLiquids.forEach((liquid) => {
+  //   if (place.liquids.includes(liquid)) {
+  //     isPlaceVisible = true;
+  //   }
+  // });
 
   checkedCategories.forEach((category) => {
     if (place.categories.includes(category)) {
