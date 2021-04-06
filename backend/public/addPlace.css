@@ -19,10 +19,12 @@
   margin: 50px auto;
 }
 
-#submitplace {
+#submitplace, #editplace {
   background-color: #46082f;
   color: #e4b370;
 }
+
+
 .form-label {
   color: #46082f;
 }
