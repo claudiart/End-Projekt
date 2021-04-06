@@ -2,13 +2,9 @@
 
 // var ignoreFilter = true;
 
-$( '#searchbyfilter' ).on( 'click', function() {
-  if ( $(this).is('clicked') ) {
-      $( '#filters', '#apply','#reset' ).show();
-  } else {
-      $( '#filters','#apply','#reset'  ).hide();
-  }
-})
+$("#searchbyfilter").on("click", function () {
+  $("#filterBox").toggle();
+});
 
 const fetchPlaces = () => {
   fetch(`/places`, {
@@ -22,6 +18,7 @@ const fetchPlaces = () => {
 };
 
 const renderPlace = (place) => {
+  console.log(place.website);
   return `
           <div id="${place.id}" class="col-md-6 col-lg-3 mb-3 ">
               <div class="content col-12 rounded shadow text-dark pt-3 pb-3">
@@ -33,7 +30,10 @@ const renderPlace = (place) => {
                     " " +
                     place.address.city
                   }</p>
-                  <a href="${place.website}">${place.website}</a>
+                  <a href="${place.website}">${place.website.replace(
+    "https://",
+    ""
+  )}</a>
               </div>
           </div>
           `;
@@ -192,5 +192,5 @@ const renderPlaces = (data) => {
 // };
 
 $("#apply").on("click", fetchPlaces);
-// $("#reset").on("click", resetFilter);
+$("#reset").on("click", resetFilter);
 // $("#showall").on("click", showAllPlaces);

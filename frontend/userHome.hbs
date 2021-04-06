@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-            <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <title>User</title>
     <style>
         .button {
@@ -17,36 +17,40 @@
         h1 {
             color: #882c66;
         }
+
         .text-center {
             color: #46082f;
         }
+
         .form-label {
             color: #e4b370;
         }
-        fieldset {    
-            text-align:center;
-            margin:50px auto;
-            width:70%;
-            border:1px solid  #882c66;
-            padding:10px 10px 10px 10px;
-            border-top: 1px solid  #882c66;
-            border-bottom: 2px solid  #882c66;
-            background: rgb(148,42,100);
-            background: linear-gradient(53deg, rgba(148,42,100,0.3883928571428571) 0%, rgba(255,161,0,0.40800070028011204) 61%);
+
+        fieldset {
+            text-align: center;
+            margin: 50px auto;
+            width: 70%;
+            border: 1px solid #882c66;
+            padding: 10px 10px 10px 10px;
+            border-top: 1px solid #882c66;
+            border-bottom: 2px solid #882c66;
+            background: rgb(148, 42, 100);
+            background: linear-gradient(53deg, rgba(148, 42, 100, 0.3883928571428571) 0%, rgba(255, 161, 0, 0.40800070028011204) 61%);
         }
 
         legend {
             text-align: center;
-            color:  #46082f;
-        
-        }
-        #filters, #apply, #reset {
-            
-        }
-        body {
-            background-color:  #ebdfce;
+            color: #46082f;
+
         }
 
+        #filterBox {
+            display: none;
+        }
+
+        body {
+            background-color: #ebdfce;
+        }
     </style>
 
 </head>
@@ -57,19 +61,21 @@
 
         <button class="btn btn-lg btn-block mt-3 mb-3 button" id="searchbyfilter" type="submit" name="btn-login">search
             by filter</button>
-         <button class="btn btn-lg btn-block mt-3 mb-3 button" id="showall" type="submit" name="btn-login">show all
+        <button class="btn btn-lg btn-block mt-3 mb-3 button" id="showall" type="submit" name="btn-login">show all
             places
         </button>
-        {{> checkboxes}}
-        <button class="btn btn-lg btn-block mt-3 mb-3 button" id="apply" type="submit" name="btn-login">apply
-            filter</button>
-        <button class="btn btn-lg btn-block mt-3 mb-3 button" id="reset" type="submit" name="btn-login">reset
-            filter</button>
-       
+        <div id="filterBox">
+            {{> checkboxes}}
+            <button class="btn btn-lg btn-block mt-3 mb-3 button" id="apply" type="submit" name="btn-login">apply
+                filter</button>
+            <button class="btn btn-lg btn-block mt-3 mb-3 button" id="reset" type="submit" name="btn-login">reset
+                filter</button>
+        </div>
         <div id="places" class="row"></div>
     </main>
 
-     <script src="/jquery-3.5.1.min.js"></script>
-     <script src="userHome.js"></script>
+    <script src="/jquery-3.5.1.min.js"></script>
+    <script src="userHome.js"></script>
 </body>
+
 </html>

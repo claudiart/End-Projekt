@@ -1,34 +1,31 @@
-
 .form {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    max-width: 800px;
-    color: #46082f;
-    background: rgb(148,42,100);
-    background: linear-gradient(53deg, rgba(148,42,100,0.3883928571428571) 0%, rgba(255,161,0,0.40800070028011204) 61%);
-  }
-
+  width: 100%;
+  max-width: 800px;
+  color: #46082f;
+  background: rgb(148, 42, 100);
+  background: linear-gradient(
+    53deg,
+    rgba(148, 42, 100, 0.3883928571428571) 0%,
+    rgba(255, 161, 0, 0.40800070028011204) 61%
+  );
+}
 
 .text-center {
-    color: #46082f;
+  color: #46082f;
 }
 
 .btn-toolbar {
-    max-width: 200px;
-    margin: 50px auto;
+  max-width: 200px;
+  margin: 50px auto;
 }
-
 
 #submitplace {
-    background-color: #882c66;
-    color: #e4b370;
+  background-color: #882c66;
+  color: #e4b370;
 }
 .form-label {
-    color: #46082f;
+  color: #46082f;
 }
 body {
-    background-color:  #ebdfce;
+  background-color: #ebdfce;
 }
