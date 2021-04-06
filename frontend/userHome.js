@@ -1,11 +1,10 @@
-//fetch all places from backend
-
 // var ignoreFilter = true;
 
 $("#searchbyfilter").on("click", function () {
   $("#filterBox").toggle();
 });
 
+//fetch all places from backend
 const fetchPlaces = () => {
   fetch(`/places`, {
     method: "GET",
@@ -17,26 +16,24 @@ const fetchPlaces = () => {
     });
 };
 
+//Render all places on page load
+fetchPlaces();
+
 const renderPlace = (place) => {
-  console.log(place.website);
   return `
-          <div id="${place.id}" class="col-md-6 col-lg-3 mb-3 ">
-              <div class="content col-12 rounded shadow text-dark pt-3 pb-3">
-                  <p class="text-dark font-weight-bold">${place.name}</p>
-                  <p class="mt-3 mb-0">${
-                    place.address.streetAddress +
-                    ", " +
-                    place.address.postalCode +
-                    " " +
-                    place.address.city
-                  }</p>
-                  <a href="${place.website}">${place.website.replace(
-    "https://",
-    ""
-  )}</a>
-              </div>
-          </div>
-          `;
+    <div id="${place.id}" class="col-md-6 col-lg-3 mb-3 ">
+      <div class="content col-12 rounded shadow text-dark pt-3 pb-3">
+        <p class="text-dark font-weight-bold">${place.name}</p>
+        <p class="mt-3 mb-0">${
+          place.address.streetAddress +
+          ", " +
+          place.address.postalCode +
+          " " +
+          place.address.city
+        }</p>
+        <a href="${place.website}">${place.website.replace("https://", "")}</a>
+      </div>
+  </div> `;
 };
 
 const isVisiblePlace = (place) => {
@@ -150,18 +147,6 @@ const isVisiblePlace = (place) => {
     checkedCategories.push("coffee");
   }
 
-  // checkedKitchen.forEach((kitchen) => {
-  //   if (place.kitchen.includes(kitchen)) {
-  //     isPlaceVisible = true;
-  //   }
-  // });
-
-  // checkedLiquids.forEach((liquid) => {
-  //   if (place.liquids.includes(liquid)) {
-  //     isPlaceVisible = true;
-  //   }
-  // });
-
   checkedCategories.forEach((category) => {
     if (place.categories.includes(category)) {
       isPlaceVisible = true;
@@ -176,6 +161,8 @@ const isVisiblePlace = (place) => {
 };
 
 const renderPlaces = (data) => {
+  //remove all divs before rendering them again
+  $("#places > div").remove();
   for (var place in data) {
     if (isVisiblePlace(data[place])) {
       $("#places").append(renderPlace(data[place]));
@@ -183,14 +170,9 @@ const renderPlaces = (data) => {
   }
 };
 
-// const resetFilter = () => {
-//   ignoreFilter = false;
-// };
-
-// const showAllPlaces = () => {
-//   ignoreFilter = true;
-// };
+const resetFilter = () => {
+  location.reload();
+};
 
 $("#apply").on("click", fetchPlaces);
 $("#reset").on("click", resetFilter);
-// $("#showall").on("click", showAllPlaces);

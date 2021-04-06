@@ -127,8 +127,6 @@ const handleEdit = (e) => {
     categories: checkedCategories,
   };
 
-  console.log(updatedPlace);
-
   // http request with PUT method
   fetch(`/places/${id}`, {
     method: "PUT",
