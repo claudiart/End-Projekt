@@ -2,6 +2,14 @@
 
 // var ignoreFilter = true;
 
+$( '#searchbyfilter' ).on( 'click', function() {
+  if ( $(this).is('clicked') ) {
+      $( '#filters', '#apply','#reset' ).show();
+  } else {
+      $( '#filters','#apply','#reset'  ).hide();
+  }
+})
+
 const fetchPlaces = () => {
   fetch(`/places`, {
     method: "GET",
@@ -14,9 +22,6 @@ const fetchPlaces = () => {
 };
 
 const renderPlace = (place) => {
-  // const liquids = place.liquids.length > 0 ? place.liquids : "";
-  // const kitchen = place.kitchen.length > 0 ? place.kitchen : "";
-
   return `
           <div id="${place.id}" class="col-md-6 col-lg-3 mb-3 ">
               <div class="content col-12 rounded shadow text-dark pt-3 pb-3">
@@ -54,7 +59,6 @@ const isVisiblePlace = (place) => {
   if ($("#family").is(":checked")) {
     checkedCategories.push("family");
   }
-
   if ($("#breakfast").is(":checked")) {
     checkedCategories.push("breakfast");
   }

@@ -17,7 +17,9 @@ const renderPlace = (place) => {
                 <p class="text-dark font-weight-bold">${place.name}</p>
                 <p class="mt-3 mb-0">${
                   place.address.streetAddress +
-                  ", " +
+                  " " +
+                  place.address.number +
+                  ", " + 
                   place.address.postalCode +
                   " " +
                   place.address.city

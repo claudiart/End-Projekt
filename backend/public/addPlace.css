@@ -6,12 +6,14 @@
     transform: translate(-50%, -50%);
     width: 100%;
     max-width: 800px;
-    color: #882c66;
+    color: #46082f;
+    background: rgb(148,42,100);
+    background: linear-gradient(53deg, rgba(148,42,100,0.3883928571428571) 0%, rgba(255,161,0,0.40800070028011204) 61%);
   }
 
 
 .text-center {
-    color: #882c66;
+    color: #46082f;
 }
 
 .btn-toolbar {
@@ -19,10 +21,11 @@
     margin: 50px auto;
 }
 
+
 #submitplace {
     background-color: #882c66;
     color: #e4b370;
 }
 .form-label {
-    color: #e4b370;
+    color: #46082f;
 }

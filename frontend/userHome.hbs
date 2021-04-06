@@ -18,7 +18,7 @@
             color: #882c66;
         }
         .text-center {
-            color: #882c66;
+            color: #46082f;
         }
         .form-label {
             color: #e4b370;
@@ -26,16 +26,24 @@
         fieldset {    
             text-align:center;
             margin:50px auto;
-            width:80%;
-            border:2px solid #e4b370;;
-            padding:10px 10px 10px 10px
+            width:70%;
+            border:1px solid  #882c66;
+            padding:10px 10px 10px 10px;
+            border-top: 1px solid  #882c66;
+            border-bottom: 2px solid  #882c66;
+            background: rgb(148,42,100);
+            background: linear-gradient(53deg, rgba(148,42,100,0.3883928571428571) 0%, rgba(255,161,0,0.40800070028011204) 61%);
         }
 
         legend {
             text-align: center;
-            color:  #e4b370;
+            color:  #46082f;
         
         }
+        #filters, #apply, #reset {
+            
+        }
+
     </style>
 
 </head>
@@ -43,14 +51,18 @@
 <body class="text-center">
     <h1>Hi User</h1>
     <main class="container justify-content-center">
+
+        <button class="btn btn-lg btn-block mt-3 mb-3 button" id="searchbyfilter" type="submit" name="btn-login">search
+            by filter</button>
+         <button class="btn btn-lg btn-block mt-3 mb-3 button" id="showall" type="submit" name="btn-login">show all
+            places
+        </button>
         {{> checkboxes}}
         <button class="btn btn-lg btn-block mt-3 mb-3 button" id="apply" type="submit" name="btn-login">apply
             filter</button>
         <button class="btn btn-lg btn-block mt-3 mb-3 button" id="reset" type="submit" name="btn-login">reset
             filter</button>
-        <button class="btn btn-lg btn-block mt-3 mb-3 button" id="showall" type="submit" name="btn-login">show all
-            places
-        </button>
+       
         <div id="places" class="row"></div>
     </main>
 
