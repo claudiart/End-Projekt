@@ -14,7 +14,7 @@ const renderPlace = (place) => {
         <div class="col-md-6 col-lg-3 mb-3">
             <div class="content col-12 rounded shadow text-dark fill #e4b370 pt-3 pb-3">
                 <p class="placeName">${place.name}</p>
-                <p class="mt-3 mb-0">${
+                <p class="address">${
                   place.address.streetAddress +
                   " " +
                   place.address.number +
