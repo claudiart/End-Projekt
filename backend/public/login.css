@@ -9,7 +9,11 @@
     margin: 0 auto;
     color: #882c66;
   }
-
+html {
+    background-color:  #ebdfce;
+    
+    /* background-color: linear-gradient(53deg, rgba(148,42,100,0.3883928571428571) 0%, rgba(255,161,0,0.40800070028011204) 61%); */
+}
 .userExistsHide, .registerInfoHide {
     display: none;
   }
