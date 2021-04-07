@@ -432,5 +432,245 @@
             "dollar",
             "ddollar"
         ]
+    },
+    "jGMQm": {
+        "id": "jGMQm",
+        "name": "PARÉMI – Boulangerie & Pâtisserie",
+        "address": {
+            "streetAddress": "Bäckerstraße ",
+            "number": "10",
+            "city": "Vienna",
+            "postalCode": "1010"
+        },
+        "website": "https://www.paremi.at",
+        "categories": [
+            "friends",
+            "date",
+            "family",
+            "breakfast",
+            "patisserie",
+            "bakery",
+            "easygoing",
+            "ddollar"
+        ]
+    },
+    "VOsON": {
+        "id": "VOsON",
+        "name": "La Spiga",
+        "address": {
+            "streetAddress": "Lerchenfelder Straße ",
+            "number": "65",
+            "city": "Vienna",
+            "postalCode": "1070"
+        },
+        "website": "https://laspiga.at/",
+        "categories": [
+            "friends",
+            "business",
+            "date",
+            "family",
+            "lunch",
+            "dinner",
+            "easygoing",
+            "ddollar",
+            "cucinaitaliana"
+        ]
+    },
+    "T0BZG": {
+        "id": "T0BZG",
+        "name": "Loos Bar",
+        "address": {
+            "streetAddress": "Kärntner Durchgang ",
+            "number": "10",
+            "city": "Vienna",
+            "postalCode": "1010"
+        },
+        "website": "https://www.loosbar.at",
+        "categories": [
+            "friends",
+            "date",
+            "between",
+            "ddollar",
+            "dddollar",
+            "cocktail"
+        ]
+    },
+    "tV5vB": {
+        "id": "tV5vB",
+        "name": "El Gaucho",
+        "address": {
+            "streetAddress": "Praterstraße 1",
+            "number": "1",
+            "city": "Vienna",
+            "postalCode": "1020"
+        },
+        "website": "https://www.elgaucho.at",
+        "categories": [
+            "friends",
+            "business",
+            "date",
+            "family",
+            "lunch",
+            "dinner",
+            "between",
+            "dddollar",
+            "fireland"
+        ]
+    },
+    "8_L7x": {
+        "id": "8_L7x",
+        "name": "Dstrikt Steakhouse",
+        "address": {
+            "streetAddress": "Schubertring ",
+            "number": "",
+            "city": "Vienna",
+            "postalCode": "1010"
+        },
+        "website": "https://www.dstrikt.com",
+        "categories": [
+            "friends",
+            "business",
+            "date",
+            "family",
+            "lunch",
+            "dinner",
+            "highend",
+            "dddollar",
+            "fireland",
+            "wine",
+            "cocktail"
+        ]
+    },
+    "2tM_u": {
+        "id": "2tM_u",
+        "name": "Brasserie & Bakery - The Guesthouse Vienna",
+        "address": {
+            "streetAddress": "Führichgasse ",
+            "number": "10",
+            "city": "Vienna",
+            "postalCode": "1010"
+        },
+        "website": "https://theguesthouse.at/de/brasserie-bakery",
+        "categories": [
+            "friends",
+            "business",
+            "date",
+            "family",
+            "breakfast",
+            "brunch",
+            "lunch",
+            "patisserie",
+            "bakery",
+            "highend",
+            "between",
+            "ddollar",
+            "dddollar",
+            "coffee"
+        ]
+    },
+    "czcgT": {
+        "id": "czcgT",
+        "name": "San Carlo",
+        "address": {
+            "streetAddress": "Mahlerstraße",
+            "number": "3",
+            "city": "Vienna",
+            "postalCode": "1010"
+        },
+        "website": "https://ristorante-san-carlo.at/",
+        "categories": [
+            "friends",
+            "business",
+            "date",
+            "family",
+            "lunch",
+            "dinner",
+            "easygoing",
+            "ddollar",
+            "cucinaitaliana"
+        ]
+    },
+    "WI4Q1": {
+        "id": "WI4Q1",
+        "name": "Bacco ",
+        "address": {
+            "streetAddress": "Margaretenstraße",
+            "number": "25",
+            "city": "Vienna",
+            "postalCode": "1040"
+        },
+        "website": "http://www.bacco.at/",
+        "categories": [
+            "friends",
+            "family",
+            "lunch",
+            "dinner",
+            "easygoing",
+            "dollar",
+            "ddollar",
+            "cucinaitaliana"
+        ]
+    },
+    "mD-ra": {
+        "id": "mD-ra",
+        "name": "Materia",
+        "address": {
+            "streetAddress": "Tigergasse",
+            "number": "31",
+            "city": "Vienna",
+            "postalCode": "1080"
+        },
+        "website": "https://materia.restaurant",
+        "categories": [
+            "friends",
+            "business",
+            "date",
+            "dinner",
+            "between",
+            "ddollar",
+            "dddollar",
+            "cucinaitaliana"
+        ]
+    },
+    "9cnic": {
+        "id": "9cnic",
+        "name": "Monte Ofelio ",
+        "address": {
+            "streetAddress": "Obere Augartenstraße",
+            "number": "70",
+            "city": "Vienna",
+            "postalCode": "1020"
+        },
+        "website": "http://www.monteofelio.com",
+        "categories": [
+            "friends",
+            "breakfast",
+            "latesnack",
+            "bakery",
+            "easygoing",
+            "ddollar",
+            "cucinaitaliana",
+            "cocktail"
+        ]
+    },
+    "hw9cJ": {
+        "id": "hw9cJ",
+        "name": "Beef & Glory Steakhouse ",
+        "address": {
+            "streetAddress": "Florianigasse",
+            "number": "35",
+            "city": "",
+            "postalCode": "1080"
+        },
+        "website": "https://www.beefandglory.at",
+        "categories": [
+            "friends",
+            "business",
+            "date",
+            "dinner",
+            "between",
+            "ddollar",
+            "fireland"
+        ]
     }
 }

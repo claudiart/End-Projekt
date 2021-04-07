@@ -4,7 +4,7 @@
 
 - editPlace.hbs has <script>
 
-- click on delete place - UserHome is empty...  -> location.reload maybe? 
+- click on delete place - AdminHome is empty...  -> location.reload maybe? 
 
 - after addPlace button (/admin/add) it should return automatically to /admin 
 
