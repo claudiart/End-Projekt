@@ -5,11 +5,11 @@ const express = require("express");
 const app = express();
 const { nanoid } = require("nanoid");
 const bcrypt = require("bcrypt");
-const hbs = require('hbs');
+const hbs = require("hbs");
 
 app.set("view engine", "hbs"); // hbs dateien statt html
 const viewsPath = path.join(__dirname, "views"); // __dirname und views zusammenfassen als String
-const partialsPath = path.join(__dirname,'../frontend/partials');
+const partialsPath = path.join(__dirname, "../frontend/partials");
 app.set("views", viewsPath); // views in ViewsPath
 app.use(express.static(path.join(__dirname, "public"))); //
 app.use(express.static(path.join(__dirname, "../frontend"))); //
@@ -159,8 +159,6 @@ function deletePlace(req, res) {
   if (placeId) {
     fs.readFile("places.json", function (err, data) {
       var places = JSON.parse(data);
-      //delete places[placeName];
-      //places = places.filter( element => element.id != placeId );
       for (let i in places) {
         if (places[i].id == placeId) {
           delete places[i];

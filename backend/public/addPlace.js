@@ -132,7 +132,7 @@ const submitPlace = (e) => {
   })
     .then((response) => response.json())
     .then(alert("New place has been added"))
-    .then(location.reload())
+    .then(window.location.replace("/admin"))
     .catch((error) => {
       console.error("there was an error: ", error);
     });
