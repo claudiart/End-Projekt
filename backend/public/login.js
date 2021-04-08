@@ -25,8 +25,13 @@ const loginUser = (e) => {
         }).then(res => res.json())
             .then(res => {
                 user = JSON.parse(res);
-                if (user.admin === true) { window.location.href = "/admin" }
+                delete user.pass; // Passwort nicht in Session speichern                
+                if (user.admin === true) { 
+                    sessionStorage.setItem( 'letseatuser', JSON.stringify(user) );
+                    window.location.href = "/admin" 
+                }
                 else if (user.admin === false) {
+                    sessionStorage.setItem( 'letseatuser', JSON.stringify(user) );
                     window.location.href = "/user"
                 }
                 else {

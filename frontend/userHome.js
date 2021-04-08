@@ -1,4 +1,17 @@
 // var ignoreFilter = true;
+var user = sessionStorage.getItem('letseatuser');
+if (!user || user == "" ) {
+  window.location.href = "/";
+}
+user = JSON.parse(user);
+$('#nameUser').html(user.username);
+
+
+$( '#logout' ).on('click', function() {
+  sessionStorage.clear();
+  window.location.href = "/";
+})
+
 
 $("#searchbyfilter").on("click", function () {
   $("#filterBox").toggle();
@@ -43,7 +56,7 @@ const renderPlace = (place) => {
 };
 
 const isVisiblePlace = (place) => {
-  var isPlaceVisible = false;
+  var isPlaceVisible = true;
 
   let checkedCategories = [];
 
@@ -154,8 +167,8 @@ const isVisiblePlace = (place) => {
   }
 
   checkedCategories.forEach((category) => {
-    if (place.categories.includes(category)) {
-      isPlaceVisible = true;
+    if (!place.categories.includes(category)) {
+      isPlaceVisible = false;
     }
   });
 

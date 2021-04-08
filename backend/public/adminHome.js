@@ -1,3 +1,19 @@
+var user = sessionStorage.getItem('letseatuser');
+if (!user || user == "" ) {
+  window.location.href = "/";
+}
+user = JSON.parse(user);
+if (!user.admin ) { // wenn user kein Admin ist, umleiten zu User-Seite
+  window.location.href = "/user";
+}
+$('#nameUser').html(user.username + '(Administrator)' );
+
+$( '#logout' ).on('click', function() {
+  sessionStorage.clear();
+  window.location.href = "/";
+})
+
+
 $("#addPlace").on("click", () => (window.location.href = "/admin/add"));
 
 fetch(`/places`, {
