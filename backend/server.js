@@ -31,9 +31,9 @@ app.get("/register", (req, res) => {
   res.render("register");
 });
 
-app.get("/user", (req, res) => {
-  res.render("../../frontend/userHome");
-});
+// app.get("/user", (req, res) => {
+//   res.render("../../frontend/userHome");
+// });
 
 app.get("/admin", (req, res) => {
   res.render("adminHome");
@@ -48,7 +48,7 @@ app.get("/admin/edit/:id", (req, res) => {
   var placeId = req.params.id;
   var data = fs.readFileSync("./places.json");
   var places = JSON.parse(data);
-  //var ort = places.find( element => element.id == placeId );
+
   for (let i in places) {
     if (places[i].id == placeId) {
       var place = places[i];
@@ -122,20 +122,18 @@ app.put("/places/:id", editPlace);
 function editPlace(req, res) {
   var placeId = req.params.id;
   var updatedPlaceData = req.body;
-  console.log(updatedPlaceData);
   if (placeId) {
+    //get places from places.json and save them in var places
     fs.readFile("places.json", function (err, data) {
       var places = JSON.parse(data);
 
-      //update object with new values
+      //update place with placeId with new values from updatedPlaceData
       places[placeId].name = updatedPlaceData.name;
       places[placeId].address = updatedPlaceData.address;
       places[placeId].website = updatedPlaceData.website;
       places[placeId].categories = updatedPlaceData.categories;
 
-      //befülle das Formular mit den daten
-
-      //on save überschreibe place mit dem namen placeId mit neuen daten
+      //save places to places.json
       fs.writeFile("places.json", JSON.stringify(places), (err) => {
         if (err) {
           throw err;
@@ -227,9 +225,6 @@ const registerUser = (req, res) => {
         console.log(newUser);
         res.json(newUser); //send response to client with newUser information
       } else {
-        // res.status(404);
-        // res.send('User already exists');
-        // throw new Error('User already exists');
         res.json({ ok: false });
       }
     });
@@ -238,6 +233,7 @@ const registerUser = (req, res) => {
     throw new Error("Failed to add user - missing data"); //and throw new error in the backend
   }
 };
+
 app.post("/user", registerUser);
 
 //Endpoint for user login
@@ -255,7 +251,6 @@ function loginUser(req, res) {
       };
 
       let foundUser = findUserByEmail(userData.email);
-      console.log(foundUser);
 
       if (foundUser) {
         bcrypt
@@ -271,3 +266,30 @@ function loginUser(req, res) {
     throw new Error("no valid data found in request");
   }
 }
+
+//Endpint for single user
+app.get("/user/:username", (req, res) => {
+  var username = req.params.username;
+
+  fs.readFile("users.json", function (err, data) {
+    var users = JSON.parse(data);
+
+    //find user by username
+    const findUserByUsername = (username) => {
+      return users.find((user) => {
+        user.username === username;
+        console.log(username);
+      });
+    };
+
+    //WHY IS foundUser undefined?
+    let foundUser = findUserByUsername(username);
+    console.log("found user " + JSON.stringify(foundUser));
+
+    if (foundUser.admin === false) {
+      res.render("../../frontend/userHome", {
+        user: foundUser,
+      });
+    }
+  });
+});

@@ -7,5 +7,7 @@
 
 - on userHome all saved Places (after logged in)
 
+- add frontend validation for add place
+
 
 
