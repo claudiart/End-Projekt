@@ -1,5 +1,5 @@
 const http = require("http");
-const ss1Redirect = require ('heroku-ssl-redirect');
+const ss1Redirect = require("heroku-ssl-redirect");
 const fs = require("fs");
 const path = require("path");
 const express = require("express");
@@ -8,7 +8,7 @@ const { nanoid } = require("nanoid");
 const bcrypt = require("bcrypt");
 const hbs = require("hbs");
 
-app.use( ss1Redirect.default());
+app.use(ss1Redirect.default());
 app.set("view engine", "hbs"); // hbs dateien statt html
 const viewsPath = path.join(__dirname, "views"); // __dirname und views zusammenfassen als String
 const partialsPath = path.join(__dirname, "frontend/partials");
@@ -242,10 +242,6 @@ const registerUser = (req, res) => {
 };
 app.post("/user", registerUser);
 
-
-
-
-
 //Endpoint for user login
 app.post("/login", loginUser);
 
@@ -268,8 +264,9 @@ function loginUser(req, res) {
           .compare(userData.pass, foundUser.pass)
           .then(res.json(JSON.stringify(foundUser)));
       } else {
-        console.log("didn't find user");
-        throw new Error("didnt find user in database");
+        res
+          .status(500)
+          .json({ message: "this e-mail address is not registered" });
       }
     });
   } else {
@@ -277,9 +274,6 @@ function loginUser(req, res) {
     throw new Error("no valid data found in request");
   }
 }
-
-
-
 
 //////////////////////////////////
 
@@ -298,12 +292,12 @@ function loginUser(req, res) {
 //       });
 //     };
 
-    // //WHY IS foundUser undefined?
-    // let foundUser = findUserByUsername(username);
-    // console.log("found user " + JSON.stringify(foundUser));
+// //WHY IS foundUser undefined?
+// let foundUser = findUserByUsername(username);
+// console.log("found user " + JSON.stringify(foundUser));
 
-    // if (foundUser.admin === false) {
-    //   res.render("../../frontend/userHome", {
-    //     user: foundUser,
-    //   });
-    // }
+// if (foundUser.admin === false) {
+//   res.render("../../frontend/userHome", {
+//     user: foundUser,
+//   });
+// }
