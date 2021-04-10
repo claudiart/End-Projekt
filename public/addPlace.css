@@ -19,7 +19,7 @@
   margin: 50px auto;
 }
 
-#submitplace, #editplace {
+#submitplace, #editplace, #goback {
   background-color: #46082f;
   color: #e4b370;
 }

@@ -139,3 +139,7 @@ const submitPlace = (e) => {
 };
 
 $("#submitplace").on("click", submitPlace);
+
+$( '#goback' ).on('click', function() {
+  window.location.href = "/admin";
+});

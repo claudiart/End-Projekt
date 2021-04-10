@@ -1,3 +1,4 @@
+
 const handleEdit = (e) => {
   e.preventDefault();
 
@@ -139,4 +140,9 @@ const handleEdit = (e) => {
     });
 };
 
+
 $("#editplace").on("click", handleEdit);
+
+$( '#goback' ).on('click', function() {
+  window.location.href = "/admin";
+});
