@@ -22,7 +22,16 @@ const loginUser = (e) => {
       headers: { "content-type": "application/json; charset=UTF-8" },
       body: JSON.stringify({ email: email, pass: pass }),
     })
-      .then((res) => res.json())
+      .then((res) => {
+        if (!res.ok) {
+          // check if response is ok and if not
+          return res.json().then((res) => {
+            //return a JSON response and use then() to throw new Error
+            throw new Error(res.message); //throw new error with the message
+          });
+        }
+        return res.json(); //if response is ok return a JSON response to use it in the next then()
+      })
       .then((res) => {
         user = JSON.parse(res);
         delete user.pass; // Passwort nicht in Session speichern
@@ -32,11 +41,12 @@ const loginUser = (e) => {
         } else if (user.admin === false) {
           sessionStorage.setItem("letseatuser", JSON.stringify(user));
           window.location.href = "/user";
-        } else {
-          alert("pass is not correct");
         }
       })
-      .catch((error) => alert("this e-mail address is not registered"));
+      .catch((error) => {
+        //catch the error form above and alert the message from the backend
+        alert(error.message); //alert the message from the backend
+      });
   }
 };
 

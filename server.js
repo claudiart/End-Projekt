@@ -257,15 +257,18 @@ function loginUser(req, res) {
       };
 
       let foundUser = findUserByEmail(userData.email);
-      console.log(foundUser);
 
       if (foundUser) {
-        bcrypt
-          .compare(userData.pass, foundUser.pass)
-          .then(res.json(JSON.stringify(foundUser)));
+        bcrypt.compare(userData.pass, foundUser.pass, (err, result) => {
+          if (err || !result) {
+            res.status(400).json({ message: "wrong password" });
+          } else if (result) {
+            res.json(JSON.stringify(foundUser));
+          }
+        });
       } else {
         res
-          .status(500)
+          .status(400)
           .json({ message: "this e-mail address is not registered" });
       }
     });
