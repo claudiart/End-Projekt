@@ -74,19 +74,19 @@ function getAllPlaces(req, res) {
   }
 }
 
-//Endpoint for getting a single place by name
-app.get("/places/:place", searchPlace);
+// //Endpoint for getting a single place by name
+// app.get("/places/:place", searchPlace);
 
-function searchPlace(req, res) {
-  var name = req.params.place.toLowerCase();
-  var data = fs.readFileSync("./places.json");
-  var places = JSON.parse(data);
-  if (places[name]) {
-    res.json(places[name]);
-  } else {
-    res.send("Place not found");
-  }
-}
+// function searchPlace(req, res) {
+//   var name = req.params.place.toLowerCase();
+//   var data = fs.readFileSync("./places.json");
+//   var places = JSON.parse(data);
+//   if (places[name]) {
+//     res.json(places[name]);
+//   } else {
+//     res.send("Place not found");
+//   }
+// }
 
 //Endpoint for adding a place
 app.post("/places/add", addPlace);
@@ -173,6 +173,39 @@ function deletePlace(req, res) {
         }
       });
       console.log(placeId + " has been deleted");
+    });
+    res.json(placeId);
+  } else {
+    res.send("Failed to delete place");
+    throw new Error("Failed to delete place");
+  }
+}
+
+//Endpoint for saving a place id in user
+app.post("/places/:placeid/:userid", savePlace);
+
+function savePlace(req, res) {
+  var placeId = req.params.placeid;
+  var userId = req.params.userid;
+
+  if (placeId && userId) {
+    fs.readFile("users.json", function (err, data) {
+      var users = JSON.parse(data);
+      //find user by id
+      const findUserById = (id) => {
+        return users.find((user) => id === user.id);
+      };
+      const foundUser = findUserById(userId);
+
+      const saved = foundUser.savedplaces ? [...foundUser.savedplaces] : []; //if the user already has saved places then spread this array and save it to saved. Otherwise just save empty array to saved.
+      saved.push(placeId); //push placeId to savedplaces
+      foundUser.savedplaces = saved; //add saved to the users savedplaces
+      fs.writeFile("users.json", JSON.stringify(users), (err) => {
+        if (err) {
+          throw err;
+        }
+      });
+      console.log(placeId + " has been saved");
     });
     res.json(placeId);
   } else {
@@ -277,30 +310,3 @@ function loginUser(req, res) {
     throw new Error("no valid data found in request");
   }
 }
-
-//////////////////////////////////
-
-//Endpint for single user
-// app.get("/user/:username", (req, res) => {
-//   var username = req.params.username;
-
-//   fs.readFile("users.json", function (err, data) {
-//     var users = JSON.parse(data);
-
-//     //find user by username
-//     const findUserByUsername = (username) => {
-//       return users.find((user) => {
-//         user.username === username;
-//         console.log(username);
-//       });
-//     };
-
-// //WHY IS foundUser undefined?
-// let foundUser = findUserByUsername(username);
-// console.log("found user " + JSON.stringify(foundUser));
-
-// if (foundUser.admin === false) {
-//   res.render("../../frontend/userHome", {
-//     user: foundUser,
-//   });
-// }

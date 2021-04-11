@@ -1,17 +1,16 @@
 // var ignoreFilter = true;
-var user = sessionStorage.getItem('letseatuser');
-if (!user || user == "" ) {
+var user = sessionStorage.getItem("letseatuser");
+
+if (!user || user == "") {
   window.location.href = "/";
 }
 user = JSON.parse(user);
-$('#nameUser').html(user.username);
+$("#nameUser").html(user.username);
 
-
-$( '#logout' ).on('click', function() {
+$("#logout").on("click", function () {
   sessionStorage.clear();
   window.location.href = "/";
-})
-
+});
 
 $("#searchbyfilter").on("click", function () {
   $("#filterBox").toggle();
@@ -44,9 +43,10 @@ const renderPlace = (place) => {
           " " +
           place.address.city
         }</p>
-        <a class="website" href="${
-          place.website
-        }">${place.website.replace("https://", "")}</a>
+        <a class="website" href="${place.website}">${place.website.replace(
+    "https://",
+    ""
+  )}</a>
         <br>
         <button class="btn btn-lg btn-block mt-3 mb-3" onclick='handleSave("${
           place.id
@@ -172,11 +172,20 @@ const isVisiblePlace = (place) => {
     }
   });
 
-  // if (ignoreFilter) {
-  //   isPlaceVisible = true;
-  // }
-
   return isPlaceVisible;
+};
+
+const handleSave = (placeId) => {
+  // http request with PUT method
+  fetch(`/places/${placeId}/${user.id}`, {
+    method: "POST",
+    headers: { "content-type": "application/json; charset=UTF-8" },
+  })
+    .then((response) => alert("Place is saved to your favourites"))
+    .then(location.reload())
+    .catch((error) => {
+      console.error("there was an error: ", error);
+    });
 };
 
 const renderPlaces = (data) => {
