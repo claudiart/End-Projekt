@@ -18,7 +18,7 @@ $("#searchbyfilter").on("click", function () {
 
 //fetch all places from backend
 const fetchPlaces = () => {
-  fetch(`/places`, {
+  fetch(`/places/${user.id}`, {
     method: "GET",
     headers: { "content-type": "application/json; charset=UTF-8" },
   })
@@ -31,7 +31,18 @@ const fetchPlaces = () => {
 //Render all places on page load
 fetchPlaces();
 
-const renderPlace = (place) => {
+const renderPlace = (place, showButtonType, showButton) => {
+  let buttonCode = "";
+  if (showButton) {
+    if (showButtonType) {
+      buttonCode = `
+            <button class="btn btn-lg btn-block mt-3 mb-3" onclick='handleSave("${place.id}")'>save</button>`;
+    } else {
+      buttonCode = `
+            <button class="btn btn-lg btn-block mt-3 mb-3" onclick='handleUnsave("${place.id}")'>remove</button>`;
+    }
+  }
+
   return `
     <div id="${place.id}" class="col-md-6 col-lg-3 mb-3 ">
       <div class="content col-12 rounded shadow text-dark pt-3 pb-3">
@@ -48,9 +59,7 @@ const renderPlace = (place) => {
     ""
   )}</a>
         <br>
-        <button class="btn btn-lg btn-block mt-3 mb-3" onclick='handleSave("${
-          place.id
-        }")'>save</button>
+          ${buttonCode}
       </div>
   </div> `;
 };
@@ -176,12 +185,23 @@ const isVisiblePlace = (place) => {
 };
 
 const handleSave = (placeId) => {
-  // http request with PUT method
+  // http request with POST method
   fetch(`/places/${placeId}/${user.id}`, {
     method: "POST",
     headers: { "content-type": "application/json; charset=UTF-8" },
   })
-    .then((response) => alert("Place is saved to your favourites"))
+    .then(location.reload())
+    .catch((error) => {
+      console.error("there was an error: ", error);
+    });
+};
+
+const handleUnsave = (placeId) => {
+  // http request with DELETE method
+  fetch(`/places/${placeId}/${user.id}`, {
+    method: "DELETE",
+    headers: { "content-type": "application/json; charset=UTF-8" },
+  })
     .then(location.reload())
     .catch((error) => {
       console.error("there was an error: ", error);
@@ -192,8 +212,12 @@ const renderPlaces = (data) => {
   //remove all divs before rendering them again
   $("#places > div").remove();
   for (var place in data) {
+    isFavorite = data[place].isFavorite;
     if (isVisiblePlace(data[place])) {
-      $("#places").append(renderPlace(data[place]));
+      $("#places").append(renderPlace(data[place], true, !isFavorite));
+    }
+    if (isFavorite) {
+      $("#savedPlaces").append(renderPlace(data[place], false, true));
     }
   }
 };

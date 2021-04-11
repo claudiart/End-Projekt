@@ -62,12 +62,31 @@ app.get("/admin/edit/:id", (req, res) => {
 });
 
 //Endpoint for getting all places
-app.get("/places", getAllPlaces);
+app.get("/places/:userid", getAllPlaces);
 
 function getAllPlaces(req, res) {
-  var data = fs.readFileSync("./places.json");
+  var data = fs.readFileSync("places.json");
   var places = JSON.parse(data);
   if (places) {
+    var userId = req.params.userid;
+    var data = fs.readFileSync("users.json");
+    var users = JSON.parse(data);
+    //find user by id
+    const findUserById = (id) => {
+      return users.find((user) => id === user.id);
+    };
+    const foundUser = findUserById(userId);
+    const usersSavedPlaces = foundUser.savedplaces;
+
+    if (usersSavedPlaces) {
+      for (let i in places) {
+        if (usersSavedPlaces.includes(places[i].id)) {
+          places[i].isFavorite = true;
+        } else {
+          places[i].isFavorite = false;
+        }
+      }
+    }
     res.json(places);
   } else {
     res.send("No places found");
@@ -206,11 +225,44 @@ function savePlace(req, res) {
         }
       });
       console.log(placeId + " has been saved");
+      res.json(saved);
     });
-    res.json(placeId);
   } else {
-    res.send("Failed to delete place");
-    throw new Error("Failed to delete place");
+    res.send("Failed to save place");
+    throw new Error("Failed to save place");
+  }
+}
+
+//Endpoint for removing a place id from user
+app.delete("/places/:placeid/:userid", unsavePlace);
+
+function unsavePlace(req, res) {
+  var placeId = req.params.placeid;
+  var userId = req.params.userid;
+
+  if (placeId && userId) {
+    fs.readFile("users.json", function (err, data) {
+      var users = JSON.parse(data);
+      //find user by id
+      const findUserById = (id) => {
+        return users.find((user) => id === user.id);
+      };
+      const foundUser = findUserById(userId);
+
+      let saved = foundUser.savedplaces ? [...foundUser.savedplaces] : [];
+      saved = saved.filter((place) => place != placeId);
+      foundUser.savedplaces = saved; //add saved to the users savedplaces
+      fs.writeFile("users.json", JSON.stringify(users), (err) => {
+        if (err) {
+          throw err;
+        }
+      });
+      console.log(placeId + " has been removed");
+      res.json(saved);
+    });
+  } else {
+    res.send("Failed to remove place");
+    throw new Error("Failed to remove place");
   }
 }
 
