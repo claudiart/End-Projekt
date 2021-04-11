@@ -34,7 +34,7 @@ const loginUser = (e) => {
       })
       .then((res) => {
         user = JSON.parse(res);
-        delete user.pass; // Passwort nicht in Session speichern
+        delete user.pass; // password not saved in Session 
         if (user.admin === true) {
           sessionStorage.setItem("letseatuser", JSON.stringify(user));
           window.location.href = "/admin";
