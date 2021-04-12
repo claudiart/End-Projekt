@@ -209,8 +209,8 @@ const handleUnsave = (placeId) => {
 };
 
 const renderPlaces = (data) => {
-  
-  $("#places > div").remove();  //remove all divs before rendering them again
+  $("#places > div").remove(); //remove all divs from places before rendering them again
+  $("#savedPlaces > div").remove(); //remove all divs from savedPlaces before rendering them again
   for (var place in data) {
     isFavorite = data[place].isFavorite;
     if (isVisiblePlace(data[place])) {
