@@ -9,48 +9,89 @@ const bcrypt = require("bcrypt");
 const hbs = require("hbs");
 
 app.use(ss1Redirect.default());
-app.set("view engine", "hbs"); // hbs dateien statt html
-const viewsPath = path.join(__dirname, "views"); // __dirname und views zusammenfassen als String
+app.set("view engine", "hbs");
+const viewsPath = path.join(__dirname, "views");
 const partialsPath = path.join(__dirname, "frontend/partials");
-app.set("views", viewsPath); // views in ViewsPath
-app.use(express.static(path.join(__dirname, "public"))); //
-app.use(express.static(path.join(__dirname, "frontend"))); //
+app.set("views", viewsPath);
+app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "frontend")));
 
 const bodyParser = require("body-parser");
-app.use(bodyParser.urlencoded({ extended: true })); // Middleware
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 hbs.registerPartials(partialsPath);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log("Server Start at the Port " + PORT));
 
-//render register on start page (change this later to login)
+//render login on start page
 app.get("/", (req, res) => {
   res.render("login");
 });
 
+//render login on register page
 app.get("/register", (req, res) => {
   res.render("register");
 });
 
+//render userHome on user page
 app.get("/user", (req, res) => {
   res.render("../frontend/userHome");
 });
 
+//render adminHome on admin page
 app.get("/admin", (req, res) => {
   res.render("adminHome");
 });
 
+//render addPlace on admin/add page
 app.get("/admin/add", (req, res) => {
   res.render("addPlace");
 });
 
-//Endpoint for editing place by id
+//=================================
+//API ENDPOINTS
+//===================================
+
+//Endpoint for user login
+app.post("/login", loginUser);
+
+function loginUser(req, res) {
+  let userData = req.body;
+  if (userData.email && userData.pass) {
+    fs.readFile("users.json", function (err, data) {
+      let users = JSON.parse(data);
+      //find user by email function
+      const findUserByEmail = (email) => {
+        return users.find((user) => email === user.email);
+      };
+
+      let foundUser = findUserByEmail(userData.email); //call function findUserByEmail and save the data to foundUser
+
+      if (foundUser) {
+        bcrypt.compare(userData.pass, foundUser.pass, (err, result) => {
+          if (err || !result) {
+            res.status(403).json({ message: "wrong password" }); //sent error to frontend
+          } else if (result) {
+            res.json(JSON.stringify(foundUser));
+          }
+        });
+      } else {
+        res
+          .status(403)
+          .json({ message: "this e-mail address is not registered" });
+      }
+    });
+  } else {
+    throw new Error("no valid data found in request");
+  }
+}
+
+//API Endpoint for editing place by id
 app.get("/admin/edit/:id", (req, res) => {
   var placeId = req.params.id;
   var data = fs.readFileSync("./places.json");
   var places = JSON.parse(data);
-  //var ort = places.find( element => element.id == placeId );
   for (let i in places) {
     if (places[i].id == placeId) {
       var place = places[i];
@@ -61,7 +102,7 @@ app.get("/admin/edit/:id", (req, res) => {
   });
 });
 
-//Endpoint for getting all places
+//API Endpoint for getting all places
 app.get("/places/:userid", getAllPlaces);
 
 function getAllPlaces(req, res) {
@@ -92,20 +133,6 @@ function getAllPlaces(req, res) {
     res.send("No places found");
   }
 }
-
-// //Endpoint for getting a single place by name
-// app.get("/places/:place", searchPlace);
-
-// function searchPlace(req, res) {
-//   var name = req.params.place.toLowerCase();
-//   var data = fs.readFileSync("./places.json");
-//   var places = JSON.parse(data);
-//   if (places[name]) {
-//     res.json(places[name]);
-//   } else {
-//     res.send("Place not found");
-//   }
-// }
 
 //Endpoint for adding a place
 app.post("/places/add", addPlace);
@@ -267,7 +294,6 @@ function unsavePlace(req, res) {
 }
 
 //Endpoint for user registration
-
 const registerUser = (req, res) => {
   var newUser = req.body; //get user object from the request body and save it to newUser
   if (newUser.username && newUser.email && newUser.pass) {
@@ -326,39 +352,3 @@ const registerUser = (req, res) => {
   }
 };
 app.post("/user", registerUser);
-
-//Endpoint for user login
-app.post("/login", loginUser);
-
-function loginUser(req, res) {
-  var userData = req.body;
-  if (userData.email && userData.pass) {
-    fs.readFile("users.json", function (err, data) {
-      var users = JSON.parse(data);
-
-      //find user by email
-      const findUserByEmail = (email) => {
-        return users.find((user) => email === user.email);
-      };
-
-      let foundUser = findUserByEmail(userData.email);
-
-      if (foundUser) {
-        bcrypt.compare(userData.pass, foundUser.pass, (err, result) => {
-          if (err || !result) {
-            res.status(400).json({ message: "wrong password" });
-          } else if (result) {
-            res.json(JSON.stringify(foundUser));
-          }
-        });
-      } else {
-        res
-          .status(400)
-          .json({ message: "this e-mail address is not registered" });
-      }
-    });
-  } else {
-    console.log("failed to log in");
-    throw new Error("no valid data found in request");
-  }
-}

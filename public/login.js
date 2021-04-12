@@ -5,7 +5,6 @@ const loginUser = (e) => {
   let pass = $("#pass").val();
 
   // validation
-
   $(".is-invalid").removeClass("is-invalid");
   if (email.length < 7 || email.indexOf("@") == -1) {
     $("#email").addClass("is-invalid");
@@ -14,8 +13,6 @@ const loginUser = (e) => {
     $("#pass").addClass("is-invalid");
   }
   if ($(".is-invalid").length == 0) {
-    // $( '#login' ).prop( 'disabled', true ); // damit man nicht zweimal klicken kann
-
     // send http request to server
     fetch(`/login`, {
       method: "POST",
@@ -33,8 +30,8 @@ const loginUser = (e) => {
         return res.json(); //if response is ok return a JSON response to use it in the next then()
       })
       .then((res) => {
-        user = JSON.parse(res);
-        delete user.pass; // password not saved in Session 
+        let user = JSON.parse(res);
+        delete user.pass; // password not saved in Session
         if (user.admin === true) {
           sessionStorage.setItem("letseatuser", JSON.stringify(user));
           window.location.href = "/admin";
