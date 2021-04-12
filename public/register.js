@@ -5,9 +5,7 @@ const getUsers = (e) => {
   let email = $("#email").val();
   let pass = $("#pass").val();
 
-  let doubleUserError = null;
-  // validation
-
+  // validation for username, email and pass
   $(".is-invalid").removeClass("is-invalid");
   if (username == "") {
     $("#username").addClass("is-invalid");
@@ -19,9 +17,9 @@ const getUsers = (e) => {
   if (pass.length < 6) {
     $("#pass").addClass("is-invalid");
   }
-  if ($(".is-invalid").length == 0) {
-    // $('#register').prop('disabled', true); // damit man nicht zweimal klicken kann
 
+  //error handling if user exists
+  if ($(".is-invalid").length == 0) {
     const showError = () => {
       $("#userExists").addClass("userExistsShow").removeClass("userExistsHide");
     };
@@ -30,30 +28,30 @@ const getUsers = (e) => {
       $("#userExists").removeClass("userExistsShow").addClass("userExistsHide");
     };
 
+    //register success message
     const showRegisterInfo = () => {
-      $("#registerInfo").addClass("registerInfoShow").removeClass("registerInfoHide");
-    }
+      $("#registerInfo")
+        .addClass("registerInfoShow")
+        .removeClass("registerInfoHide");
+    };
 
     // http request with POST method
     fetch(`/user`, {
       method: "POST",
       headers: { "content-type": "application/json; charset=UTF-8" },
       body: JSON.stringify({ username: username, email: email, pass: pass }),
-    }).then(response => response.json())
+    })
+      .then((res) => res.json())
       .then((res) => {
         hideError();
         if (!res.ok) {
-          // throw new Error("User already exists"); 
-          showError();
+          showError(); // display message "User already exists";
         } else {
-          showRegisterInfo();
-          // top.location.href = "/"
+          showRegisterInfo(); //display message "User successfully registered"
         }
-        // return res.json;
       })
       .catch((error) => {
         console.error("there was an error: ", error);
-        // showError();
       });
   }
 };

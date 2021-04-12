@@ -87,6 +87,61 @@ function loginUser(req, res) {
   }
 }
 
+//API Endpoint for user registration
+app.post("/user", registerUser);
+
+function registerUser(req, res) {
+  var newUser = req.body; //get user object from the request body and save it to newUser
+  if (newUser.username && newUser.email && newUser.pass) {
+    //if username, email and pass are truthy ...
+
+    fs.readFile("users.json", async (err, data) => {
+      // ...take all existing users from users.js..
+      let users = JSON.parse(data); // ...parse that data to a JS object and save it to users...
+
+      let userIsNew = true;
+      //check if user exists, if yes set userIsNew to false
+      users.forEach((user) => {
+        if (user.email === newUser.email) {
+          userIsNew = false;
+        }
+      });
+
+      if (userIsNew) {
+        newUser.admin = false; //add admin and set it to false, because all users are false at the beginning
+        newUser.id = nanoid(5); //add unique id to the user
+        await bcrypt
+          .hash(newUser.pass, 8)
+          .then((hash) => {
+            newUser.pass = hash;
+          })
+          .catch((err) => console.log(err));
+
+        users.push(newUser); //...push newUser to users array.
+
+        fs.writeFile(
+          "users.json",
+          JSON.stringify(users), //stringify users (converts a JavaScript value to a JSON string) and write it to users.json file
+          (err) => {
+            if (err) {
+              //if there is an error throw error
+              throw err;
+            }
+            console.log(newUser.username + " has been added"); //if success then console.log this sentence
+          }
+        );
+        newUser.ok = true; // user is registered
+        res.json(newUser); //send response to client with newUser information
+      } else {
+        res.json({ ok: false });
+      }
+    });
+  } else {
+    res.send("Failed to add user - missing data"); // if username, email and pass are NOT truthy (are missing) send response to client with this sentence
+    throw new Error("Failed to add user - missing data"); //and throw new error in the backend
+  }
+}
+
 //API Endpoint for editing place by id
 app.get("/admin/edit/:id", (req, res) => {
   var placeId = req.params.id;
@@ -292,63 +347,3 @@ function unsavePlace(req, res) {
     throw new Error("Failed to remove place");
   }
 }
-
-//Endpoint for user registration
-const registerUser = (req, res) => {
-  var newUser = req.body; //get user object from the request body and save it to newUser
-  if (newUser.username && newUser.email && newUser.pass) {
-    //if username, email and pass are truthy ...
-
-    fs.readFile("users.json", async (err, data) => {
-      // ...read existing users data from users.js..
-      var users = JSON.parse(data); // ...parse that data to a JS object and save it to users...
-
-      //check if user exists, if yes set userIsNew to false
-      let userIsNew = true;
-
-      users.forEach((item) => {
-        if (item.email == newUser.email) {
-          userIsNew = false;
-        }
-      });
-
-      if (userIsNew) {
-        newUser.admin = false; //... all users are false at the beginning...
-        newUser.id = nanoid(5);
-        await bcrypt
-          .hash(newUser.pass, 8)
-          .then((hash) => {
-            if (hash) {
-              newUser.pass = hash;
-            } else {
-              //todo smth if hash not valid
-            }
-          })
-          .catch((err) => console.log(err));
-
-        users.push(newUser); //...push newUser to users array...
-
-        fs.writeFile("users.json", JSON.stringify(users), (err) => {
-          //stringify users (onverts a JavaScript value to a JSON string) and write it to users.json file
-          if (err) {
-            //if there is an error throw error
-            throw err;
-          }
-          console.log(newUser.username + " has been added"); //if success then console.log this sentence
-        });
-        newUser.ok = true; // wurde angelegt
-        console.log(newUser);
-        res.json(newUser); //send response to client with newUser information
-      } else {
-        // res.status(404);
-        // res.send('User already exists');
-        // throw new Error('User already exists');
-        res.json({ ok: false });
-      }
-    });
-  } else {
-    res.send("Failed to add user - missing data"); // if username, email and pass are NOT truthy (are missing) send response to client with this sentence
-    throw new Error("Failed to add user - missing data"); //and throw new error in the backend
-  }
-};
-app.post("/user", registerUser);
