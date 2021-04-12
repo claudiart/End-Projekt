@@ -44,7 +44,7 @@ const renderPlace = (place, showButtonType, showButton) => {
   }
 
   return `
-    <div id="${place.id}" class="col-md-6 col-lg-3 mb-3 ">
+    <div id="${place.id}" class=" cards col-md-6 col-lg-3 mb-3 ">
       <div class="content col-12 rounded shadow text-dark pt-3 pb-3">
         <p class="placeName">${place.name}</p>
         <p class="address">${
@@ -209,8 +209,8 @@ const handleUnsave = (placeId) => {
 };
 
 const renderPlaces = (data) => {
-  //remove all divs before rendering them again
-  $("#places > div").remove();
+  
+  $("#places > div").remove();  //remove all divs before rendering them again
   for (var place in data) {
     isFavorite = data[place].isFavorite;
     if (isVisiblePlace(data[place])) {

@@ -16,11 +16,11 @@ $( '#logout' ).on('click', function() {
 
 $("#addPlace").on("click", () => (window.location.href = "/admin/add"));
 
-fetch(`/places`, {
+fetch(`/places/${user.id}`, {
   method: "GET",
   headers: { "content-type": "application/json; charset=UTF-8" },
 })
-  .then((res) => res.json())
+  .then((res) => res.json()) 
   .then((data) => {
     renderPlaces(data);
   });
