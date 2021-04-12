@@ -1,6 +1,7 @@
-
 const handleEdit = (e) => {
   e.preventDefault();
+
+  //get all (new) values from the form
 
   let id = $("#placeId").val();
 
@@ -116,6 +117,7 @@ const handleEdit = (e) => {
     checkedCategories.push("coffee");
   }
 
+  //save all values to updatedPlaceObject
   let updatedPlace = {
     name: name,
     address: {
@@ -132,7 +134,7 @@ const handleEdit = (e) => {
   fetch(`/places/${id}`, {
     method: "PUT",
     headers: { "content-type": "application/json; charset=UTF-8" },
-    body: JSON.stringify(updatedPlace),
+    body: JSON.stringify(updatedPlace), //send updatedPlace  object as body to backend
   })
     .then(alert("The place has been edited"))
     .catch((error) => {
@@ -140,9 +142,8 @@ const handleEdit = (e) => {
     });
 };
 
-
 $("#editplace").on("click", handleEdit);
 
-$( '#goback' ).on('click', function() {
+$("#goback").on("click", function () {
   window.location.href = "/admin";
 });

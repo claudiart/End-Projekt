@@ -125,12 +125,13 @@ const submitPlace = (e) => {
     categories: checkedCategories,
   };
 
+  //http request with POST method, sending placeData as body
   fetch(`/places/add`, {
     method: "POST",
     headers: { "content-type": "application/json; charset=UTF-8" },
     body: JSON.stringify(placeData),
   })
-    .then((response) => response.json())
+    .then((res) => res.json())
     .then(alert("New place has been added"))
     .then(location.reload())
     .catch((error) => {
@@ -140,6 +141,6 @@ const submitPlace = (e) => {
 
 $("#submitplace").on("click", submitPlace);
 
-$( '#goback' ).on('click', function() {
+$("#goback").on("click", function () {
   window.location.href = "/admin";
 });

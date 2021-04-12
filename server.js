@@ -142,21 +142,6 @@ function registerUser(req, res) {
   }
 }
 
-//API Endpoint for editing place by id
-app.get("/admin/edit/:id", (req, res) => {
-  var placeId = req.params.id;
-  var data = fs.readFileSync("./places.json");
-  var places = JSON.parse(data);
-  for (let i in places) {
-    if (places[i].id == placeId) {
-      var place = places[i];
-    }
-  }
-  res.render("editPlace", {
-    place,
-  });
-});
-
 //API Endpoint for getting all places
 app.get("/places/:userid", getAllPlaces);
 
@@ -164,7 +149,7 @@ function getAllPlaces(req, res) {
   var data = fs.readFileSync("places.json");
   var places = JSON.parse(data);
   if (places) {
-    var userId = req.params.userid;
+    var userId = req.params.userid; //take user id from the url parameters
     var data = fs.readFileSync("users.json");
     var users = JSON.parse(data);
     //find user by id
@@ -172,14 +157,17 @@ function getAllPlaces(req, res) {
       return users.find((user) => id === user.id);
     };
     const foundUser = findUserById(userId);
-    const usersSavedPlaces = foundUser.savedplaces;
+    const usersSavedPlaces = foundUser.savedplaces; //get the array with users saved places
 
     if (usersSavedPlaces) {
+      //if user has saved places
       for (let i in places) {
+        //for every place in places
         if (usersSavedPlaces.includes(places[i].id)) {
-          places[i].isFavorite = true;
+          //check if users saved places includes this place
+          places[i].isFavorite = true; //if yes then add property "isFavorite" : true
         } else {
-          places[i].isFavorite = false;
+          places[i].isFavorite = false; //else add property "isFavorite" : false
         }
       }
     }
@@ -189,15 +177,17 @@ function getAllPlaces(req, res) {
   }
 }
 
-//Endpoint for adding a place
+//API Endpoint for adding a place
 app.post("/places/add", addPlace);
 
 function addPlace(req, res) {
   var newPlace = req.body;
+
   if (newPlace.name) {
     fs.readFile("places.json", function (err, data) {
       var places = JSON.parse(data);
-      const id = nanoid(5);
+      const id = nanoid(5); //create new id
+      //create new place object with the new id and add it to places
       places[id] = {
         id,
         name: newPlace.name,
@@ -209,47 +199,13 @@ function addPlace(req, res) {
         if (err) {
           throw err;
         }
-        console.log(newPlace.name + " has been added"); //if success then console.log this sentence
+        console.log(newPlace.name + " has been added");
       });
     });
-    res.json(newPlace); //send response to client with newUser information
+    res.json(newPlace); //send response to client with newPlace information
   } else {
-    res.send("Failed to add place"); // if username, email and pass are NOT truthy (are missing) send response to client with this sentence
+    res.send("Failed to add place"); // if name of the place is NOT truthy (is missing) send response to client with this sentence
     throw new Error("Failed to add place"); //and throw new error in the backend
-  }
-}
-
-//Endpoint for editing a place by id
-app.put("/places/:id", editPlace);
-
-function editPlace(req, res) {
-  var placeId = req.params.id;
-  var updatedPlaceData = req.body;
-  console.log(updatedPlaceData);
-  if (placeId) {
-    fs.readFile("places.json", function (err, data) {
-      var places = JSON.parse(data);
-
-      //update object with new values
-      places[placeId].name = updatedPlaceData.name;
-      places[placeId].address = updatedPlaceData.address;
-      places[placeId].website = updatedPlaceData.website;
-      places[placeId].categories = updatedPlaceData.categories;
-
-      //befülle das Formular mit den daten
-
-      //on save überschreibe place mit dem namen placeId mit neuen daten
-      fs.writeFile("places.json", JSON.stringify(places), (err) => {
-        if (err) {
-          throw err;
-        }
-      });
-      console.log("Place with id" + placeId + " has been edited");
-    });
-    res.json(placeId);
-  } else {
-    res.send("Failed to edit place");
-    throw new Error("Failed to edit place");
   }
 }
 
@@ -262,23 +218,67 @@ function deletePlace(req, res) {
   if (placeId) {
     fs.readFile("places.json", function (err, data) {
       var places = JSON.parse(data);
-      for (let i in places) {
-        if (places[i].id == placeId) {
-          delete places[i];
-          break;
-        }
-      }
+
+      delete places[placeId]; //delete the place with the placeId
+
       fs.writeFile("places.json", JSON.stringify(places), (err) => {
         if (err) {
           throw err;
         }
       });
-      console.log(placeId + " has been deleted");
     });
     res.json(placeId);
   } else {
     res.send("Failed to delete place");
     throw new Error("Failed to delete place");
+  }
+}
+
+//API Endpoint for getting the place by id, that needs to be edited
+app.get("/admin/edit/:id", getPlaceToEdit);
+
+function getPlaceToEdit(req, res) {
+  var placeId = req.params.id;
+  var data = fs.readFileSync("./places.json");
+  var places = JSON.parse(data);
+
+  //take place with the place id and save it to var place
+  var place = places[placeId];
+
+  //render edit place form page and send place to frontend
+  res.render("editPlace", {
+    place,
+  });
+}
+
+//API Endpoint for editing a place by id (saving changes)
+app.put("/places/:id", editPlace);
+
+function editPlace(req, res) {
+  var placeId = req.params.id;
+  var updatedPlaceData = req.body;
+  if (placeId) {
+    fs.readFile("places.json", function (err, data) {
+      var places = JSON.parse(data);
+
+      //overwrite old values with new values
+      places[placeId].name = updatedPlaceData.name;
+      places[placeId].address = updatedPlaceData.address;
+      places[placeId].website = updatedPlaceData.website;
+      places[placeId].categories = updatedPlaceData.categories;
+
+      //write new data into places.json
+      fs.writeFile("places.json", JSON.stringify(places), (err) => {
+        if (err) {
+          throw err;
+        }
+      });
+      console.log("Place with id" + placeId + " has been edited");
+    });
+    res.json(placeId);
+  } else {
+    res.send("Failed to edit place");
+    throw new Error("Failed to edit place");
   }
 }
 

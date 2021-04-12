@@ -1,26 +1,28 @@
-var user = sessionStorage.getItem('letseatuser');
-if (!user || user == "" ) {
+var user = sessionStorage.getItem("letseatuser");
+if (!user || user == "") {
+  //if user is not logged in rediret to login page
   window.location.href = "/";
 }
 user = JSON.parse(user);
-if (!user.admin ) { // wenn user kein Admin ist, umleiten zu User-Seite
+if (!user.admin) {
+  // if user is logged in and not an admin, redirect to userHome
   window.location.href = "/user";
 }
-$('#nameUser').html(user.username + '(Administrator)' );
+$("#nameUser").html(user.username + " Administrator");
 
-$( '#logout' ).on('click', function() {
+$("#logout").on("click", function () {
   sessionStorage.clear();
   window.location.href = "/";
-})
-
+});
 
 $("#addPlace").on("click", () => (window.location.href = "/admin/add"));
 
+// http request with GET method to get all places
 fetch(`/places/${user.id}`, {
   method: "GET",
   headers: { "content-type": "application/json; charset=UTF-8" },
 })
-  .then((res) => res.json()) 
+  .then((res) => res.json())
   .then((data) => {
     renderPlaces(data);
   });
@@ -55,8 +57,15 @@ const renderPlace = (place) => {
         `;
 };
 
+const renderPlaces = (data) => {
+  for (var place in data) {
+    //for every place in data
+    $("#places").append(renderPlace(data[place])); //call renderPlace function with single place object as and append to #places
+  }
+};
+
 const handleDelete = (placeId) => {
-  // http request with DELETE method
+  // http request with DELETE method to delete a place
   fetch(`/places/${placeId}`, {
     method: "DELETE",
     headers: { "content-type": "application/json; charset=UTF-8" },
@@ -68,12 +77,7 @@ const handleDelete = (placeId) => {
     });
 };
 
+//click on edit button leads to /admin/edit/placeId (sends place id to the backend)
 const handleEdit = (placeId) => {
-  top.location.href = "/admin/edit/" + placeId;
-};
-
-const renderPlaces = (data) => {
-  for (var place in data) {
-    $("#places").append(renderPlace(data[place]));
-  }
+  top.location.href = `/admin/edit/${placeId}`;
 };
