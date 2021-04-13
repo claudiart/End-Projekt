@@ -33,8 +33,8 @@
         "savedplaces": [
             "qtU8Y",
             "2l7LX",
-            "ElXbY",
-            "8_L7x"
+            "8_L7x",
+            "ElXbY"
         ]
     },
     {
@@ -60,5 +60,16 @@
         "pass": "$2b$08$pEhip8xecUhapz/aCwj65OmjSR9nufv4ZnZSt2T4Zw.PE2ADSy5RW",
         "admin": false,
         "id": "-ngrz"
+    },
+    {
+        "username": "user0001",
+        "email": "user0001@me.com",
+        "pass": "$2b$08$ZxmKFsLGOzin46baQ0MS2eWN0hUS4WzVpHxUBqmRecr1SKPz8sxUK",
+        "admin": false,
+        "id": "4CYsX",
+        "savedplaces": [
+            "2l7LX",
+            "qtU8Y"
+        ]
     }
 ]
