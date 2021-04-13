@@ -1,9 +1,8 @@
-//Prefill the input fields
-
 const saveChanges = (e) => {
   e.preventDefault();
 
-  //get all (new) values from the form
+  // get all (new) values from the form
+  
   let id = $("#placeId").val();
 
   let name = $("#name").val();
@@ -118,7 +117,8 @@ const saveChanges = (e) => {
     checkedCategories.push("coffee");
   }
 
-  //save all values to updatedPlaceObject
+// save all values to updatedPlaceObject
+
   let updatedPlace = {
     name: name,
     address: {
@@ -131,7 +131,9 @@ const saveChanges = (e) => {
     categories: checkedCategories,
   };
 
-  // http request with PUT method
+// F06
+// http request with PUT method
+
   fetch(`/places/${id}`, {
     method: "PUT",
     headers: { "content-type": "application/json; charset=UTF-8" },

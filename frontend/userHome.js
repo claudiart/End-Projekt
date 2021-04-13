@@ -1,4 +1,4 @@
-// var ignoreFilter = true;
+
 var user = sessionStorage.getItem("letseatuser");
 
 if (!user || user == "") {
@@ -16,7 +16,9 @@ $("#searchbyfilter").on("click", function () {
   $("#filterBox").toggle();
 });
 
-//fetch all places from backend
+// F03
+// http request with GET method to get all places 
+
 const fetchPlaces = () => {
   fetch(`/places/${user.id}`, {
     method: "GET",
@@ -28,7 +30,7 @@ const fetchPlaces = () => {
     });
 };
 
-//Render all places on page load
+// Render all places on page load
 fetchPlaces();
 
 const renderPlace = (place, showButtonType, showButton) => {
@@ -184,8 +186,11 @@ const isVisiblePlace = (place) => {
   return isPlaceVisible;
 };
 
+// F08
+// http request with POST method 
+
 const handleSave = (placeId) => {
-  // http request with POST method
+
   fetch(`/places/${placeId}/${user.id}`, {
     method: "POST",
     headers: { "content-type": "application/json; charset=UTF-8" },
@@ -196,8 +201,11 @@ const handleSave = (placeId) => {
     });
 };
 
+// F09
+// http request with DELETE method
+
 const handleUnsave = (placeId) => {
-  // http request with DELETE method
+ 
   fetch(`/places/${placeId}/${user.id}`, {
     method: "DELETE",
     headers: { "content-type": "application/json; charset=UTF-8" },

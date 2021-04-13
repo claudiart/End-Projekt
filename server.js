@@ -53,6 +53,7 @@ app.get("/admin/add", (req, res) => {
                           //API ENDPOINTS
 //================================================================
 
+// F01
 //Endpoint for user login
 app.post("/login", loginUser);
 
@@ -87,6 +88,7 @@ function loginUser(req, res) {
   }
 }
 
+// F02
 //API Endpoint for user registration
 app.post("/user", registerUser);
 
@@ -142,6 +144,7 @@ function registerUser(req, res) {
   }
 }
 
+// F03
 //API Endpoint for getting all places
 app.get("/places/:userid", getAllPlaces);
 
@@ -177,7 +180,9 @@ function getAllPlaces(req, res) {
   }
 }
 
+// F04
 //API Endpoint for adding a place
+
 app.post("/places/add", addPlace);
 
 function addPlace(req, res) {
@@ -209,6 +214,7 @@ function addPlace(req, res) {
   }
 }
 
+// F05
 //Endpoint for deleting a place
 app.delete("/places/:id", deletePlace);
 
@@ -234,6 +240,7 @@ function deletePlace(req, res) {
   }
 }
 
+// F06
 //API Endpoint for getting the place by id, that needs to be edited
 app.get("/admin/edit/:id", getPlaceToEdit);
 
@@ -251,6 +258,7 @@ function getPlaceToEdit(req, res) {
   });
 }
 
+// F07
 //API Endpoint for editing a place by id (saving changes)
 app.put("/places/:id", editPlace);
 
@@ -282,6 +290,7 @@ function editPlace(req, res) {
   }
 }
 
+// F08
 //Endpoint for saving a place id in user
 app.post("/places/:placeid/:userid", savePlace);
 
@@ -315,6 +324,7 @@ function savePlace(req, res) {
   }
 }
 
+// F09
 //Endpoint for removing a place id from user
 app.delete("/places/:placeid/:userid", unsavePlace);
 

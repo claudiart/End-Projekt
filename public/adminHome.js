@@ -17,7 +17,9 @@ $("#logout").on("click", function () {
 
 $("#addPlace").on("click", () => (window.location.href = "/admin/add"));
 
+// F03
 // http request with GET method to get all places
+
 fetch(`/places/${user.id}`, {
   method: "GET",
   headers: { "content-type": "application/json; charset=UTF-8" },
@@ -64,8 +66,11 @@ const renderPlaces = (data) => {
   }
 };
 
+// F05
+// http request with DELETE method to delete a place
+
 const handleDelete = (placeId) => {
-  // http request with DELETE method to delete a place
+ 
   fetch(`/places/${placeId}`, {
     method: "DELETE",
     headers: { "content-type": "application/json; charset=UTF-8" },
