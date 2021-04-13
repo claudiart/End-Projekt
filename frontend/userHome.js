@@ -66,6 +66,8 @@ const renderPlace = (place, showButtonType, showButton) => {
   </div> `;
 };
 
+// filter visible and not visible places 
+
 const isVisiblePlace = (place) => {
   var isPlaceVisible = true;
 
@@ -217,15 +219,15 @@ const handleUnsave = (placeId) => {
 };
 
 const renderPlaces = (data) => {
-  $("#places > div").remove(); //remove all divs from places before rendering them again
+  $("#places > div").remove(); //remove all divs from places before rendering them again // not double 
   $("#savedPlaces > div").remove(); //remove all divs from savedPlaces before rendering them again
   for (var place in data) {
     isFavorite = data[place].isFavorite;
     if (isVisiblePlace(data[place])) {
-      $("#places").append(renderPlace(data[place], true, !isFavorite));
+      $("#places").append(renderPlace(data[place], true, !isFavorite)); // which button are showed (save or remove)
     }
     if (isFavorite) {
-      $("#savedPlaces").append(renderPlace(data[place], false, true));
+      $("#savedPlaces").append(renderPlace(data[place], false, true)); // which button are showed (save or remove)
     }
   }
 };

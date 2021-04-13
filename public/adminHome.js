@@ -82,7 +82,19 @@ const handleDelete = (placeId) => {
     });
 };
 
+// F06
 //click on edit button leads to /admin/edit/placeId (sends place id to the backend)
+
 const handleEdit = (placeId) => {
   top.location.href = `/admin/edit/${placeId}`;
 };
+ 
+
+// full stack crud app 
+// Rest API 
+
+// und file basierte datenbanken (.json)
+
+// verwendeten technologien: node.js, express.js 
+// frontend: JS/jQuery/ hbs
+ 

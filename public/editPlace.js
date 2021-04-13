@@ -131,7 +131,7 @@ const saveChanges = (e) => {
     categories: checkedCategories,
   };
 
-// F06
+// F07
 // http request with PUT method
 
   fetch(`/places/${id}`, {

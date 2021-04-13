@@ -342,7 +342,7 @@ function unsavePlace(req, res) {
       const foundUser = findUserById(userId);
 
       let saved = foundUser.savedplaces ? [...foundUser.savedplaces] : [];
-      saved = saved.filter((place) => place != placeId);
+      saved = saved.filter((place) => place != placeId); // filter out all places except the clicked one
       foundUser.savedplaces = saved; //add saved to the users savedplaces
       fs.writeFile("users.json", JSON.stringify(users), (err) => {
         if (err) {
