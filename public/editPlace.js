@@ -1,8 +1,9 @@
-const handleEdit = (e) => {
+//Prefill the input fields
+
+const saveChanges = (e) => {
   e.preventDefault();
 
   //get all (new) values from the form
-
   let id = $("#placeId").val();
 
   let name = $("#name").val();
@@ -142,7 +143,7 @@ const handleEdit = (e) => {
     });
 };
 
-$("#editplace").on("click", handleEdit);
+$("#editplace").on("click", saveChanges);
 
 $("#goback").on("click", function () {
   window.location.href = "/admin";
