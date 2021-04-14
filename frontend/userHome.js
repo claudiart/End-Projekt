@@ -1,4 +1,4 @@
-
+// sessionStorage.getItem - Gespeicherte Daten aus dem sessionStorage abfragen
 var user = sessionStorage.getItem("letseatuser");
 
 if (!user || user == "") {
@@ -8,7 +8,7 @@ user = JSON.parse(user);
 $("#nameUser").html(user.username);
 
 $("#logout").on("click", function () {
-  sessionStorage.clear();
+  sessionStorage.clear(); 
   window.location.href = "/";
 });
 

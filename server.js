@@ -50,7 +50,7 @@ app.get("/admin/add", (req, res) => {
 });
 
 //================================================================
-                          //API ENDPOINTS
+                          //API ENDPOINTS//
 //================================================================
 
 // F01
@@ -135,7 +135,7 @@ function registerUser(req, res) {
         newUser.ok = true; // user is registered
         res.json(newUser); //send response to client with newUser information
       } else {
-        res.json({ ok: false });
+        res.json({ ok: false }); // send !ok to frontend if user exists
       }
     });
   } else {
