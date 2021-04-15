@@ -1,0 +1,20 @@
+{
+    "name": "letSeat by Claudia",
+    "short_name": "letSeat",
+    "start_url": "/",
+    "display": "standalone",
+    "theme_color": "#e4b370",
+    "background_color": "#46082f",
+    "orientation": "landscape",
+    "scope": "/",
+    "icons": [
+        {
+            "src": "/icons/letSeat.png",
+            "type": "image/png",
+            "sizes": "512x512",
+            "purpose": "any maskable"
+
+        }
+    ]
+
+}

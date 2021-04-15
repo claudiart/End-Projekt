@@ -8,15 +8,17 @@
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <title>User</title>
     <style>
-        .placeName {
-            color: #46082f;
-        }
 
-        .website {
+         .website {
             color: #46082f;
             word-wrap: break-word;
         }
 
+        #logout {
+            background-color: #46082f;
+            color: #e4b370;
+        }
+        
         .address {
             color: #46082f;
         }
@@ -29,52 +31,65 @@
              display: inline-block;
         }
 
-        .btn {
+           .btn {
             color: #e4b370;
         }
 
         h1 {
             color: #46082f;
         }
-
-        .text-center {
+         .placeName {
             color: #46082f;
         }
-
-        .form-label {
+         .text-center {
+            color: #46082f;
+        }
+         .form-label {
             color: #e4b370;
         }
-
-        fieldset {
-            text-align: center;
-            margin: 50px auto;
-            width: 70%;
-
-            padding: 10px 10px 10px 10px;
-
-            background: rgb(148, 42, 100);
-            background: linear-gradient(53deg, rgba(148, 42, 100, 0.3883928571428571) 0%, rgba(255, 161, 0, 0.40800070028011204) 61%);
-        }
-
-        legend {
-            text-align: center;
-            color: #46082f;
-
-        }
-
-        #filterBox {
+         #filterBox {
             display: none;
         }
 
         body {
             background-color: #ebdfce;
-            margin: 30px;
+            margin-top: 30px;
         }
 
         #logout {
             background-color: #46082f;
             color: #e4b370;
         }
+           legend {
+            text-align: center;
+            color: #46082f;
+
+        }
+        fieldset {
+            
+            text-align: center;
+            width: 100%;
+            margin:auto;
+
+            padding: 1% 1% 1% 1%;
+
+            background: rgb(148, 42, 100);
+            background: linear-gradient(53deg, rgba(148, 42, 100, 0.3883928571428571) 0%, rgba(255, 161, 0, 0.40800070028011204) 61%);
+        }
+          
+        @media screen and (max-width:400px) {
+        
+            .controlgroup {
+                display: inline-flex;
+                flex-flow: column wrap;
+                justify-content: space-between;
+                align-items: center;
+                
+            }
+
+            
+        }
+      
     </style>
 
 </head>
